@@ -6,6 +6,10 @@ client = pymongo.MongoClient('mongodb://bart:downy37)tory@my-development-at.my-r
 dbeva = client.eva
 facilities = dbeva.facilities
 
+client = pymongo.MongoClient('mongodb://bart:downy37)tory@pi-worker-1:27017/eva')
+dbeva = client.eva
+facilities = dbeva.facilities
+
 fac_json_string = '{"equipmentnumber": 99999,"type": "ELEVATOR", "description": "zu Gleis 1","geocoordX": 14.6713589,"geocoordY": 51.0993991,"state": "ACTIVE","stateExplanation": "available","stationnumber": 3751}'
 json_obj_active = json.loads(fac_json_string)
 
@@ -30,7 +34,12 @@ search_result = dbeva.facilities.find({"equipmentnumber": json_obj_active["equip
 for doc in search_result:
           print(doc)
 
-search_result = dbeva.facilities.find({"equipmentnumber": 10316334}).sort([("datetime",pymongo.DESCENDING)])
+search_result = dbeva.facilities.find({"equipmentnumber": 10355939}).sort([("datetime",pymongo.DESCENDING)])
+#search_result = dbeva.facilities.find()
+print(search_result.count())
+
+
+search_result = dbeva.facilities.find()
 #search_result = dbeva.facilities.find()
 print(search_result.count())
 

@@ -158,11 +158,19 @@ def printer():
 
           print("facility found")
           for mongo_item in search_result:
-                  print(mongo_item)
                   if( mongo_item["state"] != request[api_item]["state"] ):
+                   print(mongo_item)
+                   print("")
+                   print("mongoitem state:")
+                   print(mongo_item["state"])
+
+                   print("")
+                   print("api_item state:")
+                   print(request[api_item]["state"])
 
                    print("status has changed! - Inserting update!")
-                   facilities.insert_one(api_item)
+
+                   facilities.insert_one(request[api_item])
                    break
 
 
