@@ -149,7 +149,7 @@ def printer():
          print("api_item equipmentnumber")
          print(request[api_item]["equipmentnumber"])
 
-         search_result = dbeva.facilities.find({"equipmentnumber": request[api_item]["equipmentnumber"]}).sort([("datetime",pymongo.DESCENDING)])
+         search_result = dbeva.facilities.find({"equipmentnumber": request[api_item]["equipmentnumber"]}).sort([("datetime",pymongo.DESCENDING)]).limit(1)
 
          print("mongo db count")
          print(search_result.count())
@@ -159,20 +159,26 @@ def printer():
           print("facility found")
           for mongo_item in search_result:
                   if( mongo_item["state"] != request[api_item]["state"] ):
+                   print("")
+                   print("mongo_item:")
                    print(mongo_item)
                    print("")
-                   print("mongoitem state:")
+                   print("mongo_item state:")
                    print(mongo_item["state"])
 
                    print("")
+                   print("api_item")
+                   print(request[api_item])
+                   print("")
                    print("api_item state:")
                    print(request[api_item]["state"])
+                   print(request[api_item])
 
                    print("status has changed! - Inserting update!")
-
-                   facilities.insert_one(request[api_item])
-                   break
-
+                   print("inserting:")
+                   print(request[api_item])
+                   #facilities.insert_one(request[api_item])
+                  break
 
          else:
               print("facility not found -> initial inserting")

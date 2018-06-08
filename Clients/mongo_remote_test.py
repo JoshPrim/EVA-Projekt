@@ -13,7 +13,7 @@ facilities = dbeva.facilities
 fac_json_string = '{"equipmentnumber": 99999,"type": "ELEVATOR", "description": "zu Gleis 1","geocoordX": 14.6713589,"geocoordY": 51.0993991,"state": "ACTIVE","stateExplanation": "available","stationnumber": 3751}'
 json_obj_active = json.loads(fac_json_string)
 
-fac_json_string = '{"equipmentnumber": 999999,"type": "ELEVATOR", "description": "zu Gleis 1","geocoordX": 14.6713589,"geocoordY": 51.0993991,"state": "INACTIVE","stateExplanation": "available","stationnumber": 3751}'
+fac_json_string = '{"equipmentnumber": 10038566, "type": "ELEVATOR", "description": "zu Gleis 1/2", "geocoordX": 11.0592875, "geocoordY": 50.14624, "state": "ACTIVE", "stateExplanation": "available", "stationnumber": 3700, "datetime": "2018-06-08_18-24-48"}}'
 json_obj_inactive = json.loads(fac_json_string)
 
 #for fac_json_obj in fac_json_array:
@@ -34,14 +34,22 @@ search_result = dbeva.facilities.find({"equipmentnumber": json_obj_active["equip
 for doc in search_result:
           print(doc)
 
-search_result = dbeva.facilities.find({"equipmentnumber": 10355939}).sort([("datetime",pymongo.DESCENDING)])
+search_result = dbeva.facilities.distinct({"equipmentnumber": 10463734}).sort([("datetime",pymongo.DESCENDING)])
 #search_result = dbeva.facilities.find()
 print(search_result.count())
 
+# Gibt all equipemnts aus die mehr als einen Eintrag besitzen
+search_result = dbeva.facilities.distinct("equipmentnumber")
+for i in search_result:
+    equip = dbeva.facilities.find({"equipmentnumber": i }).sort([("datetime", pymongo.DESCENDING)])
+    if(equip.count() > 1):
+     for y in equip:
+         print(y)
 
-search_result = dbeva.facilities.find()
-#search_result = dbeva.facilities.find()
-print(search_result.count())
+
+if (search_result["state"] != fac_json_string["state"]):
+    print("true")
+#.sort("equipmentnumber")
 
 for doc in search_result:
           print(doc)
