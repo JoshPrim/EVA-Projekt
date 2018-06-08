@@ -39,8 +39,8 @@ class FaSta_Request():
 
         # Verzeichnis zum lokalen Speichern de Json anlegen
         def create_log_directories():
-            date_n_time = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d_%H-%M-%S')
-            logdir = './Logs/{}/'.format(date_n_time)
+          #  date_n_time = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d_%H-%M-%S')
+            logdir = './Logs/FaSta/'
 
             if not os.path.exists(os.path.abspath('./Logs')):
                 os.mkdir(os.path.abspath('./Logs'))
@@ -61,38 +61,31 @@ class FaSta_Request():
             r = requests.get(url, headers=headers)
             print('Request Status Code: ', r.status_code)
             #print('Request Json: ', r.json())
+            date_n_time = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d_%H-%M-%S')
 
             # Json als .json abspeichern
-            with open(self.logdir + 'FaSta.json', 'w') as outfile:
+            with open(self.logdir + '{}.json'.format(date_n_time), 'w') as outfile:
                 json.dump(r.json(), outfile)
 
             # Json als .txt abspeichern
-            with open(self.logdir + 'FaSta.txt', 'w') as outfile:
-                json.dump(r.json(), outfile)
+           # with open(self.logdir + '{}.txt'.format(date_n_time), 'w') as outfile:
+           #     json.dump(r.json(), outfile)
 
             print('Zurgiff erfolgreich abgeschlossen!')
+            print(date_n_time)
 
-        
-            # Speichern der Json in die MongoDB
-            '''
-            conn = pymongo.MongoClient("mongodb://lcalehost")
-            db = conn.book
-            record1 = db.book_collection
+            temp = r.json()
 
-            for item in r.json():
-                record1.insert(item)
-            '''
+            for i in range( len (temp)):
+               temp[i]["datetime"]= date_n_time
+
+            print(temp)
+
+            return temp
+    
             
         except Exception as e:
             print(e)
             print('Fehler beim Request!')
 
 
-if __name__ == '__main__':
-
-    api_key = 'd16d67e35458c895f557696799eb4e8f'
-    
-    api_zugriff = FaSta_Request(api_key)
-    api_zugriff.request()
-
-    
