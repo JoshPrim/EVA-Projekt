@@ -182,7 +182,7 @@ def printer():
 
          else:
               print("facility not found -> initial inserting")
-              facilities.insert_one(request[api_item])
+             # facilities.insert_one(request[api_item])
               print(" ")
 
      except Exception as e:

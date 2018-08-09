@@ -2,11 +2,16 @@ from __future__ import print_function
 import pymongo
 import json
 
-client = pymongo.MongoClient('mongodb://bart:downy37)tory@my-development-at.my-router.de:27777/eva')
+client = pymongo.MongoClient('mongodb://bart:downy37)tory@localhost:27017/eva')
 dbeva = client.eva
 facilities = dbeva.facilities
 
-client = pymongo.MongoClient('mongodb://bart:downy37)tory@pi-worker-1:27017/eva')
+search_result = dbeva.facilities.find()
+print(search_result.count())
+
+facilities = dbeva.facilities
+
+client = pymongo.MongoClient('mongodb://bart:downy37)tory@localhost:27017/eva')
 dbeva = client.eva
 facilities = dbeva.facilities
 
@@ -29,7 +34,7 @@ date_n_time = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d_%H
 dbeva.facilities.insert(json_obj_active)
 
 
-search_result = dbeva.facilities.find({"equipmentnumber": json_obj_active["equipmentnumber"]})
+search_result = dbeva.facilities.find({"type": "ESCALATOR"})
 #search_result = dbeva.facilities.find()
 for doc in search_result:
           print(doc)
