@@ -21,7 +21,6 @@
 
 '''
 
-
 # -*- coding: utf-8 -*-
 
 
@@ -30,7 +29,6 @@ import dash_core_components as dcc
 import dash_html_components as html
 import flask
 import dash_auth
-
 
 
 ##########################################################################                 #############################################################################################################################################
@@ -42,11 +40,10 @@ class Dashboard():
 
     # Kostruktor
     def __init__(self):
-       print('Fasta Server initialisiert!')
-        
+        print('Fasta Server initialisiert!')
 
     def run(self):
-         # Die Passworter eigentlich aus dem Quellcode-Repository heraushalten und in einer Datei oder einer Datenbank speichern.
+        # Die Passworter eigentlich aus dem Quellcode-Repository heraushalten und in einer Datei oder einer Datenbank speichern.
         VALID_USERNAME_PASSWORD_PAIRS = [
             ['Josh', '1234'],
             ['Sophie', '1234']
@@ -60,37 +57,76 @@ class Dashboard():
             VALID_USERNAME_PASSWORD_PAIRS
         )
 
-
         app.layout = html.Div(children=[
 
-            # Ueberschrift
+            # Überschrift
             html.Div([
-                html.H1(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align':'center', 'width': '15em'},children='EVA Dashboard'),
+                html.H1(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'center', 'width': '15em'},
+                        children='EVA Dashboard'),
             ]),
 
-            # Berschreibung
+            # Beschreibung
             html.Div([
-                html.H2(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align':'center', 'width': '10em'},children='Der Aufzugwaechter'),
+                html.H2(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'center', 'width': '10em',
+                               'color': '#000099'}, children='Der Aufzugwächter'),
                 dcc.Markdown('''
-                    Informationen rund um Aufzuege und
-                    Rolltreppen in Bahnhoefen der DB
-                    Station & Service AG NEU
+                    Informationen rund um Aufzuege und Rolltreppen in Bahnhöfen der DB Station & Service AG
                     '''.replace('  ', ''), className='beschreibung',
-                containerProps={'style': {'maxWidth': '650px'}})
-            ])
-            
+                             containerProps={
+                                 'style': {'maxWidth': '650px', 'color': '#000099', 'margin-left': 'auto',
+                                           'margin-right': 'auto', 'text-align': 'center'}})
+            ]),
+
+            # Übersicht
+            html.Div([
+
+                html.Div([ dcc.Graph(
+                id='diagramm_status',
+                figure={
+                    'data': [
+                        {'x': ['aktiv', 'inaktiv', 'keine Information'], 'y': [4, 1, 2], 'type': 'bar', 'name': 'Aufzüge',
+                         'marker': dict(color=['green', 'red', 'grey'])
+                         },
+                    ],
+                    'layout': {
+                        'title': 'Die Aufzüge im Überblick',
+                        'width': '35%',
+                        'align': 'left'
+
+                    }
+                }
+                )], style={'width': '35%', 'text-align': 'left', 'display': 'inline-block', 'padding-top': 10, 'padding-left': 140, 'padding-bottom': 10 }),
+
+                html.Div([dcc.Graph(
+                id='diagramm_inaktive',
+                figure={
+                    'data': [
+                        {'x': ['aktiv', 'inaktiv', 'keine Information'], 'y': [2, 3, 5], 'type': 'bar',
+                         'name': 'Aufzüge'},
+                    ],
+                    'layout': {
+                        'title': 'Gründe für Inaktivität',
+
+                    }
+                }
+                )], style={'width': '40%', 'text-align': 'right', 'display': 'inline-block', 'padding-left': 10, 'padding-bottom': 10}),
+
+            ], style = {'background-color': '#F0F8FF'}
+            )
+
+
+
         ], style={'marginTop': '2%', 'marginLeft': '5%', 'marginRight': '5%'})
 
 
-##########################################################################           #############################################################################################################################################
-########################################################################## CALLBACKS #############################################################################################################################################
-##########################################################################           #############################################################################################################################################
+        ##########################################################################           #############################################################################################################################################
+        ########################################################################## CALLBACKS #############################################################################################################################################
+        ##########################################################################           #############################################################################################################################################
 
+        # @app.callback():
 
-        #@app.callback():
+        # app.css.append_css({'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'})
 
-        #app.css.append_css({'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'})
-        
         app.run_server(debug=False, host='0.0.0.0', port='37001')
 
 
