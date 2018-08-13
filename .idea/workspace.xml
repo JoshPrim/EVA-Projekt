@@ -2,9 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1caccd8-7387-493a-ac19-96aa64514c06" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Server_frontent-checkpoint.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Testberechnungen-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/server_frontend-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-24-37/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-24-37/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-26-43/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-26-43/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-26-55/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-26-55/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-27-13/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-27-13/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-27-30/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-27-30/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-31-15/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-31-15/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-31-21/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-31-21/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-32-28/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-32-28/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-34-56/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-34-56/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-35-07/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-35-07/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-38-00/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-38-00/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-40-04/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-40-04/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-59-47/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-12_18-59-47/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-14_10-46-19/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-14_10-46-19/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-14_11-27-33/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-14_11-27-33/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-14_13-52-13/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-14_13-52-13/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-14_13-52-35/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-14_13-52-35/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-14_14-02-06/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-14_14-02-06/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-14_14-02-16/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-14_14-02-16/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-14_14-06-04/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-14_14-06-04/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-14_14-08-57/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-06-14_14-08-57/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-08-01_14-28-20/FaSta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/2018-08-01_14-28-20/FaSta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server_frontent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Stammdaten_Aufzüge.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Testberechnungen.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server_frontend.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Clients/mongo_remote_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Clients/mongo_remote_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,7 +94,20 @@
       </file>
       <file leaf-file-name="Postgres_Client.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clients/Postgres_Client.py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReferFacilitiesToStations.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Version/ReferFacilitiesToStations.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1380">
+              <caret line="96" column="52" selection-start-line="96" selection-start-column="52" selection-end-line="96" selection-end-column="52" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="Python_Client.py" pinned="false" current-in-tab="false">
@@ -55,20 +119,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Python_Client.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Version/Python_Client.py">
+      <file leaf-file-name="FacToCustomJsbon.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Version/FacToCustomJsbon.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
+            <state relative-caret-position="480">
+              <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+              <folding>
+                <element signature="e#1#12#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Postgres_Client.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Version/Postgres_Client.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="Python_Client.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Version/Python_Client.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="47" column="59" lean-forward="true" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
+              <folding>
+                <element signature="e#834#849#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1950">
-              <caret line="135" column="4" selection-start-line="135" selection-start-column="4" selection-end-line="135" selection-end-column="4" />
+            <state relative-caret-position="-252">
+              <caret line="122" selection-start-line="122" selection-end-line="203" selection-end-column="10" />
               <folding>
                 <element signature="e#5318#5334#0" expanded="true" />
               </folding>
@@ -79,7 +163,7 @@
       <file leaf-file-name="mongo_remote_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clients/mongo_remote_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="150">
               <caret line="10" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
@@ -131,7 +215,6 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="960" />
     <option name="y" value="23" />
     <option name="width" value="960" />
     <option name="height" value="1177" />
@@ -144,7 +227,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -160,18 +242,13 @@
             <path>
               <item name="EVA-Projekt" type="b2602c69:ProjectViewProjectNode" />
               <item name="EVA-Projekt" type="462c0819:PsiDirectoryNode" />
-              <item name="Clients" type="462c0819:PsiDirectoryNode" />
-              <item name="Logs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EVA-Projekt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EVA-Projekt" type="462c0819:PsiDirectoryNode" />
               <item name="Version" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -328,7 +405,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="23" width="960" height="1177" extended-state="0" />
+    <frame x="0" y="23" width="960" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -391,31 +468,16 @@
           <line>5</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Version/Python_Client.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Clients/mongo_remote_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="42" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Clients/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Version/Python_Client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="73" column="55" selection-start-line="73" selection-start-column="55" selection-end-line="73" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2070">
@@ -684,9 +746,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Version/Version 0.2/StationsInJSON.py" />
-    <entry file="file://$PROJECT_DIR$/Version/Postgres_Client.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Clients/Logs/2018-06-08_10-58-04/FaSta.json" />
     <entry file="file://$PROJECT_DIR$/Clients/Logs/FaSta/2018-06-08_11-29-50.json" />
     <entry file="file://$USER_HOME$/PycharmProjects/untitled/venv/lib/python3.6/site-packages/pymongo/cursor.py">
@@ -696,38 +755,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Version/ReferFacilitiesToStations.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="96" column="52" selection-start-line="96" selection-start-column="52" selection-end-line="96" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Version/FacToCustomJsbon.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="88" column="7" selection-start-line="88" selection-start-column="7" selection-end-line="88" selection-end-column="7" />
-          <folding>
-            <element signature="e#1#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Clients/Postgres_Client.py">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Clients/__init__.py">
+    <entry file="file://$PROJECT_DIR$/Server_frontent.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Clients/mongo_remote_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Clients/Python_Client.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -736,20 +771,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/Version/FacToCustomJsbon.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1950">
-          <caret line="135" column="4" selection-start-line="135" selection-start-column="4" selection-end-line="135" selection-end-column="4" />
+        <state relative-caret-position="480">
+          <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
           <folding>
-            <element signature="e#5318#5334#0" expanded="true" />
+            <element signature="e#1#12#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Version/Postgres_Client.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Clients/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Clients/mongo_remote_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Clients/Postgres_Client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Version/ReferFacilitiesToStations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="96" column="52" selection-start-line="96" selection-start-column="52" selection-end-line="96" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Version/Python_Client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
+        <state relative-caret-position="303">
+          <caret line="47" column="59" lean-forward="true" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
+          <folding>
+            <element signature="e#834#849#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-252">
+          <caret line="122" selection-start-line="122" selection-end-line="203" selection-end-column="10" />
+          <folding>
+            <element signature="e#5318#5334#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
