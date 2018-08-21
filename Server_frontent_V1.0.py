@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
  Autor: Joshua Prim, Philipp Krenitz, Bartos Mosch, Sophie Hagemann
  Version: 1.0
@@ -20,8 +21,6 @@
 ==============================================================================
 
 '''
-
-# -*- coding: utf-8 -*-
 
 
 import dash
@@ -54,7 +53,7 @@ import pgdb
 
 print('Fasta Server initialisiert!')
 
-def getDesiredState(listWithStates: list, state: str):
+def getDesiredState(listWithStates, state):
     stateCounter = 0
 
     for i in listWithStates:
@@ -65,7 +64,7 @@ def getDesiredState(listWithStates: list, state: str):
     return stateCounter
 
 
-def getDesiredStateExplanation(listWithStates: list, state: str, stateExplanation: str):
+def getDesiredStateExplanation(listWithStates, state, stateExplanation):
     stateExpressionCounter = 0
 
     for i in listWithStates:
