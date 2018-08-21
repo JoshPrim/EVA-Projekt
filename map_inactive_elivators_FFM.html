@@ -1,0 +1,4354 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS = false; L_NO_TOUCH = false; L_DISABLE_3D = false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawgit.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <style> #map_7b52c456e2cb4e3db7e8aef873f5b887 {
+                position : relative;
+                width : 100.0%;
+                height: 100.0%;
+                left: 0.0%;
+                top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_7b52c456e2cb4e3db7e8aef873f5b887" ></div>
+        
+</body>
+<script>    
+    
+
+            
+                var bounds = null;
+            
+
+            var map_7b52c456e2cb4e3db7e8aef873f5b887 = L.map(
+                                  'map_7b52c456e2cb4e3db7e8aef873f5b887',
+                                  {center: [50.1106444,8.6820917],
+                                  zoom: 10,
+                                  maxBounds: bounds,
+                                  layers: [],
+                                  worldCopyJump: false,
+                                  crs: L.CRS.EPSG3857
+                                 });
+            
+        
+    
+            var tile_layer_f43257006361414d9d5efdcc1ae55dc6 = L.tileLayer(
+                'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                {
+  "attribution": null,
+  "detectRetina": false,
+  "maxZoom": 18,
+  "minZoom": 1,
+  "noWrap": false,
+  "subdomains": "abc"
+}
+                ).addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+        
+    
+
+            var marker_5a959bf91f474eb49b321dc491a3193e = L.marker(
+                [48.7384833,9.3006344],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_0c0185dab6a34c7bb81a551a0d155391 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5a959bf91f474eb49b321dc491a3193e.setIcon(icon_0c0185dab6a34c7bb81a551a0d155391);
+            
+    
+            var popup_e7e255b296a84d16b8e4b7ef9dac26cc = L.popup({maxWidth: '300'});
+
+            
+                var html_e6d45f58a6324238a0208815e6a837f2 = $('<div id="html_e6d45f58a6324238a0208815e6a837f2" style="width: 100.0%; height: 100.0%;">ID: 10463696 Beschreibung: zu Gleis 5/6</div>')[0];
+                popup_e7e255b296a84d16b8e4b7ef9dac26cc.setContent(html_e6d45f58a6324238a0208815e6a837f2);
+            
+
+            marker_5a959bf91f474eb49b321dc491a3193e.bindPopup(popup_e7e255b296a84d16b8e4b7ef9dac26cc);
+
+            
+        
+    
+
+            var marker_d7b93df97f384bf4bae257701992d0a6 = L.marker(
+                [48.7386718,9.3007596],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_21f34f225985432db679b13b21689c97 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_d7b93df97f384bf4bae257701992d0a6.setIcon(icon_21f34f225985432db679b13b21689c97);
+            
+    
+            var popup_ded1efc2d80547eba5c3fdfac4d7f141 = L.popup({maxWidth: '300'});
+
+            
+                var html_ec985da8750f40ba8d9145f4be5e0628 = $('<div id="html_ec985da8750f40ba8d9145f4be5e0628" style="width: 100.0%; height: 100.0%;">ID: 10463695 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_ded1efc2d80547eba5c3fdfac4d7f141.setContent(html_ec985da8750f40ba8d9145f4be5e0628);
+            
+
+            marker_d7b93df97f384bf4bae257701992d0a6.bindPopup(popup_ded1efc2d80547eba5c3fdfac4d7f141);
+
+            
+        
+    
+
+            var marker_76fb4aecb63949148fe4ae846f747ad1 = L.marker(
+                [48.98289219,9.577524507],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_0714939600d54a2187decca312f234a0 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_76fb4aecb63949148fe4ae846f747ad1.setIcon(icon_0714939600d54a2187decca312f234a0);
+            
+    
+            var popup_8ceaac5b2c124bc7a8ae6c9e5c1acdac = L.popup({maxWidth: '300'});
+
+            
+                var html_b8dc5c84bda74ee0ba0b444916668ae8 = $('<div id="html_b8dc5c84bda74ee0ba0b444916668ae8" style="width: 100.0%; height: 100.0%;">ID: 10267594 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_8ceaac5b2c124bc7a8ae6c9e5c1acdac.setContent(html_b8dc5c84bda74ee0ba0b444916668ae8);
+            
+
+            marker_76fb4aecb63949148fe4ae846f747ad1.bindPopup(popup_8ceaac5b2c124bc7a8ae6c9e5c1acdac);
+
+            
+        
+    
+
+            var marker_6d36573b3fa64045a10410fc283900b1 = L.marker(
+                [50.1074549,8.6627516],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_d79a04a07d3446fd8447e9b710001a3d = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_6d36573b3fa64045a10410fc283900b1.setIcon(icon_d79a04a07d3446fd8447e9b710001a3d);
+            
+    
+            var popup_662c78df95954f6f8644dcdf5d916b22 = L.popup({maxWidth: '300'});
+
+            
+                var html_4ba9dbe97e0a4c3d99c5fa3c313b02f9 = $('<div id="html_4ba9dbe97e0a4c3d99c5fa3c313b02f9" style="width: 100.0%; height: 100.0%;">ID: 10314464 Beschreibung: zu Gleis 103/104 (S-Bahn)</div>')[0];
+                popup_662c78df95954f6f8644dcdf5d916b22.setContent(html_4ba9dbe97e0a4c3d99c5fa3c313b02f9);
+            
+
+            marker_6d36573b3fa64045a10410fc283900b1.bindPopup(popup_662c78df95954f6f8644dcdf5d916b22);
+
+            
+        
+    
+
+            var marker_8246a270c16d4d40934b54d509f6d188 = L.marker(
+                [48.1061579,11.0374653],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_b720378f1b43452fa339c46d3d5aa092 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8246a270c16d4d40934b54d509f6d188.setIcon(icon_b720378f1b43452fa339c46d3d5aa092);
+            
+    
+            var popup_92fa3ba8c94645a0948023685855c762 = L.popup({maxWidth: '300'});
+
+            
+                var html_cc7952254c334a1fb65c0199586c59b4 = $('<div id="html_cc7952254c334a1fb65c0199586c59b4" style="width: 100.0%; height: 100.0%;">ID: 10334097 Beschreibung: zu Gleis 1</div>')[0];
+                popup_92fa3ba8c94645a0948023685855c762.setContent(html_cc7952254c334a1fb65c0199586c59b4);
+            
+
+            marker_8246a270c16d4d40934b54d509f6d188.bindPopup(popup_92fa3ba8c94645a0948023685855c762);
+
+            
+        
+    
+
+            var marker_7686cfb298534400829a5901780a5d1d = L.marker(
+                [51.6372398,13.7109819],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_2a3e004c6e8b42349f3bd42b17bf653f = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_7686cfb298534400829a5901780a5d1d.setIcon(icon_2a3e004c6e8b42349f3bd42b17bf653f);
+            
+    
+            var popup_e1a6289d2afa4a4abbd23d7f9f0763f4 = L.popup({maxWidth: '300'});
+
+            
+                var html_c13983b90e9144108e4c4b443694075a = $('<div id="html_c13983b90e9144108e4c4b443694075a" style="width: 100.0%; height: 100.0%;">ID: 10502905 Beschreibung: zu Gleis 2</div>')[0];
+                popup_e1a6289d2afa4a4abbd23d7f9f0763f4.setContent(html_c13983b90e9144108e4c4b443694075a);
+            
+
+            marker_7686cfb298534400829a5901780a5d1d.bindPopup(popup_e1a6289d2afa4a4abbd23d7f9f0763f4);
+
+            
+        
+    
+
+            var marker_82e79414aa254eceb8bbf0c6bca457af = L.marker(
+                [49.9611598,8.0157992],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_cbffbe0b6b2d49f5b90cf548387269df = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_82e79414aa254eceb8bbf0c6bca457af.setIcon(icon_cbffbe0b6b2d49f5b90cf548387269df);
+            
+    
+            var popup_7722cb2cce754ea7afeea6d9fa4b651d = L.popup({maxWidth: '300'});
+
+            
+                var html_61ec2dc8e4b446ad9ee2ca5b5f530aa6 = $('<div id="html_61ec2dc8e4b446ad9ee2ca5b5f530aa6" style="width: 100.0%; height: 100.0%;">ID: 10492162 Beschreibung: zu Gleis 1</div>')[0];
+                popup_7722cb2cce754ea7afeea6d9fa4b651d.setContent(html_61ec2dc8e4b446ad9ee2ca5b5f530aa6);
+            
+
+            marker_82e79414aa254eceb8bbf0c6bca457af.bindPopup(popup_7722cb2cce754ea7afeea6d9fa4b651d);
+
+            
+        
+    
+
+            var marker_974a99e9240748788ff3caf297550625 = L.marker(
+                [48.165216,8.6390691],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_5cf4bf0b36b54370b96dce3b86f50262 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_974a99e9240748788ff3caf297550625.setIcon(icon_5cf4bf0b36b54370b96dce3b86f50262);
+            
+    
+            var popup_e6f17edcef48471382c32db24caba8b3 = L.popup({maxWidth: '300'});
+
+            
+                var html_01b45b8f79b04a6b8d03529f6e07177c = $('<div id="html_01b45b8f79b04a6b8d03529f6e07177c" style="width: 100.0%; height: 100.0%;">ID: 10099567 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_e6f17edcef48471382c32db24caba8b3.setContent(html_01b45b8f79b04a6b8d03529f6e07177c);
+            
+
+            marker_974a99e9240748788ff3caf297550625.bindPopup(popup_e6f17edcef48471382c32db24caba8b3);
+
+            
+        
+    
+
+            var marker_56b8fb8a63714e1ab68a0f6199f9bf72 = L.marker(
+                [48.1653672,8.6390638],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_3f24cbc9614149b7add58431a5775192 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_56b8fb8a63714e1ab68a0f6199f9bf72.setIcon(icon_3f24cbc9614149b7add58431a5775192);
+            
+    
+            var popup_5358bd5576534833be6f267d98f42c97 = L.popup({maxWidth: '300'});
+
+            
+                var html_24d0a0959cfa4bb080012361b6b6c403 = $('<div id="html_24d0a0959cfa4bb080012361b6b6c403" style="width: 100.0%; height: 100.0%;">ID: 10099555 Beschreibung: zu Gleis 1</div>')[0];
+                popup_5358bd5576534833be6f267d98f42c97.setContent(html_24d0a0959cfa4bb080012361b6b6c403);
+            
+
+            marker_56b8fb8a63714e1ab68a0f6199f9bf72.bindPopup(popup_5358bd5576534833be6f267d98f42c97);
+
+            
+        
+    
+
+            var marker_1300fff41a7447bb86a3a4130268994f = L.marker(
+                [51.6831703,7.1318215],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_0dff8278c68246768b34355c12d411f7 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_1300fff41a7447bb86a3a4130268994f.setIcon(icon_0dff8278c68246768b34355c12d411f7);
+            
+    
+            var popup_55a87d25007a4366af7ce6a78570a1d8 = L.popup({maxWidth: '300'});
+
+            
+                var html_71b387760c7241608bd31c25ccc0cdef = $('<div id="html_71b387760c7241608bd31c25ccc0cdef" style="width: 100.0%; height: 100.0%;">ID: 10041367 Beschreibung: zu Gleis 1 (S-Bahn)</div>')[0];
+                popup_55a87d25007a4366af7ce6a78570a1d8.setContent(html_71b387760c7241608bd31c25ccc0cdef);
+            
+
+            marker_1300fff41a7447bb86a3a4130268994f.bindPopup(popup_55a87d25007a4366af7ce6a78570a1d8);
+
+            
+        
+    
+
+            var marker_c1294cc79c69447fbe71d65b9c7e6319 = L.marker(
+                [50.0176346,8.4314107],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_6c0983f575c7487190cd87983d88efcd = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c1294cc79c69447fbe71d65b9c7e6319.setIcon(icon_6c0983f575c7487190cd87983d88efcd);
+            
+    
+            var popup_120a99f84a4140a38f2964157220e496 = L.popup({maxWidth: '300'});
+
+            
+                var html_cbe4fe06e4e8426fbda4ec5949e14e07 = $('<div id="html_cbe4fe06e4e8426fbda4ec5949e14e07" style="width: 100.0%; height: 100.0%;">ID: 10334001 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_120a99f84a4140a38f2964157220e496.setContent(html_cbe4fe06e4e8426fbda4ec5949e14e07);
+            
+
+            marker_c1294cc79c69447fbe71d65b9c7e6319.bindPopup(popup_120a99f84a4140a38f2964157220e496);
+
+            
+        
+    
+
+            var marker_048016c6131248d488d08586cfe7ec2f = L.marker(
+                [48.7732396,11.4326649],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_cedff8cc97a9438b8c96e4f16afeee79 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_048016c6131248d488d08586cfe7ec2f.setIcon(icon_cedff8cc97a9438b8c96e4f16afeee79);
+            
+    
+            var popup_a539c08f12584130956aea2d329de3da = L.popup({maxWidth: '300'});
+
+            
+                var html_d72116a416c84034badb63f24405bf4b = $('<div id="html_d72116a416c84034badb63f24405bf4b" style="width: 100.0%; height: 100.0%;">ID: 10201705 Beschreibung: zu Gleis 5/6</div>')[0];
+                popup_a539c08f12584130956aea2d329de3da.setContent(html_d72116a416c84034badb63f24405bf4b);
+            
+
+            marker_048016c6131248d488d08586cfe7ec2f.bindPopup(popup_a539c08f12584130956aea2d329de3da);
+
+            
+        
+    
+
+            var marker_c091be4ac1ff4fbda910d414431a99e1 = L.marker(
+                [48.1650738,8.6390884],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_2c765cc31ec64577a8a3cd3d4302f6d8 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c091be4ac1ff4fbda910d414431a99e1.setIcon(icon_2c765cc31ec64577a8a3cd3d4302f6d8);
+            
+    
+            var popup_bdc3e97f9ac34745bf03a51d88f5657b = L.popup({maxWidth: '300'});
+
+            
+                var html_101722c00f484a688c6d3402580d8be4 = $('<div id="html_101722c00f484a688c6d3402580d8be4" style="width: 100.0%; height: 100.0%;">ID: 10099595 Beschreibung: zu Gleis 4/5</div>')[0];
+                popup_bdc3e97f9ac34745bf03a51d88f5657b.setContent(html_101722c00f484a688c6d3402580d8be4);
+            
+
+            marker_c091be4ac1ff4fbda910d414431a99e1.bindPopup(popup_bdc3e97f9ac34745bf03a51d88f5657b);
+
+            
+        
+    
+
+            var marker_eebc35c4653343b7a1bf32d94df02494 = L.marker(
+                [50.1062542,8.6638005],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_1b4db6ed93274b2bb1d9852ad5c5613e = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_eebc35c4653343b7a1bf32d94df02494.setIcon(icon_1b4db6ed93274b2bb1d9852ad5c5613e);
+            
+    
+            var popup_c0f5b608e8234315bef6fc5ec81cf8db = L.popup({maxWidth: '300'});
+
+            
+                var html_3c420ebd1e0a4770b1f08dcc7f91cb23 = $('<div id="html_3c420ebd1e0a4770b1f08dcc7f91cb23" style="width: 100.0%; height: 100.0%;">ID: 10020388 Beschreibung: von EG zu 1.OG</div>')[0];
+                popup_c0f5b608e8234315bef6fc5ec81cf8db.setContent(html_3c420ebd1e0a4770b1f08dcc7f91cb23);
+            
+
+            marker_eebc35c4653343b7a1bf32d94df02494.bindPopup(popup_c0f5b608e8234315bef6fc5ec81cf8db);
+
+            
+        
+    
+
+            var marker_2c6cca09d89e472c96e6b812972805b0 = L.marker(
+                [51.4746665,6.8521317],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_0784f6c1f1014fe0a0c0e10d8c74a275 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_2c6cca09d89e472c96e6b812972805b0.setIcon(icon_0784f6c1f1014fe0a0c0e10d8c74a275);
+            
+    
+            var popup_47e5f78a98cd4899aabe76eb6ce2ea6b = L.popup({maxWidth: '300'});
+
+            
+                var html_ede6043f1a614d74abf5eafbf6f89e2c = $('<div id="html_ede6043f1a614d74abf5eafbf6f89e2c" style="width: 100.0%; height: 100.0%;">ID: 10480248 Beschreibung: zu Gleis 6/7 Abschnitt B/C</div>')[0];
+                popup_47e5f78a98cd4899aabe76eb6ce2ea6b.setContent(html_ede6043f1a614d74abf5eafbf6f89e2c);
+            
+
+            marker_2c6cca09d89e472c96e6b812972805b0.bindPopup(popup_47e5f78a98cd4899aabe76eb6ce2ea6b);
+
+            
+        
+    
+
+            var marker_938a7f78085f4f7a98258ea4797d463a = L.marker(
+                [51.4492699,6.8526474],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_b08edc09826d48b297a8f7d9b03c7d29 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_938a7f78085f4f7a98258ea4797d463a.setIcon(icon_b08edc09826d48b297a8f7d9b03c7d29);
+            
+    
+            var popup_9a9f8e67d1d146c9a081c0524665064a = L.popup({maxWidth: '300'});
+
+            
+                var html_d7d39dee15b64f9fa0395c07370c27d9 = $('<div id="html_d7d39dee15b64f9fa0395c07370c27d9" style="width: 100.0%; height: 100.0%;">ID: 10043045 Beschreibung: zu Gleis 4/5 (S-Bahn)</div>')[0];
+                popup_9a9f8e67d1d146c9a081c0524665064a.setContent(html_d7d39dee15b64f9fa0395c07370c27d9);
+            
+
+            marker_938a7f78085f4f7a98258ea4797d463a.bindPopup(popup_9a9f8e67d1d146c9a081c0524665064a);
+
+            
+        
+    
+
+            var marker_6b7ab7b2cbee4ed7a1faaabad94a9017 = L.marker(
+                [49.9509525,8.651008],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_5b8783d81dc94210a810500d9375aa65 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_6b7ab7b2cbee4ed7a1faaabad94a9017.setIcon(icon_5b8783d81dc94210a810500d9375aa65);
+            
+    
+            var popup_817a3118a3954cd5a9047885269cb6be = L.popup({maxWidth: '300'});
+
+            
+                var html_82516919ddb6469ab1088c07fe4d5b10 = $('<div id="html_82516919ddb6469ab1088c07fe4d5b10" style="width: 100.0%; height: 100.0%;">ID: 10018120 Beschreibung: zu Gleis 1/2 (S-Bahn)</div>')[0];
+                popup_817a3118a3954cd5a9047885269cb6be.setContent(html_82516919ddb6469ab1088c07fe4d5b10);
+            
+
+            marker_6b7ab7b2cbee4ed7a1faaabad94a9017.bindPopup(popup_817a3118a3954cd5a9047885269cb6be);
+
+            
+        
+    
+
+            var marker_9e518ca9a0f14a39915621a1b73325f3 = L.marker(
+                [48.04466125,10.50156446],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_09ac612a7bf1467ca0faf8e1ef24498d = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_9e518ca9a0f14a39915621a1b73325f3.setIcon(icon_09ac612a7bf1467ca0faf8e1ef24498d);
+            
+    
+            var popup_64e88903cd4a47399170d6ba9963b7aa = L.popup({maxWidth: '300'});
+
+            
+                var html_2aa2a62cd0b74229b5ccfb161c48359e = $('<div id="html_2aa2a62cd0b74229b5ccfb161c48359e" style="width: 100.0%; height: 100.0%;">ID: 10357526 Beschreibung: zu Gleis 2/4</div>')[0];
+                popup_64e88903cd4a47399170d6ba9963b7aa.setContent(html_2aa2a62cd0b74229b5ccfb161c48359e);
+            
+
+            marker_9e518ca9a0f14a39915621a1b73325f3.bindPopup(popup_64e88903cd4a47399170d6ba9963b7aa);
+
+            
+        
+    
+
+            var marker_53068a9c8621462db412095d2a04c8d7 = L.marker(
+                [52.4554586,13.5090913],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_e48eaacbfe244ad8b4a17d67cf6edd32 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_53068a9c8621462db412095d2a04c8d7.setIcon(icon_e48eaacbfe244ad8b4a17d67cf6edd32);
+            
+    
+            var popup_06fef21af8844caaaf01c36480efce9d = L.popup({maxWidth: '300'});
+
+            
+                var html_29c1a442c44842ce8f0d6b2f69df5035 = $('<div id="html_29c1a442c44842ce8f0d6b2f69df5035" style="width: 100.0%; height: 100.0%;">ID: 10448907 Beschreibung: zu Gleis 5/6 (S-Bahn)</div>')[0];
+                popup_06fef21af8844caaaf01c36480efce9d.setContent(html_29c1a442c44842ce8f0d6b2f69df5035);
+            
+
+            marker_53068a9c8621462db412095d2a04c8d7.bindPopup(popup_06fef21af8844caaaf01c36480efce9d);
+
+            
+        
+    
+
+            var marker_920370e4a86740a2916c1e06ebe28cc3 = L.marker(
+                [52.4294023,13.3275304],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_c79f8af5a8ec458b929aa7951a33458e = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_920370e4a86740a2916c1e06ebe28cc3.setIcon(icon_c79f8af5a8ec458b929aa7951a33458e);
+            
+    
+            var popup_7073167a00a14ec0a9a65f7360a4675f = L.popup({maxWidth: '300'});
+
+            
+                var html_442dea8e95f74feaaa1438ac646fe87f = $('<div id="html_442dea8e95f74feaaa1438ac646fe87f" style="width: 100.0%; height: 100.0%;">ID: 10448906 Beschreibung: zu Gleis 1/2 (S-Bahn)</div>')[0];
+                popup_7073167a00a14ec0a9a65f7360a4675f.setContent(html_442dea8e95f74feaaa1438ac646fe87f);
+            
+
+            marker_920370e4a86740a2916c1e06ebe28cc3.bindPopup(popup_7073167a00a14ec0a9a65f7360a4675f);
+
+            
+        
+    
+
+            var marker_b9b181e4b43b4d308b3016de98b2137e = L.marker(
+                [50.5770034,7.230482],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_45f16eb5560b4c618200c9d12755713b = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_b9b181e4b43b4d308b3016de98b2137e.setIcon(icon_45f16eb5560b4c618200c9d12755713b);
+            
+    
+            var popup_f06a5e3c763b4195b67877353ca816a5 = L.popup({maxWidth: '300'});
+
+            
+                var html_ac1bec50a38247f08a6f200cf1f347a0 = $('<div id="html_ac1bec50a38247f08a6f200cf1f347a0" style="width: 100.0%; height: 100.0%;">ID: 10295696 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_f06a5e3c763b4195b67877353ca816a5.setContent(html_ac1bec50a38247f08a6f200cf1f347a0);
+            
+
+            marker_b9b181e4b43b4d308b3016de98b2137e.bindPopup(popup_f06a5e3c763b4195b67877353ca816a5);
+
+            
+        
+    
+
+            var marker_b265f596cf9d49149f64ef2a0a3c75df = L.marker(
+                [51.06423,6.96349],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_959a1d59aafe40a2b276ca83315939b7 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_b265f596cf9d49149f64ef2a0a3c75df.setIcon(icon_959a1d59aafe40a2b276ca83315939b7);
+            
+    
+            var popup_93d4ccc5c71f47b795b9fb3431afab12 = L.popup({maxWidth: '300'});
+
+            
+                var html_d06cac25673f4565bf82481845c5daa0 = $('<div id="html_d06cac25673f4565bf82481845c5daa0" style="width: 100.0%; height: 100.0%;">ID: 10038544 Beschreibung: zu Gleis 1/2 (S-Bahn)</div>')[0];
+                popup_93d4ccc5c71f47b795b9fb3431afab12.setContent(html_d06cac25673f4565bf82481845c5daa0);
+            
+
+            marker_b265f596cf9d49149f64ef2a0a3c75df.bindPopup(popup_93d4ccc5c71f47b795b9fb3431afab12);
+
+            
+        
+    
+
+            var marker_c3611b1920d440209497cf6b527f429a = L.marker(
+                [51.4297093,6.7757009],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_ee040d19f89e403c82e1803cac7e95b2 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c3611b1920d440209497cf6b527f429a.setIcon(icon_ee040d19f89e403c82e1803cac7e95b2);
+            
+    
+            var popup_60724566db8a40c197e438d24756796e = L.popup({maxWidth: '300'});
+
+            
+                var html_0d3dc95db7ce4eef84eac76331106b2b = $('<div id="html_0d3dc95db7ce4eef84eac76331106b2b" style="width: 100.0%; height: 100.0%;">ID: 10356106 Beschreibung: zu Gleis 3/4 Abschnitt B/C</div>')[0];
+                popup_60724566db8a40c197e438d24756796e.setContent(html_0d3dc95db7ce4eef84eac76331106b2b);
+            
+
+            marker_c3611b1920d440209497cf6b527f429a.bindPopup(popup_60724566db8a40c197e438d24756796e);
+
+            
+        
+    
+
+            var marker_8dabdf0c46f64a5f8a3acdcd126c6379 = L.marker(
+                [48.1419606,11.5486828],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_30d1df5ef1ce4010a177ba5031b08e5f = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8dabdf0c46f64a5f8a3acdcd126c6379.setIcon(icon_30d1df5ef1ce4010a177ba5031b08e5f);
+            
+    
+            var popup_0dad9a3951d44f79880fefc83563da99 = L.popup({maxWidth: '300'});
+
+            
+                var html_55f3504bc92a427eb8b1367ff9b0c6b1 = $('<div id="html_55f3504bc92a427eb8b1367ff9b0c6b1" style="width: 100.0%; height: 100.0%;">ID: 10043217 Beschreibung: zu Gleis 1/2</div>')[0];
+                popup_0dad9a3951d44f79880fefc83563da99.setContent(html_55f3504bc92a427eb8b1367ff9b0c6b1);
+            
+
+            marker_8dabdf0c46f64a5f8a3acdcd126c6379.bindPopup(popup_0dad9a3951d44f79880fefc83563da99);
+
+            
+        
+    
+
+            var marker_6a89b6973b0e4ba69f8568cb95c8b8c2 = L.marker(
+                [51.35466249,9.460283905],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_340aa6a3779548b181ccb48d420ffec5 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_6a89b6973b0e4ba69f8568cb95c8b8c2.setIcon(icon_340aa6a3779548b181ccb48d420ffec5);
+            
+    
+            var popup_ac4b604e6275423bb143dcf7c8a2591a = L.popup({maxWidth: '300'});
+
+            
+                var html_641ba6431f6645059cd110bc48b7a3ae = $('<div id="html_641ba6431f6645059cd110bc48b7a3ae" style="width: 100.0%; height: 100.0%;">ID: 10413505 Beschreibung: zu Gleis 2</div>')[0];
+                popup_ac4b604e6275423bb143dcf7c8a2591a.setContent(html_641ba6431f6645059cd110bc48b7a3ae);
+            
+
+            marker_6a89b6973b0e4ba69f8568cb95c8b8c2.bindPopup(popup_ac4b604e6275423bb143dcf7c8a2591a);
+
+            
+        
+    
+
+            var marker_ac44c439f53c4740b7f47ed54acf0c4a = L.marker(
+                [48.0447608,10.50134894],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_e9b3eb0ef8724e72bd3ada2aa145eabe = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ac44c439f53c4740b7f47ed54acf0c4a.setIcon(icon_e9b3eb0ef8724e72bd3ada2aa145eabe);
+            
+    
+            var popup_5db9d279ed2f4bd6b22311dcb5183994 = L.popup({maxWidth: '300'});
+
+            
+                var html_f80bc7078832424daf2787064fd2331b = $('<div id="html_f80bc7078832424daf2787064fd2331b" style="width: 100.0%; height: 100.0%;">ID: 10356986 Beschreibung: zu Gleis 1</div>')[0];
+                popup_5db9d279ed2f4bd6b22311dcb5183994.setContent(html_f80bc7078832424daf2787064fd2331b);
+            
+
+            marker_ac44c439f53c4740b7f47ed54acf0c4a.bindPopup(popup_5db9d279ed2f4bd6b22311dcb5183994);
+
+            
+        
+    
+
+            var marker_995dde4470b441f6bc632f9c6a45081c = L.marker(
+                [49.871858,8.34316],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_09863dd248d748dcb124ba2174ae19a0 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_995dde4470b441f6bc632f9c6a45081c.setIcon(icon_09863dd248d748dcb124ba2174ae19a0);
+            
+    
+            var popup_923b6d9d10d24e0da68f660626c4ac68 = L.popup({maxWidth: '300'});
+
+            
+                var html_d652bb5805af484499479c3811a35b3a = $('<div id="html_d652bb5805af484499479c3811a35b3a" style="width: 100.0%; height: 100.0%;">ID: 10504726 Beschreibung: zu Gleis 1</div>')[0];
+                popup_923b6d9d10d24e0da68f660626c4ac68.setContent(html_d652bb5805af484499479c3811a35b3a);
+            
+
+            marker_995dde4470b441f6bc632f9c6a45081c.bindPopup(popup_923b6d9d10d24e0da68f660626c4ac68);
+
+            
+        
+    
+
+            var marker_e81bb1405ce1476b884e10c18ec2bd49 = L.marker(
+                [50.5061027,12.1302121],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_c87df096e9934876a82e677446a6736d = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_e81bb1405ce1476b884e10c18ec2bd49.setIcon(icon_c87df096e9934876a82e677446a6736d);
+            
+    
+            var popup_c512bf33bafa4905b456e87bf8a1dbe8 = L.popup({maxWidth: '300'});
+
+            
+                var html_61398d05344d449aaba46a18128edbaf = $('<div id="html_61398d05344d449aaba46a18128edbaf" style="width: 100.0%; height: 100.0%;">ID: 10286645 Beschreibung: zu Gleis 5/6</div>')[0];
+                popup_c512bf33bafa4905b456e87bf8a1dbe8.setContent(html_61398d05344d449aaba46a18128edbaf);
+            
+
+            marker_e81bb1405ce1476b884e10c18ec2bd49.bindPopup(popup_c512bf33bafa4905b456e87bf8a1dbe8);
+
+            
+        
+    
+
+            var marker_03e201af855546949d64198367e693e2 = L.marker(
+                [48.8104151,9.4205554],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_dde9d718d7f744b4af621804abe23dbd = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_03e201af855546949d64198367e693e2.setIcon(icon_dde9d718d7f744b4af621804abe23dbd);
+            
+    
+            var popup_8caf353128204eb5a053c22df8f3d568 = L.popup({maxWidth: '300'});
+
+            
+                var html_92b1a15a1d3945458054559edf63d07c = $('<div id="html_92b1a15a1d3945458054559edf63d07c" style="width: 100.0%; height: 100.0%;">ID: 10457999 Beschreibung: zu Gleis 1</div>')[0];
+                popup_8caf353128204eb5a053c22df8f3d568.setContent(html_92b1a15a1d3945458054559edf63d07c);
+            
+
+            marker_03e201af855546949d64198367e693e2.bindPopup(popup_8caf353128204eb5a053c22df8f3d568);
+
+            
+        
+    
+
+            var marker_4d5f561337ba47489e181e1faca03b8c = L.marker(
+                [50.6278611,12.2928127],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_28d459630ce64fdea7e73046e62eae0b = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_4d5f561337ba47489e181e1faca03b8c.setIcon(icon_28d459630ce64fdea7e73046e62eae0b);
+            
+    
+            var popup_e1f9edab603f4cf2989c1fe929d3cd05 = L.popup({maxWidth: '300'});
+
+            
+                var html_9872eb7292ee46ceac9b3db19b1b94bc = $('<div id="html_9872eb7292ee46ceac9b3db19b1b94bc" style="width: 100.0%; height: 100.0%;">ID: 10121113 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_e1f9edab603f4cf2989c1fe929d3cd05.setContent(html_9872eb7292ee46ceac9b3db19b1b94bc);
+            
+
+            marker_4d5f561337ba47489e181e1faca03b8c.bindPopup(popup_e1f9edab603f4cf2989c1fe929d3cd05);
+
+            
+        
+    
+
+            var marker_be5f8ab7f5a543aeb3a75a11e5808197 = L.marker(
+                [49.41034984,8.774793841],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_e289db0649da4571ba51f521048ccb66 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_be5f8ab7f5a543aeb3a75a11e5808197.setIcon(icon_e289db0649da4571ba51f521048ccb66);
+            
+    
+            var popup_a640c5c6e82c4564928e677d01b7cf0a = L.popup({maxWidth: '300'});
+
+            
+                var html_3847409c468746f3b77a0a8ca6f0ec09 = $('<div id="html_3847409c468746f3b77a0a8ca6f0ec09" style="width: 100.0%; height: 100.0%;">ID: 10257228 Beschreibung: zu Gleis 1</div>')[0];
+                popup_a640c5c6e82c4564928e677d01b7cf0a.setContent(html_3847409c468746f3b77a0a8ca6f0ec09);
+            
+
+            marker_be5f8ab7f5a543aeb3a75a11e5808197.bindPopup(popup_a640c5c6e82c4564928e677d01b7cf0a);
+
+            
+        
+    
+
+            var marker_bb055ec4a51e4ea09a7445b40d63c71a = L.marker(
+                [52.10208175,9.375285044],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_fb0d4aa29438455584cf2c9659a95bde = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_bb055ec4a51e4ea09a7445b40d63c71a.setIcon(icon_fb0d4aa29438455584cf2c9659a95bde);
+            
+    
+            var popup_abc55a32d03549698fecacafd4fcb387 = L.popup({maxWidth: '300'});
+
+            
+                var html_3f9d10b598c44371bcedbbc0ff6cb9e3 = $('<div id="html_3f9d10b598c44371bcedbbc0ff6cb9e3" style="width: 100.0%; height: 100.0%;">ID: 10356927 Beschreibung: zu Gleis 6/7</div>')[0];
+                popup_abc55a32d03549698fecacafd4fcb387.setContent(html_3f9d10b598c44371bcedbbc0ff6cb9e3);
+            
+
+            marker_bb055ec4a51e4ea09a7445b40d63c71a.bindPopup(popup_abc55a32d03549698fecacafd4fcb387);
+
+            
+        
+    
+
+            var marker_01e31bec43714e188c9373c4c7ceb962 = L.marker(
+                [52.5157341,13.6486085],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_621e0a6826c4469b9444d7d4e6a76122 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_01e31bec43714e188c9373c4c7ceb962.setIcon(icon_621e0a6826c4469b9444d7d4e6a76122);
+            
+    
+            var popup_e2663b5ae3a84f2184c89e30d6ab4166 = L.popup({maxWidth: '300'});
+
+            
+                var html_8007d3f7992e4fb9bced96859542783b = $('<div id="html_8007d3f7992e4fb9bced96859542783b" style="width: 100.0%; height: 100.0%;">ID: 10487472 Beschreibung: zu Gleis 1/2 (S-Bahn)</div>')[0];
+                popup_e2663b5ae3a84f2184c89e30d6ab4166.setContent(html_8007d3f7992e4fb9bced96859542783b);
+            
+
+            marker_01e31bec43714e188c9373c4c7ceb962.bindPopup(popup_e2663b5ae3a84f2184c89e30d6ab4166);
+
+            
+        
+    
+
+            var marker_2937a81c017544eb9ac3a54b3fa58d73 = L.marker(
+                [49.3732792,8.074559],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_d943f424a1cc40469df7a356bf8eb8f3 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_2937a81c017544eb9ac3a54b3fa58d73.setIcon(icon_d943f424a1cc40469df7a356bf8eb8f3);
+            
+    
+            var popup_c640ea857de14e37882f5e584e4e5916 = L.popup({maxWidth: '300'});
+
+            
+                var html_ef1e804e00e4485c8af686e1211b06ca = $('<div id="html_ef1e804e00e4485c8af686e1211b06ca" style="width: 100.0%; height: 100.0%;">ID: 10275370 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_c640ea857de14e37882f5e584e4e5916.setContent(html_ef1e804e00e4485c8af686e1211b06ca);
+            
+
+            marker_2937a81c017544eb9ac3a54b3fa58d73.bindPopup(popup_c640ea857de14e37882f5e584e4e5916);
+
+            
+        
+    
+
+            var marker_eb5e5b83ec5145e68702051200bf8b3d = L.marker(
+                [50.5546445,9.683646],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_77005f829c3b46d6adc840846c6718a8 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_eb5e5b83ec5145e68702051200bf8b3d.setIcon(icon_77005f829c3b46d6adc840846c6718a8);
+            
+    
+            var popup_b938ba535ea246cb8df465075c61e648 = L.popup({maxWidth: '300'});
+
+            
+                var html_3aaf47b291054afb9e368fd34b49f0cd = $('<div id="html_3aaf47b291054afb9e368fd34b49f0cd" style="width: 100.0%; height: 100.0%;">ID: 10508056 Beschreibung: von Empfangshalle zu Tunnel</div>')[0];
+                popup_b938ba535ea246cb8df465075c61e648.setContent(html_3aaf47b291054afb9e368fd34b49f0cd);
+            
+
+            marker_eb5e5b83ec5145e68702051200bf8b3d.bindPopup(popup_b938ba535ea246cb8df465075c61e648);
+
+            
+        
+    
+
+            var marker_0f3390e60f73446cbefdf3571f7e86a9 = L.marker(
+                [53.1599001,8.7047047],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_b9b8dfe4542642dfb6b5502a53d5c7ae = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0f3390e60f73446cbefdf3571f7e86a9.setIcon(icon_b9b8dfe4542642dfb6b5502a53d5c7ae);
+            
+    
+            var popup_18295c41da194e939a429878a78b83d5 = L.popup({maxWidth: '300'});
+
+            
+                var html_dcafed3f5c2848b692ed56c991b84c54 = $('<div id="html_dcafed3f5c2848b692ed56c991b84c54" style="width: 100.0%; height: 100.0%;">ID: 10010334 Beschreibung: zu Gleis 2</div>')[0];
+                popup_18295c41da194e939a429878a78b83d5.setContent(html_dcafed3f5c2848b692ed56c991b84c54);
+            
+
+            marker_0f3390e60f73446cbefdf3571f7e86a9.bindPopup(popup_18295c41da194e939a429878a78b83d5);
+
+            
+        
+    
+
+            var marker_38e7ea2fb25d4097b5b4a4fed188761b = L.marker(
+                [48.1287413,11.5936987],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_386423b1b24d45af877d09bad49ad881 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_38e7ea2fb25d4097b5b4a4fed188761b.setIcon(icon_386423b1b24d45af877d09bad49ad881);
+            
+    
+            var popup_c9e44556a678400891d891f2626c1fbe = L.popup({maxWidth: '300'});
+
+            
+                var html_f6a01097bbf94f8bb1066daa388c0212 = $('<div id="html_f6a01097bbf94f8bb1066daa388c0212" style="width: 100.0%; height: 100.0%;">ID: 10258067 Beschreibung: zu Gleis 1/2 (S-Bahn)</div>')[0];
+                popup_c9e44556a678400891d891f2626c1fbe.setContent(html_f6a01097bbf94f8bb1066daa388c0212);
+            
+
+            marker_38e7ea2fb25d4097b5b4a4fed188761b.bindPopup(popup_c9e44556a678400891d891f2626c1fbe);
+
+            
+        
+    
+
+            var marker_16b99e2d860b48c1aa76196a88e44b2c = L.marker(
+                [48.829548,9.1661673],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_e96252bc87f44044bf4dc68e9ba33898 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_16b99e2d860b48c1aa76196a88e44b2c.setIcon(icon_e96252bc87f44044bf4dc68e9ba33898);
+            
+    
+            var popup_c543f020d414483882d70b6f94335994 = L.popup({maxWidth: '300'});
+
+            
+                var html_460b65b11ae94a318bf6d47c9352ab33 = $('<div id="html_460b65b11ae94a318bf6d47c9352ab33" style="width: 100.0%; height: 100.0%;">ID: 10060639 Beschreibung: zu Gleis 1/2</div>')[0];
+                popup_c543f020d414483882d70b6f94335994.setContent(html_460b65b11ae94a318bf6d47c9352ab33);
+            
+
+            marker_16b99e2d860b48c1aa76196a88e44b2c.bindPopup(popup_c543f020d414483882d70b6f94335994);
+
+            
+        
+    
+
+            var marker_015e2432f1254b73820ecf19c751b895 = L.marker(
+                [48.1955025,11.3729858],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_90851ddbb774484189535627a5857829 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_015e2432f1254b73820ecf19c751b895.setIcon(icon_90851ddbb774484189535627a5857829);
+            
+    
+            var popup_e2d0d9789d7d463cae4532b77fd0f901 = L.popup({maxWidth: '300'});
+
+            
+                var html_b5c26db891bb4bc0bce0431016607866 = $('<div id="html_b5c26db891bb4bc0bce0431016607866" style="width: 100.0%; height: 100.0%;">ID: 10025452 Beschreibung: zu Gleis 1/2</div>')[0];
+                popup_e2d0d9789d7d463cae4532b77fd0f901.setContent(html_b5c26db891bb4bc0bce0431016607866);
+            
+
+            marker_015e2432f1254b73820ecf19c751b895.bindPopup(popup_e2d0d9789d7d463cae4532b77fd0f901);
+
+            
+        
+    
+
+            var marker_a2eab93e363e4322b516f4a6f5468be1 = L.marker(
+                [48.21279,11.2991769],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_9521935add8d47819e9f027648cbb64e = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a2eab93e363e4322b516f4a6f5468be1.setIcon(icon_9521935add8d47819e9f027648cbb64e);
+            
+    
+            var popup_8fd20c188dde478882ef081f9d9ebab8 = L.popup({maxWidth: '300'});
+
+            
+                var html_ab91a391cf3940288824f7558d891f34 = $('<div id="html_ab91a391cf3940288824f7558d891f34" style="width: 100.0%; height: 100.0%;">ID: 10355955 Beschreibung: zu Gleis 1/2</div>')[0];
+                popup_8fd20c188dde478882ef081f9d9ebab8.setContent(html_ab91a391cf3940288824f7558d891f34);
+            
+
+            marker_a2eab93e363e4322b516f4a6f5468be1.bindPopup(popup_8fd20c188dde478882ef081f9d9ebab8);
+
+            
+        
+    
+
+            var marker_e13ddf4c4d1442af8bb478a5ad3b1825 = L.marker(
+                [47.9851147,10.187166],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_5c1cf7485e734a99ab87508feee19c56 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_e13ddf4c4d1442af8bb478a5ad3b1825.setIcon(icon_5c1cf7485e734a99ab87508feee19c56);
+            
+    
+            var popup_5a36b8d209fc495a9e2be4ba42b03d7a = L.popup({maxWidth: '300'});
+
+            
+                var html_b650d8947bd04821a1a001b9e4ae2211 = $('<div id="html_b650d8947bd04821a1a001b9e4ae2211" style="width: 100.0%; height: 100.0%;">ID: 10495164 Beschreibung: zu Gleis 4/5</div>')[0];
+                popup_5a36b8d209fc495a9e2be4ba42b03d7a.setContent(html_b650d8947bd04821a1a001b9e4ae2211);
+            
+
+            marker_e13ddf4c4d1442af8bb478a5ad3b1825.bindPopup(popup_5a36b8d209fc495a9e2be4ba42b03d7a);
+
+            
+        
+    
+
+            var marker_26fdd6a6e7894a12baa1b7481934d495 = L.marker(
+                [52.5303961,13.30063867],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_ec3ffcac7d3844f5adb63567215aaf53 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_26fdd6a6e7894a12baa1b7481934d495.setIcon(icon_ec3ffcac7d3844f5adb63567215aaf53);
+            
+    
+            var popup_8c11d453df564b04a22e4a21b2e9482b = L.popup({maxWidth: '300'});
+
+            
+                var html_6f0bacf19e1b43938b4b7bc480992597 = $('<div id="html_6f0bacf19e1b43938b4b7bc480992597" style="width: 100.0%; height: 100.0%;">ID: 10594902 Beschreibung: zu Gleis 3/4 Regionalbahnsteig</div>')[0];
+                popup_8c11d453df564b04a22e4a21b2e9482b.setContent(html_6f0bacf19e1b43938b4b7bc480992597);
+            
+
+            marker_26fdd6a6e7894a12baa1b7481934d495.bindPopup(popup_8c11d453df564b04a22e4a21b2e9482b);
+
+            
+        
+    
+
+            var marker_bae0cf9d2f8f41a9a61869336d74faa9 = L.marker(
+                [49.3105338,10.7111823],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_9740dd23e9d44b9680f50f8a92c8727b = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_bae0cf9d2f8f41a9a61869336d74faa9.setIcon(icon_9740dd23e9d44b9680f50f8a92c8727b);
+            
+    
+            var popup_356daf33cd7f4900a7e7a0dac34d2bff = L.popup({maxWidth: '300'});
+
+            
+                var html_95bdd35fdad54c52b95e9a6cc247f267 = $('<div id="html_95bdd35fdad54c52b95e9a6cc247f267" style="width: 100.0%; height: 100.0%;">ID: 10474275 Beschreibung: zu Gleis 4/5</div>')[0];
+                popup_356daf33cd7f4900a7e7a0dac34d2bff.setContent(html_95bdd35fdad54c52b95e9a6cc247f267);
+            
+
+            marker_bae0cf9d2f8f41a9a61869336d74faa9.bindPopup(popup_356daf33cd7f4900a7e7a0dac34d2bff);
+
+            
+        
+    
+
+            var marker_11638f464b4b414ba4e84d0f1a0c96ff = L.marker(
+                [48.729934,9.3269],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_f107363738ee4618aa65b1749a50a579 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_11638f464b4b414ba4e84d0f1a0c96ff.setIcon(icon_f107363738ee4618aa65b1749a50a579);
+            
+    
+            var popup_8b0edf4c2016440a8682d1a102274882 = L.popup({maxWidth: '300'});
+
+            
+                var html_854b6452f9c845b7b0234ed267daf1ff = $('<div id="html_854b6452f9c845b7b0234ed267daf1ff" style="width: 100.0%; height: 100.0%;">ID: 10495189 Beschreibung: zu Gleis 3/4</div>')[0];
+                popup_8b0edf4c2016440a8682d1a102274882.setContent(html_854b6452f9c845b7b0234ed267daf1ff);
+            
+
+            marker_11638f464b4b414ba4e84d0f1a0c96ff.bindPopup(popup_8b0edf4c2016440a8682d1a102274882);
+
+            
+        
+    
+
+            var marker_69c6e074a7b74765b2b169aaa6e72c5e = L.marker(
+                [52.6377811,13.2056473],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_fe9d815ebf0a46b18f8fea565fc040d9 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_69c6e074a7b74765b2b169aaa6e72c5e.setIcon(icon_fe9d815ebf0a46b18f8fea565fc040d9);
+            
+    
+            var popup_1687cd722a6b4f628943203627638c09 = L.popup({maxWidth: '300'});
+
+            
+                var html_ae6e8114032640f7982670c2c9187122 = $('<div id="html_ae6e8114032640f7982670c2c9187122" style="width: 100.0%; height: 100.0%;">ID: 10090640 Beschreibung: zu Gleis 1/5 (S-Bahn)</div>')[0];
+                popup_1687cd722a6b4f628943203627638c09.setContent(html_ae6e8114032640f7982670c2c9187122);
+            
+
+            marker_69c6e074a7b74765b2b169aaa6e72c5e.bindPopup(popup_1687cd722a6b4f628943203627638c09);
+
+            
+        
+    
+
+            var marker_dbe27b887a7c4a64bb086f7983c9cf40 = L.marker(
+                [53.3248564,9.8770705],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_556d9d3865124fc3a799532bba52f0b3 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_dbe27b887a7c4a64bb086f7983c9cf40.setIcon(icon_556d9d3865124fc3a799532bba52f0b3);
+            
+    
+            var popup_39d1a7d0e28540b08c22e98f7ddfcb27 = L.popup({maxWidth: '300'});
+
+            
+                var html_0f6ef591a71f4831ae00fecdbab5cce2 = $('<div id="html_0f6ef591a71f4831ae00fecdbab5cce2" style="width: 100.0%; height: 100.0%;">ID: 10318084 Beschreibung: zu Gleis 3/6</div>')[0];
+                popup_39d1a7d0e28540b08c22e98f7ddfcb27.setContent(html_0f6ef591a71f4831ae00fecdbab5cce2);
+            
+
+            marker_dbe27b887a7c4a64bb086f7983c9cf40.bindPopup(popup_39d1a7d0e28540b08c22e98f7ddfcb27);
+
+            
+        
+    
+
+            var marker_30f400166a9c407c93933df1335ad6c9 = L.marker(
+                [52.479785,13.312209],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_9a9839de019a43ab8ad7746f39334fdb = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_30f400166a9c407c93933df1335ad6c9.setIcon(icon_9a9839de019a43ab8ad7746f39334fdb);
+            
+    
+            var popup_98cddc173a2a475b804162d0fa2b3f68 = L.popup({maxWidth: '300'});
+
+            
+                var html_a326ddbfaaff402a89089c122dce1cef = $('<div id="html_a326ddbfaaff402a89089c122dce1cef" style="width: 100.0%; height: 100.0%;">ID: 10193764 Beschreibung: zu Gleis 1/2 (S-Bahn)</div>')[0];
+                popup_98cddc173a2a475b804162d0fa2b3f68.setContent(html_a326ddbfaaff402a89089c122dce1cef);
+            
+
+            marker_30f400166a9c407c93933df1335ad6c9.bindPopup(popup_98cddc173a2a475b804162d0fa2b3f68);
+
+            
+        
+    
+
+            var marker_0174a880c5834f61aeaa21a7bd88dcfd = L.marker(
+                [53.800788,12.172517],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_d9e3386c993241749043061c6e7a99c6 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0174a880c5834f61aeaa21a7bd88dcfd.setIcon(icon_d9e3386c993241749043061c6e7a99c6);
+            
+    
+            var popup_7a232efe3d7f4cd38b8ad9d2b9cae8f6 = L.popup({maxWidth: '300'});
+
+            
+                var html_07ae33294ed244d3bce1596baabc7180 = $('<div id="html_07ae33294ed244d3bce1596baabc7180" style="width: 100.0%; height: 100.0%;">ID: 10508131 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_7a232efe3d7f4cd38b8ad9d2b9cae8f6.setContent(html_07ae33294ed244d3bce1596baabc7180);
+            
+
+            marker_0174a880c5834f61aeaa21a7bd88dcfd.bindPopup(popup_7a232efe3d7f4cd38b8ad9d2b9cae8f6);
+
+            
+        
+    
+
+            var marker_a453845affec4ec0a16f3a85ad4f43ed = L.marker(
+                [54.78952482,8.834899751],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_407e78275aab4eba83c9e3e5f531b875 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a453845affec4ec0a16f3a85ad4f43ed.setIcon(icon_407e78275aab4eba83c9e3e5f531b875);
+            
+    
+            var popup_693db2fdfabb46969cccf479bc79a0a7 = L.popup({maxWidth: '300'});
+
+            
+                var html_e36d8ce94beb46a2ac9b98d84012271e = $('<div id="html_e36d8ce94beb46a2ac9b98d84012271e" style="width: 100.0%; height: 100.0%;">ID: 10462229 Beschreibung: zu Gleis 3/4</div>')[0];
+                popup_693db2fdfabb46969cccf479bc79a0a7.setContent(html_e36d8ce94beb46a2ac9b98d84012271e);
+            
+
+            marker_a453845affec4ec0a16f3a85ad4f43ed.bindPopup(popup_693db2fdfabb46969cccf479bc79a0a7);
+
+            
+        
+    
+
+            var marker_32e1cc77182d44ac8f00b6897400cb1a = L.marker(
+                [52.2988303,13.2676335],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_7a183223237741098f1590bff836aa15 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_32e1cc77182d44ac8f00b6897400cb1a.setIcon(icon_7a183223237741098f1590bff836aa15);
+            
+    
+            var popup_1d6be3d8aa06424c9908b99c45710c99 = L.popup({maxWidth: '300'});
+
+            
+                var html_83845c720a07468a9528bf2293621515 = $('<div id="html_83845c720a07468a9528bf2293621515" style="width: 100.0%; height: 100.0%;">ID: 10493414 Beschreibung: zu Gleis 2/4</div>')[0];
+                popup_1d6be3d8aa06424c9908b99c45710c99.setContent(html_83845c720a07468a9528bf2293621515);
+            
+
+            marker_32e1cc77182d44ac8f00b6897400cb1a.bindPopup(popup_1d6be3d8aa06424c9908b99c45710c99);
+
+            
+        
+    
+
+            var marker_6f0e6b8624564f3a9ec21b762adb31ab = L.marker(
+                [52.298906,13.2673725],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_3a1c1a14dfd14a12843bb63aabbbd0b8 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_6f0e6b8624564f3a9ec21b762adb31ab.setIcon(icon_3a1c1a14dfd14a12843bb63aabbbd0b8);
+            
+    
+            var popup_bc00d3fc738a4134960e9574b0e362ee = L.popup({maxWidth: '300'});
+
+            
+                var html_172f37592c3f4422860f060c30b6bc4d = $('<div id="html_172f37592c3f4422860f060c30b6bc4d" style="width: 100.0%; height: 100.0%;">ID: 10493413 Beschreibung: zu Gleis 1</div>')[0];
+                popup_bc00d3fc738a4134960e9574b0e362ee.setContent(html_172f37592c3f4422860f060c30b6bc4d);
+            
+
+            marker_6f0e6b8624564f3a9ec21b762adb31ab.bindPopup(popup_bc00d3fc738a4134960e9574b0e362ee);
+
+            
+        
+    
+
+            var marker_7cb3c3a2e3ab49c0aaab31040664abe7 = L.marker(
+                [50.8840079,11.5932737],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_1467dad6a266430d9db80f33cbd45ae4 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_7cb3c3a2e3ab49c0aaab31040664abe7.setIcon(icon_1467dad6a266430d9db80f33cbd45ae4);
+            
+    
+            var popup_55a1b0e43a80447f9d4c255fecd22c80 = L.popup({maxWidth: '300'});
+
+            
+                var html_96ccc31495fd402fbc7bff7ace733b40 = $('<div id="html_96ccc31495fd402fbc7bff7ace733b40" style="width: 100.0%; height: 100.0%;">ID: 10500175 Beschreibung: zu Gleis 3/4</div>')[0];
+                popup_55a1b0e43a80447f9d4c255fecd22c80.setContent(html_96ccc31495fd402fbc7bff7ace733b40);
+            
+
+            marker_7cb3c3a2e3ab49c0aaab31040664abe7.bindPopup(popup_55a1b0e43a80447f9d4c255fecd22c80);
+
+            
+        
+    
+
+            var marker_7e48fbc964b348648726bcacdfa5b045 = L.marker(
+                [50.8840753,11.5937936],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_cdb9eafc0fe741d68ff15f4c106d5275 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_7e48fbc964b348648726bcacdfa5b045.setIcon(icon_cdb9eafc0fe741d68ff15f4c106d5275);
+            
+    
+            var popup_d93820ef9ce447e69e61063efeee1146 = L.popup({maxWidth: '300'});
+
+            
+                var html_9f97ee0e36ae4d9e8ead557949e2ca05 = $('<div id="html_9f97ee0e36ae4d9e8ead557949e2ca05" style="width: 100.0%; height: 100.0%;">ID: 10500179 Beschreibung: zu Gleis 6</div>')[0];
+                popup_d93820ef9ce447e69e61063efeee1146.setContent(html_9f97ee0e36ae4d9e8ead557949e2ca05);
+            
+
+            marker_7e48fbc964b348648726bcacdfa5b045.bindPopup(popup_d93820ef9ce447e69e61063efeee1146);
+
+            
+        
+    
+
+            var marker_1032f3838d40445ea0c4011799a9b307 = L.marker(
+                [48.1767183,11.4074792],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_8066a81bae9b425985ae7a0594f7857a = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_1032f3838d40445ea0c4011799a9b307.setIcon(icon_8066a81bae9b425985ae7a0594f7857a);
+            
+    
+            var popup_b60f66be228d41a39ead74fc9e88d047 = L.popup({maxWidth: '300'});
+
+            
+                var html_2a568c18fc7547b58afb109f6c9e23df = $('<div id="html_2a568c18fc7547b58afb109f6c9e23df" style="width: 100.0%; height: 100.0%;">ID: 10491655 Beschreibung: zu Gleis 1/2</div>')[0];
+                popup_b60f66be228d41a39ead74fc9e88d047.setContent(html_2a568c18fc7547b58afb109f6c9e23df);
+            
+
+            marker_1032f3838d40445ea0c4011799a9b307.bindPopup(popup_b60f66be228d41a39ead74fc9e88d047);
+
+            
+        
+    
+
+            var marker_1440a5d4a3464af690d86d4ca62aa287 = L.marker(
+                [51.102531,6.9382692],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_65ab389ce91e411c905b95d34fd47ff8 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_1440a5d4a3464af690d86d4ca62aa287.setIcon(icon_65ab389ce91e411c905b95d34fd47ff8);
+            
+    
+            var popup_f26f2616d54d40b2bee1ded019b18f66 = L.popup({maxWidth: '300'});
+
+            
+                var html_4f3b89beb89f4bd59727dea84fb8bb2f = $('<div id="html_4f3b89beb89f4bd59727dea84fb8bb2f" style="width: 100.0%; height: 100.0%;">ID: 10037546 Beschreibung: zu Gleis 3/4</div>')[0];
+                popup_f26f2616d54d40b2bee1ded019b18f66.setContent(html_4f3b89beb89f4bd59727dea84fb8bb2f);
+            
+
+            marker_1440a5d4a3464af690d86d4ca62aa287.bindPopup(popup_f26f2616d54d40b2bee1ded019b18f66);
+
+            
+        
+    
+
+            var marker_0a7c6cea7c904c30902459010a26b97a = L.marker(
+                [52.10919046,11.62988582],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_69d33f0e88bd44489e094e6582eb5917 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0a7c6cea7c904c30902459010a26b97a.setIcon(icon_69d33f0e88bd44489e094e6582eb5917);
+            
+    
+            var popup_e56fde376a79487ba70afdef7eaf9b14 = L.popup({maxWidth: '300'});
+
+            
+                var html_1ace979d9dec475badad14cba7b602d2 = $('<div id="html_1ace979d9dec475badad14cba7b602d2" style="width: 100.0%; height: 100.0%;">ID: 10457766 Beschreibung: zu Gleis 3/4</div>')[0];
+                popup_e56fde376a79487ba70afdef7eaf9b14.setContent(html_1ace979d9dec475badad14cba7b602d2);
+            
+
+            marker_0a7c6cea7c904c30902459010a26b97a.bindPopup(popup_e56fde376a79487ba70afdef7eaf9b14);
+
+            
+        
+    
+
+            var marker_cf41ad0e5f8c4e0dae7e468061dd6c49 = L.marker(
+                [52.5244148,13.3692362],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_1b5ab79166c54e45a04554cc25c49c12 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_cf41ad0e5f8c4e0dae7e468061dd6c49.setIcon(icon_1b5ab79166c54e45a04554cc25c49c12);
+            
+    
+            var popup_88b1bec64c5c435080321f34b641befb = L.popup({maxWidth: '300'});
+
+            
+                var html_e055b3658a084b569bae48c9b0fec7f1 = $('<div id="html_e055b3658a084b569bae48c9b0fec7f1" style="width: 100.0%; height: 100.0%;">ID: 10316254 Beschreibung: von Parkhaus C zu 1.UG</div>')[0];
+                popup_88b1bec64c5c435080321f34b641befb.setContent(html_e055b3658a084b569bae48c9b0fec7f1);
+            
+
+            marker_cf41ad0e5f8c4e0dae7e468061dd6c49.bindPopup(popup_88b1bec64c5c435080321f34b641befb);
+
+            
+        
+    
+
+            var marker_4708584bb5834402ac65c90eaf753952 = L.marker(
+                [48.2102876,11.3340189],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_da993cbe9ac54e86bc307d4c0eea19a0 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_4708584bb5834402ac65c90eaf753952.setIcon(icon_da993cbe9ac54e86bc307d4c0eea19a0);
+            
+    
+            var popup_3402828b2cd6452994cbd1290f8dd51d = L.popup({maxWidth: '300'});
+
+            
+                var html_864311a1e1db44c1a674fb27b4c006e4 = $('<div id="html_864311a1e1db44c1a674fb27b4c006e4" style="width: 100.0%; height: 100.0%;">ID: 10444912 Beschreibung: zu Gleis 1/2</div>')[0];
+                popup_3402828b2cd6452994cbd1290f8dd51d.setContent(html_864311a1e1db44c1a674fb27b4c006e4);
+            
+
+            marker_4708584bb5834402ac65c90eaf753952.bindPopup(popup_3402828b2cd6452994cbd1290f8dd51d);
+
+            
+        
+    
+
+            var marker_d3da6ef43ea7415b8631ccb89dcb66b5 = L.marker(
+                [52.3668678,14.0597869],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_281d87e15593456caae290b147c726dc = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_d3da6ef43ea7415b8631ccb89dcb66b5.setIcon(icon_281d87e15593456caae290b147c726dc);
+            
+    
+            var popup_125413fac82e4ef9b7a0e1def159bdc9 = L.popup({maxWidth: '300'});
+
+            
+                var html_1132d6cbec924352bda1fe10de4891c6 = $('<div id="html_1132d6cbec924352bda1fe10de4891c6" style="width: 100.0%; height: 100.0%;">ID: 10542594 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_125413fac82e4ef9b7a0e1def159bdc9.setContent(html_1132d6cbec924352bda1fe10de4891c6);
+            
+
+            marker_d3da6ef43ea7415b8631ccb89dcb66b5.bindPopup(popup_125413fac82e4ef9b7a0e1def159bdc9);
+
+            
+        
+    
+
+            var marker_534137ff4cf14e01adce3bb73164969b = L.marker(
+                [50.1123976,8.6438553],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_500a2e37ed6a49f8aeddf6c3639858df = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_534137ff4cf14e01adce3bb73164969b.setIcon(icon_500a2e37ed6a49f8aeddf6c3639858df);
+            
+    
+            var popup_8c2f0dff49294b48b743373a0eb8f8d7 = L.popup({maxWidth: '300'});
+
+            
+                var html_10701be7470449eab874813141df3266 = $('<div id="html_10701be7470449eab874813141df3266" style="width: 100.0%; height: 100.0%;">ID: 10122847 Beschreibung: von EG zu Brücke</div>')[0];
+                popup_8c2f0dff49294b48b743373a0eb8f8d7.setContent(html_10701be7470449eab874813141df3266);
+            
+
+            marker_534137ff4cf14e01adce3bb73164969b.bindPopup(popup_8c2f0dff49294b48b743373a0eb8f8d7);
+
+            
+        
+    
+
+            var marker_ace3ce17bde84313a7c69e8520525815 = L.marker(
+                [50.1026518,8.5423573],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_9d068a448a2545f989c6a5a28c32f9d6 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ace3ce17bde84313a7c69e8520525815.setIcon(icon_9d068a448a2545f989c6a5a28c32f9d6);
+            
+    
+            var popup_6e45da4847b84738b625ccc1e42ac6f7 = L.popup({maxWidth: '300'});
+
+            
+                var html_c472f0af9c094ea8a7971ded0faf7ae7 = $('<div id="html_c472f0af9c094ea8a7971ded0faf7ae7" style="width: 100.0%; height: 100.0%;">ID: 10499223 Beschreibung: zu Gleis 5/6</div>')[0];
+                popup_6e45da4847b84738b625ccc1e42ac6f7.setContent(html_c472f0af9c094ea8a7971ded0faf7ae7);
+            
+
+            marker_ace3ce17bde84313a7c69e8520525815.bindPopup(popup_6e45da4847b84738b625ccc1e42ac6f7);
+
+            
+        
+    
+
+            var marker_3094819b6da344639769c008251332ac = L.marker(
+                [48.783982,9.18078],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_e8023c048a904d0cb5b380bf5dfa819f = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_3094819b6da344639769c008251332ac.setIcon(icon_e8023c048a904d0cb5b380bf5dfa819f);
+            
+    
+            var popup_16fe52d850f44094bae3e90928efc5e2 = L.popup({maxWidth: '300'});
+
+            
+                var html_d5968c56c92a4a7e87aa45b833ef1c5b = $('<div id="html_d5968c56c92a4a7e87aa45b833ef1c5b" style="width: 100.0%; height: 100.0%;">ID: 10060095 Beschreibung: zu Gleis 101/102 (S-Bahn)</div>')[0];
+                popup_16fe52d850f44094bae3e90928efc5e2.setContent(html_d5968c56c92a4a7e87aa45b833ef1c5b);
+            
+
+            marker_3094819b6da344639769c008251332ac.bindPopup(popup_16fe52d850f44094bae3e90928efc5e2);
+
+            
+        
+    
+
+            var marker_0ab33298cde54d179ffa2c9ecf4c7a2f = L.marker(
+                [52.2906909,8.9347769],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_baad526a594d4f649b72f2bdd7ae069a = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0ab33298cde54d179ffa2c9ecf4c7a2f.setIcon(icon_baad526a594d4f649b72f2bdd7ae069a);
+            
+    
+            var popup_3e0647d00e2644f4b4ba721c535aa4f9 = L.popup({maxWidth: '300'});
+
+            
+                var html_936ed6d582f3464182e3414321187cc7 = $('<div id="html_936ed6d582f3464182e3414321187cc7" style="width: 100.0%; height: 100.0%;">ID: 10042243 Beschreibung: zu Gleis 10/11</div>')[0];
+                popup_3e0647d00e2644f4b4ba721c535aa4f9.setContent(html_936ed6d582f3464182e3414321187cc7);
+            
+
+            marker_0ab33298cde54d179ffa2c9ecf4c7a2f.bindPopup(popup_3e0647d00e2644f4b4ba721c535aa4f9);
+
+            
+        
+    
+
+            var marker_074b3f9a097f48698db9bb0232fcf35e = L.marker(
+                [51.5007291,7.33428],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_266cc92dbf7e48df89db793308702fc4 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_074b3f9a097f48698db9bb0232fcf35e.setIcon(icon_266cc92dbf7e48df89db793308702fc4);
+            
+    
+            var popup_c4024f18e5544894a1893b4ff3179a04 = L.popup({maxWidth: '300'});
+
+            
+                var html_8ccd6cb30f81495bb2a5e1cd3b1fab21 = $('<div id="html_8ccd6cb30f81495bb2a5e1cd3b1fab21" style="width: 100.0%; height: 100.0%;">ID: 10013632 Beschreibung: zu Gleis 1 (S-Bahn)</div>')[0];
+                popup_c4024f18e5544894a1893b4ff3179a04.setContent(html_8ccd6cb30f81495bb2a5e1cd3b1fab21);
+            
+
+            marker_074b3f9a097f48698db9bb0232fcf35e.bindPopup(popup_c4024f18e5544894a1893b4ff3179a04);
+
+            
+        
+    
+
+            var marker_b8d08329789b48b6bf77db0f1bbfd70d = L.marker(
+                [49.56446461,8.167896324],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_c9448e50edd54521860fc63f690fd6a3 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_b8d08329789b48b6bf77db0f1bbfd70d.setIcon(icon_c9448e50edd54521860fc63f690fd6a3);
+            
+    
+            var popup_d4ccda9066894bb59d5b2f786d038574 = L.popup({maxWidth: '300'});
+
+            
+                var html_6942670a78c6497f8a1e584a166afbd1 = $('<div id="html_6942670a78c6497f8a1e584a166afbd1" style="width: 100.0%; height: 100.0%;">ID: 10224810 Beschreibung: zu Gleis 5/7</div>')[0];
+                popup_d4ccda9066894bb59d5b2f786d038574.setContent(html_6942670a78c6497f8a1e584a166afbd1);
+            
+
+            marker_b8d08329789b48b6bf77db0f1bbfd70d.bindPopup(popup_d4ccda9066894bb59d5b2f786d038574);
+
+            
+        
+    
+
+            var marker_052057d124d942d5ba36c54fbc51e5bc = L.marker(
+                [49.56441421,8.167696433],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_864fe9a58c88491c9e817baee23480d8 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_052057d124d942d5ba36c54fbc51e5bc.setIcon(icon_864fe9a58c88491c9e817baee23480d8);
+            
+    
+            var popup_6d47905ef3a148a6b38c0858335190b0 = L.popup({maxWidth: '300'});
+
+            
+                var html_222f13dc0a9b4555b21ce5edb8c55f7a = $('<div id="html_222f13dc0a9b4555b21ce5edb8c55f7a" style="width: 100.0%; height: 100.0%;">ID: 10224809 Beschreibung: zu Gleis 4</div>')[0];
+                popup_6d47905ef3a148a6b38c0858335190b0.setContent(html_222f13dc0a9b4555b21ce5edb8c55f7a);
+            
+
+            marker_052057d124d942d5ba36c54fbc51e5bc.bindPopup(popup_6d47905ef3a148a6b38c0858335190b0);
+
+            
+        
+    
+
+            var marker_db2616b20ba145568eb4c17000ef424d = L.marker(
+                [48.3550731,10.9018693],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_f5c8a5df625e438a99292c7fe629c611 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_db2616b20ba145568eb4c17000ef424d.setIcon(icon_f5c8a5df625e438a99292c7fe629c611);
+            
+    
+            var popup_412686894d024b88964126ee189d51b7 = L.popup({maxWidth: '300'});
+
+            
+                var html_0941cb3c4bd7439081b1c8a6de08bd9e = $('<div id="html_0941cb3c4bd7439081b1c8a6de08bd9e" style="width: 100.0%; height: 100.0%;">ID: 10352264 Beschreibung: zu Gleis 1/2</div>')[0];
+                popup_412686894d024b88964126ee189d51b7.setContent(html_0941cb3c4bd7439081b1c8a6de08bd9e);
+            
+
+            marker_db2616b20ba145568eb4c17000ef424d.bindPopup(popup_412686894d024b88964126ee189d51b7);
+
+            
+        
+    
+
+            var marker_f4ead1ca1f454e3d8a021ce3bd211355 = L.marker(
+                [49.4045341,8.841562],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_250d1ff301ea46fb94732d51e8a15580 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_f4ead1ca1f454e3d8a021ce3bd211355.setIcon(icon_250d1ff301ea46fb94732d51e8a15580);
+            
+    
+            var popup_d6f7cd905a5c4d9f86ddadca4fe3db9e = L.popup({maxWidth: '300'});
+
+            
+                var html_27f76f86d16b48bda580dad3dc0028ee = $('<div id="html_27f76f86d16b48bda580dad3dc0028ee" style="width: 100.0%; height: 100.0%;">ID: 10262317 Beschreibung: zu Gleis 1</div>')[0];
+                popup_d6f7cd905a5c4d9f86ddadca4fe3db9e.setContent(html_27f76f86d16b48bda580dad3dc0028ee);
+            
+
+            marker_f4ead1ca1f454e3d8a021ce3bd211355.bindPopup(popup_d6f7cd905a5c4d9f86ddadca4fe3db9e);
+
+            
+        
+    
+
+            var marker_934c82cab11f44ee897143c65163d809 = L.marker(
+                [49.2489,6.84873],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_8cf7847706c74235a99b5c125702e5c8 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_934c82cab11f44ee897143c65163d809.setIcon(icon_8cf7847706c74235a99b5c125702e5c8);
+            
+    
+            var popup_ab1dbcfc1e7c4ceb8ad256149cb929e3 = L.popup({maxWidth: '300'});
+
+            
+                var html_fac649c266f94c12a86408002187e03c = $('<div id="html_fac649c266f94c12a86408002187e03c" style="width: 100.0%; height: 100.0%;">ID: 10475286 Beschreibung: zu Gleis 1</div>')[0];
+                popup_ab1dbcfc1e7c4ceb8ad256149cb929e3.setContent(html_fac649c266f94c12a86408002187e03c);
+            
+
+            marker_934c82cab11f44ee897143c65163d809.bindPopup(popup_ab1dbcfc1e7c4ceb8ad256149cb929e3);
+
+            
+        
+    
+
+            var marker_6bffdccb7bc84c08bcb44d1d48b5d51d = L.marker(
+                [48.107422,11.5363925],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_24a0bd5097b04296a8f76e9b65c70a7b = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_6bffdccb7bc84c08bcb44d1d48b5d51d.setIcon(icon_24a0bd5097b04296a8f76e9b65c70a7b);
+            
+    
+            var popup_3ff1bb0e82af4bd98ccfcdffae702aa2 = L.popup({maxWidth: '300'});
+
+            
+                var html_0168e03f20bb4f74a1b5d32824b8d53d = $('<div id="html_0168e03f20bb4f74a1b5d32824b8d53d" style="width: 100.0%; height: 100.0%;">ID: 10480647 Beschreibung: zu Gleis 1/2</div>')[0];
+                popup_3ff1bb0e82af4bd98ccfcdffae702aa2.setContent(html_0168e03f20bb4f74a1b5d32824b8d53d);
+            
+
+            marker_6bffdccb7bc84c08bcb44d1d48b5d51d.bindPopup(popup_3ff1bb0e82af4bd98ccfcdffae702aa2);
+
+            
+        
+    
+
+            var marker_0cbeeb87cc154c2eac19ecb9f7c7c446 = L.marker(
+                [50.0538189,7.1346922],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_e6577f9256fd4899957f5b81b7316394 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0cbeeb87cc154c2eac19ecb9f7c7c446.setIcon(icon_e6577f9256fd4899957f5b81b7316394);
+            
+    
+            var popup_ab73c5fb4ee9479fa9fbd4a14e6caee5 = L.popup({maxWidth: '300'});
+
+            
+                var html_3de43d60953f4f23819cb2b3a8b98db3 = $('<div id="html_3de43d60953f4f23819cb2b3a8b98db3" style="width: 100.0%; height: 100.0%;">ID: 10264942 Beschreibung: zu Gleis 1/2</div>')[0];
+                popup_ab73c5fb4ee9479fa9fbd4a14e6caee5.setContent(html_3de43d60953f4f23819cb2b3a8b98db3);
+            
+
+            marker_0cbeeb87cc154c2eac19ecb9f7c7c446.bindPopup(popup_ab73c5fb4ee9479fa9fbd4a14e6caee5);
+
+            
+        
+    
+
+            var marker_097fb71d705c4a5fa77aa2432fe5bad0 = L.marker(
+                [53.5205516,10.2779104],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_a205e2dcef7c4dc989bf500e16094ed1 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_097fb71d705c4a5fa77aa2432fe5bad0.setIcon(icon_a205e2dcef7c4dc989bf500e16094ed1);
+            
+    
+            var popup_a570123d977143528ce1fd949a75ade7 = L.popup({maxWidth: '300'});
+
+            
+                var html_cdcb4bd01c0c4935b1447e9305e91780 = $('<div id="html_cdcb4bd01c0c4935b1447e9305e91780" style="width: 100.0%; height: 100.0%;">ID: 10222273 Beschreibung: zu Gleis 1/2 (S-Bahn)</div>')[0];
+                popup_a570123d977143528ce1fd949a75ade7.setContent(html_cdcb4bd01c0c4935b1447e9305e91780);
+            
+
+            marker_097fb71d705c4a5fa77aa2432fe5bad0.bindPopup(popup_a570123d977143528ce1fd949a75ade7);
+
+            
+        
+    
+
+            var marker_04b551f3436e4b4caadb91ec38a4dcb0 = L.marker(
+                [50.0512,8.5719],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_246cfeb9b4fb4833908547402ca47db9 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_04b551f3436e4b4caadb91ec38a4dcb0.setIcon(icon_246cfeb9b4fb4833908547402ca47db9);
+            
+    
+            var popup_0a4cffbc9aba4840ab72cb9ef8b29537 = L.popup({maxWidth: '300'});
+
+            
+                var html_0b20aeba65474abb8e3e4a95e82cccba = $('<div id="html_0b20aeba65474abb8e3e4a95e82cccba" style="width: 100.0%; height: 100.0%;">ID: 10354891 Beschreibung: zu Gleis 1</div>')[0];
+                popup_0a4cffbc9aba4840ab72cb9ef8b29537.setContent(html_0b20aeba65474abb8e3e4a95e82cccba);
+            
+
+            marker_04b551f3436e4b4caadb91ec38a4dcb0.bindPopup(popup_0a4cffbc9aba4840ab72cb9ef8b29537);
+
+            
+        
+    
+
+            var marker_f4aadd02be7b45408c204fea0c72e061 = L.marker(
+                [52.1311464,11.627175],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_4af42f6ffd434648a63e06d86a50eff5 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_f4aadd02be7b45408c204fea0c72e061.setIcon(icon_4af42f6ffd434648a63e06d86a50eff5);
+            
+    
+            var popup_87c76a8d357748f19c1f486c56094c7e = L.popup({maxWidth: '300'});
+
+            
+                var html_b32367ee05f4405c852d2912fb927d3c = $('<div id="html_b32367ee05f4405c852d2912fb927d3c" style="width: 100.0%; height: 100.0%;">ID: 10040574 Beschreibung: zu Gleis 5</div>')[0];
+                popup_87c76a8d357748f19c1f486c56094c7e.setContent(html_b32367ee05f4405c852d2912fb927d3c);
+            
+
+            marker_f4aadd02be7b45408c204fea0c72e061.bindPopup(popup_87c76a8d357748f19c1f486c56094c7e);
+
+            
+        
+    
+
+            var marker_026b218e2ec6469088e667aaf1c9b570 = L.marker(
+                [50.10748,8.66242],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_93e0520093724cad9ebdc778c408306e = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_026b218e2ec6469088e667aaf1c9b570.setIcon(icon_93e0520093724cad9ebdc778c408306e);
+            
+    
+            var popup_779aadfde9064f75af7de0a593de8ca0 = L.popup({maxWidth: '300'});
+
+            
+                var html_b5065d8ba478429ba8fe0571b9be3224 = $('<div id="html_b5065d8ba478429ba8fe0571b9be3224" style="width: 100.0%; height: 100.0%;">ID: 10314752 Beschreibung: zu Parkhaus</div>')[0];
+                popup_779aadfde9064f75af7de0a593de8ca0.setContent(html_b5065d8ba478429ba8fe0571b9be3224);
+            
+
+            marker_026b218e2ec6469088e667aaf1c9b570.bindPopup(popup_779aadfde9064f75af7de0a593de8ca0);
+
+            
+        
+    
+
+            var marker_19f540b145584eff80d518578893f666 = L.marker(
+                [52.577708,13.4291476],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_358cbd1d37364b749459cea78e688d9b = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_19f540b145584eff80d518578893f666.setIcon(icon_358cbd1d37364b749459cea78e688d9b);
+            
+    
+            var popup_e1d7be47dd7e4325b3062dc27e93e7c0 = L.popup({maxWidth: '300'});
+
+            
+                var html_ec9c36f986cf4a5798c6e9a1f07a86d4 = $('<div id="html_ec9c36f986cf4a5798c6e9a1f07a86d4" style="width: 100.0%; height: 100.0%;">ID: 10313414 Beschreibung: zu Gleis 1/2 (S-Bahn)</div>')[0];
+                popup_e1d7be47dd7e4325b3062dc27e93e7c0.setContent(html_ec9c36f986cf4a5798c6e9a1f07a86d4);
+            
+
+            marker_19f540b145584eff80d518578893f666.bindPopup(popup_e1d7be47dd7e4325b3062dc27e93e7c0);
+
+            
+        
+    
+
+            var marker_c696f8d9c90041728073f183cb36687d = L.marker(
+                [50.0840888,8.4448422],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_bcda98046ea7413aa58052b68fa2e1d2 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c696f8d9c90041728073f183cb36687d.setIcon(icon_bcda98046ea7413aa58052b68fa2e1d2);
+            
+    
+            var popup_c7c900d102034f4ba37697bbfd5c77c7 = L.popup({maxWidth: '300'});
+
+            
+                var html_7a6349cadbb84aec8d86dc464616f717 = $('<div id="html_7a6349cadbb84aec8d86dc464616f717" style="width: 100.0%; height: 100.0%;">ID: 10146032 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_c7c900d102034f4ba37697bbfd5c77c7.setContent(html_7a6349cadbb84aec8d86dc464616f717);
+            
+
+            marker_c696f8d9c90041728073f183cb36687d.bindPopup(popup_c7c900d102034f4ba37697bbfd5c77c7);
+
+            
+        
+    
+
+            var marker_be0e012ef5f548208619e0273defb979 = L.marker(
+                [52.3914435,13.0667029],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_aeb10d562d764af3b86678404f874cb8 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_be0e012ef5f548208619e0273defb979.setIcon(icon_aeb10d562d764af3b86678404f874cb8);
+            
+    
+            var popup_295ccf51dae84a08b71b8e348c8311b2 = L.popup({maxWidth: '300'});
+
+            
+                var html_5273e476c4904d6098c30f2cfe78b1a3 = $('<div id="html_5273e476c4904d6098c30f2cfe78b1a3" style="width: 100.0%; height: 100.0%;">ID: 10075283 Beschreibung: zu Gleis 1/3</div>')[0];
+                popup_295ccf51dae84a08b71b8e348c8311b2.setContent(html_5273e476c4904d6098c30f2cfe78b1a3);
+            
+
+            marker_be0e012ef5f548208619e0273defb979.bindPopup(popup_295ccf51dae84a08b71b8e348c8311b2);
+
+            
+        
+    
+
+            var marker_c3e6b6c1107f4c82bfc507ee109a612b = L.marker(
+                [51.67431265,11.77955705],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_8bf7cdf3aacd47938ac99c05bc077711 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c3e6b6c1107f4c82bfc507ee109a612b.setIcon(icon_8bf7cdf3aacd47938ac99c05bc077711);
+            
+    
+            var popup_cf119a74eb0949e6b20f8f1e7ee667b4 = L.popup({maxWidth: '300'});
+
+            
+                var html_cc03302a55d4415cab334b783d1cf9e9 = $('<div id="html_cc03302a55d4415cab334b783d1cf9e9" style="width: 100.0%; height: 100.0%;">ID: 10318247 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_cf119a74eb0949e6b20f8f1e7ee667b4.setContent(html_cc03302a55d4415cab334b783d1cf9e9);
+            
+
+            marker_c3e6b6c1107f4c82bfc507ee109a612b.bindPopup(popup_cf119a74eb0949e6b20f8f1e7ee667b4);
+
+            
+        
+    
+
+            var marker_837b135cebcc46938e228cd361b0610f = L.marker(
+                [51.7981361,9.9229668],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_d8aca4462a434544be940f4f480f1e3b = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_837b135cebcc46938e228cd361b0610f.setIcon(icon_d8aca4462a434544be940f4f480f1e3b);
+            
+    
+            var popup_f649b8ecb556417491b982af024e1109 = L.popup({maxWidth: '300'});
+
+            
+                var html_6a78d85c114c4ad09d5dc7020ff064df = $('<div id="html_6a78d85c114c4ad09d5dc7020ff064df" style="width: 100.0%; height: 100.0%;">ID: 10490130 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_f649b8ecb556417491b982af024e1109.setContent(html_6a78d85c114c4ad09d5dc7020ff064df);
+            
+
+            marker_837b135cebcc46938e228cd361b0610f.bindPopup(popup_f649b8ecb556417491b982af024e1109);
+
+            
+        
+    
+
+            var marker_88d5fd664c1748729b1ee488fa58b039 = L.marker(
+                [48.8890188,8.2409801],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_8228b88af7824324942f1219461c1029 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_88d5fd664c1748729b1ee488fa58b039.setIcon(icon_8228b88af7824324942f1219461c1029);
+            
+    
+            var popup_151b8fb1e8ef45b7850104d401a90ef4 = L.popup({maxWidth: '300'});
+
+            
+                var html_3c310aa1aa554cd7a4f5968ea07a77ce = $('<div id="html_3c310aa1aa554cd7a4f5968ea07a77ce" style="width: 100.0%; height: 100.0%;">ID: 10462958 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_151b8fb1e8ef45b7850104d401a90ef4.setContent(html_3c310aa1aa554cd7a4f5968ea07a77ce);
+            
+
+            marker_88d5fd664c1748729b1ee488fa58b039.bindPopup(popup_151b8fb1e8ef45b7850104d401a90ef4);
+
+            
+        
+    
+
+            var marker_52781b15dfda4e5b9939a5affece9cdd = L.marker(
+                [52.8473587,8.7395734],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_9f4c1a367ada43068a60214ad0feacac = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_52781b15dfda4e5b9939a5affece9cdd.setIcon(icon_9f4c1a367ada43068a60214ad0feacac);
+            
+    
+            var popup_b0b5765472f7408b8c04b0c6a593a26c = L.popup({maxWidth: '300'});
+
+            
+                var html_9f539b8613354bb2b6880b55270fc8d5 = $('<div id="html_9f539b8613354bb2b6880b55270fc8d5" style="width: 100.0%; height: 100.0%;">ID: 10499358 Beschreibung: zu Gleis 2/4</div>')[0];
+                popup_b0b5765472f7408b8c04b0c6a593a26c.setContent(html_9f539b8613354bb2b6880b55270fc8d5);
+            
+
+            marker_52781b15dfda4e5b9939a5affece9cdd.bindPopup(popup_b0b5765472f7408b8c04b0c6a593a26c);
+
+            
+        
+    
+
+            var marker_89fbd498eb9042dea3b9fecb19440e68 = L.marker(
+                [50.924981,11.5873405],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_2f93cef1e787444f98743e16e1464a5b = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_89fbd498eb9042dea3b9fecb19440e68.setIcon(icon_2f93cef1e787444f98743e16e1464a5b);
+            
+    
+            var popup_177c2c370fd0429c9c85ec478a88ff54 = L.popup({maxWidth: '300'});
+
+            
+                var html_9b22931fbb534695a426966cc479c3c6 = $('<div id="html_9b22931fbb534695a426966cc479c3c6" style="width: 100.0%; height: 100.0%;">ID: 10354738 Beschreibung: zu Gleis 1</div>')[0];
+                popup_177c2c370fd0429c9c85ec478a88ff54.setContent(html_9b22931fbb534695a426966cc479c3c6);
+            
+
+            marker_89fbd498eb9042dea3b9fecb19440e68.bindPopup(popup_177c2c370fd0429c9c85ec478a88ff54);
+
+            
+        
+    
+
+            var marker_ebb052c43cae4d7d82042d3130416790 = L.marker(
+                [50.0994462,8.6863198],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_0453f21228b846dc916f2847ecfe8051 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ebb052c43cae4d7d82042d3130416790.setIcon(icon_0453f21228b846dc916f2847ecfe8051);
+            
+    
+            var popup_a260805affab4d72a681c2871fda5f97 = L.popup({maxWidth: '300'});
+
+            
+                var html_3992a98adf174377bae906de57e129a9 = $('<div id="html_3992a98adf174377bae906de57e129a9" style="width: 100.0%; height: 100.0%;">ID: 10350379 Beschreibung: zu Gleis 3/4</div>')[0];
+                popup_a260805affab4d72a681c2871fda5f97.setContent(html_3992a98adf174377bae906de57e129a9);
+            
+
+            marker_ebb052c43cae4d7d82042d3130416790.bindPopup(popup_a260805affab4d72a681c2871fda5f97);
+
+            
+        
+    
+
+            var marker_3fb69d3f0dc54ddb8e81a9de343d5a4c = L.marker(
+                [52.5526307,13.1157898],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_9d384f6b79b04c90a3a181675068c474 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_3fb69d3f0dc54ddb8e81a9de343d5a4c.setIcon(icon_9d384f6b79b04c90a3a181675068c474);
+            
+    
+            var popup_3b2728e9c10144458d38939ffff61f94 = L.popup({maxWidth: '300'});
+
+            
+                var html_3ff81252a03a44de80612aacfaa30aa5 = $('<div id="html_3ff81252a03a44de80612aacfaa30aa5" style="width: 100.0%; height: 100.0%;">ID: 10467778 Beschreibung: zu Gleis 1</div>')[0];
+                popup_3b2728e9c10144458d38939ffff61f94.setContent(html_3ff81252a03a44de80612aacfaa30aa5);
+            
+
+            marker_3fb69d3f0dc54ddb8e81a9de343d5a4c.bindPopup(popup_3b2728e9c10144458d38939ffff61f94);
+
+            
+        
+    
+
+            var marker_3aeb12f3bbcc4c0f86fbee988b998bcf = L.marker(
+                [49.2733995,11.4570443],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_dae06fc83f4b4c37aee7bcb42d058216 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_3aeb12f3bbcc4c0f86fbee988b998bcf.setIcon(icon_dae06fc83f4b4c37aee7bcb42d058216);
+            
+    
+            var popup_83a8cede3ddb407fa075bf23b9ea56a5 = L.popup({maxWidth: '300'});
+
+            
+                var html_bf562abb411a45ab9e1e3d46b517f543 = $('<div id="html_bf562abb411a45ab9e1e3d46b517f543" style="width: 100.0%; height: 100.0%;">ID: 10085413 Beschreibung: zu Gleis 1</div>')[0];
+                popup_83a8cede3ddb407fa075bf23b9ea56a5.setContent(html_bf562abb411a45ab9e1e3d46b517f543);
+            
+
+            marker_3aeb12f3bbcc4c0f86fbee988b998bcf.bindPopup(popup_83a8cede3ddb407fa075bf23b9ea56a5);
+
+            
+        
+    
+
+            var marker_78b24873d4774e9ea0a44db78b2a2b75 = L.marker(
+                [51.3630634,12.3739945],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_d50ed5d5d90349e1a89e091f113a1cc9 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_78b24873d4774e9ea0a44db78b2a2b75.setIcon(icon_d50ed5d5d90349e1a89e091f113a1cc9);
+            
+    
+            var popup_32a755be0e3645548427475a221f57c1 = L.popup({maxWidth: '300'});
+
+            
+                var html_41f54b4276404375861f8de8bfc232da = $('<div id="html_41f54b4276404375861f8de8bfc232da" style="width: 100.0%; height: 100.0%;">ID: 10038200 Beschreibung: zu Gleis 1/2</div>')[0];
+                popup_32a755be0e3645548427475a221f57c1.setContent(html_41f54b4276404375861f8de8bfc232da);
+            
+
+            marker_78b24873d4774e9ea0a44db78b2a2b75.bindPopup(popup_32a755be0e3645548427475a221f57c1);
+
+            
+        
+    
+
+            var marker_11fa9f29fef24ca9907a5291cc6b72c4 = L.marker(
+                [51.7979981,9.922786],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_da71acaae6464e7da35bc69ece29e9f1 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_11fa9f29fef24ca9907a5291cc6b72c4.setIcon(icon_da71acaae6464e7da35bc69ece29e9f1);
+            
+    
+            var popup_a0d72351c4544432a9dec81589635ec2 = L.popup({maxWidth: '300'});
+
+            
+                var html_52cbb9a907f24158bebdda62dab1a478 = $('<div id="html_52cbb9a907f24158bebdda62dab1a478" style="width: 100.0%; height: 100.0%;">ID: 10490129 Beschreibung: zu Gleis 1</div>')[0];
+                popup_a0d72351c4544432a9dec81589635ec2.setContent(html_52cbb9a907f24158bebdda62dab1a478);
+            
+
+            marker_11fa9f29fef24ca9907a5291cc6b72c4.bindPopup(popup_a0d72351c4544432a9dec81589635ec2);
+
+            
+        
+    
+
+            var marker_d7231e1cc1634acfa0974fdf7fb2d721 = L.marker(
+                [50.05292,8.5693295],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_a2a3fac1977b41a7b958b16e6945f973 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_d7231e1cc1634acfa0974fdf7fb2d721.setIcon(icon_a2a3fac1977b41a7b958b16e6945f973);
+            
+    
+            var popup_ba85af9bb3c242c29cceaba34506caea = L.popup({maxWidth: '300'});
+
+            
+                var html_fbe3d1b6856d4b49a2b7167f602fcbc6 = $('<div id="html_fbe3d1b6856d4b49a2b7167f602fcbc6" style="width: 100.0%; height: 100.0%;">ID: 10179977 Beschreibung: zu Gleis 6/7</div>')[0];
+                popup_ba85af9bb3c242c29cceaba34506caea.setContent(html_fbe3d1b6856d4b49a2b7167f602fcbc6);
+            
+
+            marker_d7231e1cc1634acfa0974fdf7fb2d721.bindPopup(popup_ba85af9bb3c242c29cceaba34506caea);
+
+            
+        
+    
+
+            var marker_e1a8e58813aa4ced9a9796e82109dd2a = L.marker(
+                [49.2503582,8.8753974],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_e84e916d9b2f4e12b6e1c1c1c557b828 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_e1a8e58813aa4ced9a9796e82109dd2a.setIcon(icon_e84e916d9b2f4e12b6e1c1c1c557b828);
+            
+    
+            var popup_3d5f6055907b46208b70cfed007b8b68 = L.popup({maxWidth: '300'});
+
+            
+                var html_eff43897b99b479abf8a8ec0e37cc221 = $('<div id="html_eff43897b99b479abf8a8ec0e37cc221" style="width: 100.0%; height: 100.0%;">ID: 10440328 Beschreibung: zu Gleis 1</div>')[0];
+                popup_3d5f6055907b46208b70cfed007b8b68.setContent(html_eff43897b99b479abf8a8ec0e37cc221);
+            
+
+            marker_e1a8e58813aa4ced9a9796e82109dd2a.bindPopup(popup_3d5f6055907b46208b70cfed007b8b68);
+
+            
+        
+    
+
+            var marker_11185e0ef8eb4ec9b39fcf79ac7729e2 = L.marker(
+                [50.4868396,8.2679697],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_106cdffba82e4b2ea21b8c09f3145e6a = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_11185e0ef8eb4ec9b39fcf79ac7729e2.setIcon(icon_106cdffba82e4b2ea21b8c09f3145e6a);
+            
+    
+            var popup_3e06e97f72f64fde9c1f837d70804347 = L.popup({maxWidth: '300'});
+
+            
+                var html_38adc9754d354099a1ec6d8f5858459f = $('<div id="html_38adc9754d354099a1ec6d8f5858459f" style="width: 100.0%; height: 100.0%;">ID: 10064618 Beschreibung: von EG zu Tunnel</div>')[0];
+                popup_3e06e97f72f64fde9c1f837d70804347.setContent(html_38adc9754d354099a1ec6d8f5858459f);
+            
+
+            marker_11185e0ef8eb4ec9b39fcf79ac7729e2.bindPopup(popup_3e06e97f72f64fde9c1f837d70804347);
+
+            
+        
+    
+
+            var marker_2871ef13ac3f4128a9126b0b2962674b = L.marker(
+                [52.37616,9.74199],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_17cbb6497bd44e42acb149a68c05f46d = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_2871ef13ac3f4128a9126b0b2962674b.setIcon(icon_17cbb6497bd44e42acb149a68c05f46d);
+            
+    
+            var popup_3282dcc350474c95aba2e625827d63f4 = L.popup({maxWidth: '300'});
+
+            
+                var html_c02a0712b9e14cb89aff5e7f6aa6acab = $('<div id="html_c02a0712b9e14cb89aff5e7f6aa6acab" style="width: 100.0%; height: 100.0%;">ID: 10439300 Beschreibung: von UG zu 4.OG</div>')[0];
+                popup_3282dcc350474c95aba2e625827d63f4.setContent(html_c02a0712b9e14cb89aff5e7f6aa6acab);
+            
+
+            marker_2871ef13ac3f4128a9126b0b2962674b.bindPopup(popup_3282dcc350474c95aba2e625827d63f4);
+
+            
+        
+    
+
+            var marker_d0a4bb1df87d477ea0392714c06737aa = L.marker(
+                [51.5096056,7.4241457],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_859487f1e22d4715aa37dfbbc3e7d86b = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_d0a4bb1df87d477ea0392714c06737aa.setIcon(icon_859487f1e22d4715aa37dfbbc3e7d86b);
+            
+    
+            var popup_0468feb10de248f8a7fa4be4da37d5b1 = L.popup({maxWidth: '300'});
+
+            
+                var html_50ef20775a1d43dba50883250ebceb43 = $('<div id="html_50ef20775a1d43dba50883250ebceb43" style="width: 100.0%; height: 100.0%;">ID: 10014314 Beschreibung: Gleis 3/4</div>')[0];
+                popup_0468feb10de248f8a7fa4be4da37d5b1.setContent(html_50ef20775a1d43dba50883250ebceb43);
+            
+
+            marker_d0a4bb1df87d477ea0392714c06737aa.bindPopup(popup_0468feb10de248f8a7fa4be4da37d5b1);
+
+            
+        
+    
+
+            var marker_f59e3bc0922b42ccad48be97a76af704 = L.marker(
+                [47.4914257,11.0968838],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_b8e15cc636274e4288f5886d81211469 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_f59e3bc0922b42ccad48be97a76af704.setIcon(icon_b8e15cc636274e4288f5886d81211469);
+            
+    
+            var popup_c15c09f2273645658e5afdfa5f5d7c58 = L.popup({maxWidth: '300'});
+
+            
+                var html_65e12dbc0b9f44f199993e21542122e0 = $('<div id="html_65e12dbc0b9f44f199993e21542122e0" style="width: 100.0%; height: 100.0%;">ID: 10445192 Beschreibung: zu Gleis 4/5</div>')[0];
+                popup_c15c09f2273645658e5afdfa5f5d7c58.setContent(html_65e12dbc0b9f44f199993e21542122e0);
+            
+
+            marker_f59e3bc0922b42ccad48be97a76af704.bindPopup(popup_c15c09f2273645658e5afdfa5f5d7c58);
+
+            
+        
+    
+
+            var marker_980bd521b56948b5b4a1f120b797e36a = L.marker(
+                [48.8939874,8.7029761],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_fec817f013e74e20849b88f29142c734 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_980bd521b56948b5b4a1f120b797e36a.setIcon(icon_fec817f013e74e20849b88f29142c734);
+            
+    
+            var popup_b353c4501e5442948ae8170dfcdad091 = L.popup({maxWidth: '300'});
+
+            
+                var html_9f0267ddd248496db6d3aa1fe5ca1833 = $('<div id="html_9f0267ddd248496db6d3aa1fe5ca1833" style="width: 100.0%; height: 100.0%;">ID: 10463846 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_b353c4501e5442948ae8170dfcdad091.setContent(html_9f0267ddd248496db6d3aa1fe5ca1833);
+            
+
+            marker_980bd521b56948b5b4a1f120b797e36a.bindPopup(popup_b353c4501e5442948ae8170dfcdad091);
+
+            
+        
+    
+
+            var marker_9e7772d3a612489cba8ae16383250cc3 = L.marker(
+                [48.8941369,8.7029818],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_f29109844f0349c5b4d7acb334764a12 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_9e7772d3a612489cba8ae16383250cc3.setIcon(icon_f29109844f0349c5b4d7acb334764a12);
+            
+    
+            var popup_f81895f006114654a742412eef5f1224 = L.popup({maxWidth: '300'});
+
+            
+                var html_31a394a65aa94cffbc0d76d9f3e3991f = $('<div id="html_31a394a65aa94cffbc0d76d9f3e3991f" style="width: 100.0%; height: 100.0%;">ID: 10463849 Beschreibung: zu Gleis 4/5</div>')[0];
+                popup_f81895f006114654a742412eef5f1224.setContent(html_31a394a65aa94cffbc0d76d9f3e3991f);
+            
+
+            marker_9e7772d3a612489cba8ae16383250cc3.bindPopup(popup_f81895f006114654a742412eef5f1224);
+
+            
+        
+    
+
+            var marker_d75c9d8224a246f6996913192beeb719 = L.marker(
+                [52.50941757,13.37651595],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_ac6e8a5558da4b0481910f6e1a99e16d = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_d75c9d8224a246f6996913192beeb719.setIcon(icon_ac6e8a5558da4b0481910f6e1a99e16d);
+            
+    
+            var popup_c6dc1d862a614b3f81f407d02395886d = L.popup({maxWidth: '300'});
+
+            
+                var html_f323c4dea3f34bb5b4558946dd74c61a = $('<div id="html_f323c4dea3f34bb5b4558946dd74c61a" style="width: 100.0%; height: 100.0%;">ID: 10304800 Beschreibung: von UG zu Gleis 11/12 (S-Bahn)</div>')[0];
+                popup_c6dc1d862a614b3f81f407d02395886d.setContent(html_f323c4dea3f34bb5b4558946dd74c61a);
+            
+
+            marker_d75c9d8224a246f6996913192beeb719.bindPopup(popup_c6dc1d862a614b3f81f407d02395886d);
+
+            
+        
+    
+
+            var marker_c40d29a5ab864113962496732e05035f = L.marker(
+                [49.43682,6.63409],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_05af15ef41b4429cbe3c75e32f1a2670 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c40d29a5ab864113962496732e05035f.setIcon(icon_05af15ef41b4429cbe3c75e32f1a2670);
+            
+    
+            var popup_96d446d2837944dcb7e9434916bd95b2 = L.popup({maxWidth: '300'});
+
+            
+                var html_abaa2869c0784649ac8623a6445d1593 = $('<div id="html_abaa2869c0784649ac8623a6445d1593" style="width: 100.0%; height: 100.0%;">ID: 10500567 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_96d446d2837944dcb7e9434916bd95b2.setContent(html_abaa2869c0784649ac8623a6445d1593);
+            
+
+            marker_c40d29a5ab864113962496732e05035f.bindPopup(popup_96d446d2837944dcb7e9434916bd95b2);
+
+            
+        
+    
+
+            var marker_4bb802328eff4e4abd9db3bb4253837d = L.marker(
+                [48.2629252,10.988548],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_9745401617cc417e92299dee00ed29fe = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_4bb802328eff4e4abd9db3bb4253837d.setIcon(icon_9745401617cc417e92299dee00ed29fe);
+            
+    
+            var popup_1f8132f27e8942bc927915b49367101c = L.popup({maxWidth: '300'});
+
+            
+                var html_c62a06b87f484c0f9d1d5977dbe26353 = $('<div id="html_c62a06b87f484c0f9d1d5977dbe26353" style="width: 100.0%; height: 100.0%;">ID: 10322610 Beschreibung: von EG zu Tunnel</div>')[0];
+                popup_1f8132f27e8942bc927915b49367101c.setContent(html_c62a06b87f484c0f9d1d5977dbe26353);
+            
+
+            marker_4bb802328eff4e4abd9db3bb4253837d.bindPopup(popup_1f8132f27e8942bc927915b49367101c);
+
+            
+        
+    
+
+            var marker_5c67fa4d870e4a448f514f8c1998e27a = L.marker(
+                [50.1026867,8.7840913],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_75f3642fb39e4c4796a2fefe1a42bc3f = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5c67fa4d870e4a448f514f8c1998e27a.setIcon(icon_75f3642fb39e4c4796a2fefe1a42bc3f);
+            
+    
+            var popup_27e306ab7c984f0b80595c96ffb020bc = L.popup({maxWidth: '300'});
+
+            
+                var html_f4fa2a55fbb949debeb0e0dea73c6d4d = $('<div id="html_f4fa2a55fbb949debeb0e0dea73c6d4d" style="width: 100.0%; height: 100.0%;">ID: 10469255 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_27e306ab7c984f0b80595c96ffb020bc.setContent(html_f4fa2a55fbb949debeb0e0dea73c6d4d);
+            
+
+            marker_5c67fa4d870e4a448f514f8c1998e27a.bindPopup(popup_27e306ab7c984f0b80595c96ffb020bc);
+
+            
+        
+    
+
+            var marker_0f6f02f22c8f49f49ac33bd7602b41bc = L.marker(
+                [48.10163,9.7931483],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_066a63bfcf8b4486aa4e1e7c95e85d67 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0f6f02f22c8f49f49ac33bd7602b41bc.setIcon(icon_066a63bfcf8b4486aa4e1e7c95e85d67);
+            
+    
+            var popup_e6c4f3b650c74ca3af7b1eb76d924204 = L.popup({maxWidth: '300'});
+
+            
+                var html_7330a8cb4d7f4f219e40e0d2c4d6e979 = $('<div id="html_7330a8cb4d7f4f219e40e0d2c4d6e979" style="width: 100.0%; height: 100.0%;">ID: 10431483 Beschreibung: zu Gleis 1</div>')[0];
+                popup_e6c4f3b650c74ca3af7b1eb76d924204.setContent(html_7330a8cb4d7f4f219e40e0d2c4d6e979);
+            
+
+            marker_0f6f02f22c8f49f49ac33bd7602b41bc.bindPopup(popup_e6c4f3b650c74ca3af7b1eb76d924204);
+
+            
+        
+    
+
+            var marker_95063fb38e914afa833ceb54fa391cc5 = L.marker(
+                [48.0339859,10.7166186],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_681e244f8cde43cc950547847b511e52 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_95063fb38e914afa833ceb54fa391cc5.setIcon(icon_681e244f8cde43cc950547847b511e52);
+            
+    
+            var popup_d11d0851b5ad44538b65b15c28d1d3d4 = L.popup({maxWidth: '300'});
+
+            
+                var html_27feaaa9f25e4374a4d281a2f3e8f904 = $('<div id="html_27feaaa9f25e4374a4d281a2f3e8f904" style="width: 100.0%; height: 100.0%;">ID: 10010868 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_d11d0851b5ad44538b65b15c28d1d3d4.setContent(html_27feaaa9f25e4374a4d281a2f3e8f904);
+            
+
+            marker_95063fb38e914afa833ceb54fa391cc5.bindPopup(popup_d11d0851b5ad44538b65b15c28d1d3d4);
+
+            
+        
+    
+
+            var marker_a77ca15f77ea486898c09ed973b71414 = L.marker(
+                [49.444891,11.0814456],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_479cfd2055c748d9a2215357295e320c = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a77ca15f77ea486898c09ed973b71414.setIcon(icon_479cfd2055c748d9a2215357295e320c);
+            
+    
+            var popup_6b2072a3a7544904af455073a561fda9 = L.popup({maxWidth: '300'});
+
+            
+                var html_cbc690f3e42342e8ae9a1c23aacdcdeb = $('<div id="html_cbc690f3e42342e8ae9a1c23aacdcdeb" style="width: 100.0%; height: 100.0%;">ID: 10205105 Beschreibung: zu Gleis 12/13 Abschnitt F</div>')[0];
+                popup_6b2072a3a7544904af455073a561fda9.setContent(html_cbc690f3e42342e8ae9a1c23aacdcdeb);
+            
+
+            marker_a77ca15f77ea486898c09ed973b71414.bindPopup(popup_6b2072a3a7544904af455073a561fda9);
+
+            
+        
+    
+
+            var marker_82815a188a374d84a91ce990fb615f3f = L.marker(
+                [52.6684213,13.5644691],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_f167ae690b65474e9b57dff288d90223 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_82815a188a374d84a91ce990fb615f3f.setIcon(icon_f167ae690b65474e9b57dff288d90223);
+            
+    
+            var popup_7588710d839846b1b276b6ba7995cf07 = L.popup({maxWidth: '300'});
+
+            
+                var html_b445c599e8f948a5862ceecca3a4b8fe = $('<div id="html_b445c599e8f948a5862ceecca3a4b8fe" style="width: 100.0%; height: 100.0%;">ID: 10455436 Beschreibung: zu Gleis 1 (S-Bahn)</div>')[0];
+                popup_7588710d839846b1b276b6ba7995cf07.setContent(html_b445c599e8f948a5862ceecca3a4b8fe);
+            
+
+            marker_82815a188a374d84a91ce990fb615f3f.bindPopup(popup_7588710d839846b1b276b6ba7995cf07);
+
+            
+        
+    
+
+            var marker_18f9880214964242b067cbf0d4650658 = L.marker(
+                [48.9927793,8.4011804],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_30fa3888e8134d7db311b91368c60519 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_18f9880214964242b067cbf0d4650658.setIcon(icon_30fa3888e8134d7db311b91368c60519);
+            
+    
+            var popup_3bfb285a42ba44ffa08de3c6e0a1627e = L.popup({maxWidth: '300'});
+
+            
+                var html_43caed17a82445e38c217fb6554352c4 = $('<div id="html_43caed17a82445e38c217fb6554352c4" style="width: 100.0%; height: 100.0%;">ID: 10463057 Beschreibung: zu Gleis 11/12 Abschnitt D/E</div>')[0];
+                popup_3bfb285a42ba44ffa08de3c6e0a1627e.setContent(html_43caed17a82445e38c217fb6554352c4);
+            
+
+            marker_18f9880214964242b067cbf0d4650658.bindPopup(popup_3bfb285a42ba44ffa08de3c6e0a1627e);
+
+            
+        
+    
+
+            var marker_c699faa81d5f4d5993675013c4dbb1cb = L.marker(
+                [48.9936899,8.4006988],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_3a330b2c1b564f82ad4e1f8417fccb7c = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c699faa81d5f4d5993675013c4dbb1cb.setIcon(icon_3a330b2c1b564f82ad4e1f8417fccb7c);
+            
+    
+            var popup_63535aae44ec420cb8f37a3ec09f03e4 = L.popup({maxWidth: '300'});
+
+            
+                var html_b01752e9b1184bdc82e8387cd246919e = $('<div id="html_b01752e9b1184bdc82e8387cd246919e" style="width: 100.0%; height: 100.0%;">ID: 10454144 Beschreibung: zu Gleis 1/2 Abschnitt E/F</div>')[0];
+                popup_63535aae44ec420cb8f37a3ec09f03e4.setContent(html_b01752e9b1184bdc82e8387cd246919e);
+            
+
+            marker_c699faa81d5f4d5993675013c4dbb1cb.bindPopup(popup_63535aae44ec420cb8f37a3ec09f03e4);
+
+            
+        
+    
+
+            var marker_3a6aefb9b7264c6c86123339e3d554bb = L.marker(
+                [48.7441904,11.437573],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_c18263b34004410c98b884da155367ba = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_3a6aefb9b7264c6c86123339e3d554bb.setIcon(icon_c18263b34004410c98b884da155367ba);
+            
+    
+            var popup_01d3137aff7e40d8a737aaea61534d9b = L.popup({maxWidth: '300'});
+
+            
+                var html_4abf1ff8a8af49acadbc5a13f7e278d6 = $('<div id="html_4abf1ff8a8af49acadbc5a13f7e278d6" style="width: 100.0%; height: 100.0%;">ID: 10479465 Beschreibung: zu Gleis 4/5</div>')[0];
+                popup_01d3137aff7e40d8a737aaea61534d9b.setContent(html_4abf1ff8a8af49acadbc5a13f7e278d6);
+            
+
+            marker_3a6aefb9b7264c6c86123339e3d554bb.bindPopup(popup_01d3137aff7e40d8a737aaea61534d9b);
+
+            
+        
+    
+
+            var marker_4eec48ffd8774a38b2caf2cb537bc765 = L.marker(
+                [52.5519324,12.938047],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_c7a2d19fc13b4b6b8921c369fe1ca0a4 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_4eec48ffd8774a38b2caf2cb537bc765.setIcon(icon_c7a2d19fc13b4b6b8921c369fe1ca0a4);
+            
+    
+            var popup_cc1e7c16f16b4af7aa57610788430d6f = L.popup({maxWidth: '300'});
+
+            
+                var html_4ced6a00670a4671ae6121ef55a4e9ae = $('<div id="html_4ced6a00670a4671ae6121ef55a4e9ae" style="width: 100.0%; height: 100.0%;">ID: 10479455 Beschreibung: zu Gleis 1/2</div>')[0];
+                popup_cc1e7c16f16b4af7aa57610788430d6f.setContent(html_4ced6a00670a4671ae6121ef55a4e9ae);
+            
+
+            marker_4eec48ffd8774a38b2caf2cb537bc765.bindPopup(popup_cc1e7c16f16b4af7aa57610788430d6f);
+
+            
+        
+    
+
+            var marker_32f584c7ad164b0685caa93199dd167f = L.marker(
+                [51.5047485,7.1022559],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_ca164fb681d7432dac16407e1c2a8b97 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_32f584c7ad164b0685caa93199dd167f.setIcon(icon_ca164fb681d7432dac16407e1c2a8b97);
+            
+    
+            var popup_bcd9cac358ca47bc8045cd682acece1b = L.popup({maxWidth: '300'});
+
+            
+                var html_5b14fa1797034beebdf8377a2a1e7589 = $('<div id="html_5b14fa1797034beebdf8377a2a1e7589" style="width: 100.0%; height: 100.0%;">ID: 10348329 Beschreibung: zu Gleis 6/7</div>')[0];
+                popup_bcd9cac358ca47bc8045cd682acece1b.setContent(html_5b14fa1797034beebdf8377a2a1e7589);
+            
+
+            marker_32f584c7ad164b0685caa93199dd167f.bindPopup(popup_bcd9cac358ca47bc8045cd682acece1b);
+
+            
+        
+    
+
+            var marker_f7513025bfec47468d4c8ec344ea9708 = L.marker(
+                [51.6780904,7.8075207],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_1df062a3a794459bb6a110428c0234f2 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_f7513025bfec47468d4c8ec344ea9708.setIcon(icon_1df062a3a794459bb6a110428c0234f2);
+            
+    
+            var popup_9bc898afb259417ba0e38867ecdde960 = L.popup({maxWidth: '300'});
+
+            
+                var html_9976bac288fc42dc844deb3115d4eb74 = $('<div id="html_9976bac288fc42dc844deb3115d4eb74" style="width: 100.0%; height: 100.0%;">ID: 10028237 Beschreibung: zu Gleis 8/9 Abschnitt B/C/D</div>')[0];
+                popup_9bc898afb259417ba0e38867ecdde960.setContent(html_9976bac288fc42dc844deb3115d4eb74);
+            
+
+            marker_f7513025bfec47468d4c8ec344ea9708.bindPopup(popup_9bc898afb259417ba0e38867ecdde960);
+
+            
+        
+    
+
+            var marker_6caad8372ade47df91d7bbe99179035a = L.marker(
+                [49.3243017,8.4279569],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_9d4222ae91ce44ddbbd2152101356c78 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_6caad8372ade47df91d7bbe99179035a.setIcon(icon_9d4222ae91ce44ddbbd2152101356c78);
+            
+    
+            var popup_4c26e59cbf2e4c73b8834fc41d3b953c = L.popup({maxWidth: '300'});
+
+            
+                var html_fd7c89f834b04d96930269df41c50da2 = $('<div id="html_fd7c89f834b04d96930269df41c50da2" style="width: 100.0%; height: 100.0%;">ID: 10273081 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_4c26e59cbf2e4c73b8834fc41d3b953c.setContent(html_fd7c89f834b04d96930269df41c50da2);
+            
+
+            marker_6caad8372ade47df91d7bbe99179035a.bindPopup(popup_4c26e59cbf2e4c73b8834fc41d3b953c);
+
+            
+        
+    
+
+            var marker_0de519baf4aa4f6498d3f401d6b01465 = L.marker(
+                [52.5067928,13.2828215],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_196787ef3df64ae6989c70926f7a8cb2 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0de519baf4aa4f6498d3f401d6b01465.setIcon(icon_196787ef3df64ae6989c70926f7a8cb2);
+            
+    
+            var popup_2c7522edce974be69df554b8bf2bc6e4 = L.popup({maxWidth: '300'});
+
+            
+                var html_8fcbc6bb9c8c4f01a51e5de870e5d116 = $('<div id="html_8fcbc6bb9c8c4f01a51e5de870e5d116" style="width: 100.0%; height: 100.0%;">ID: 10410630 Beschreibung: zu Gleis 1/2 (S-Bahn)</div>')[0];
+                popup_2c7522edce974be69df554b8bf2bc6e4.setContent(html_8fcbc6bb9c8c4f01a51e5de870e5d116);
+            
+
+            marker_0de519baf4aa4f6498d3f401d6b01465.bindPopup(popup_2c7522edce974be69df554b8bf2bc6e4);
+
+            
+        
+    
+
+            var marker_2485ae78e6294d3ea162bdcc247658df = L.marker(
+                [52.5099225,13.4356788],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_9ec03e40d41f49bdafb81504461677ad = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_2485ae78e6294d3ea162bdcc247658df.setIcon(icon_9ec03e40d41f49bdafb81504461677ad);
+            
+    
+            var popup_f316f50ad78649c79613a9e256bbf8f1 = L.popup({maxWidth: '300'});
+
+            
+                var html_2f2d9f838a8a4cb383982b68c1ca4393 = $('<div id="html_2f2d9f838a8a4cb383982b68c1ca4393" style="width: 100.0%; height: 100.0%;">ID: 10378150 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_f316f50ad78649c79613a9e256bbf8f1.setContent(html_2f2d9f838a8a4cb383982b68c1ca4393);
+            
+
+            marker_2485ae78e6294d3ea162bdcc247658df.bindPopup(popup_f316f50ad78649c79613a9e256bbf8f1);
+
+            
+        
+    
+
+            var marker_3581f0df048547ccb577469bc08d5f92 = L.marker(
+                [52.5468332,12.9986492],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_b55c9c48145d40daa21f430b527b56ee = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_3581f0df048547ccb577469bc08d5f92.setIcon(icon_b55c9c48145d40daa21f430b527b56ee);
+            
+    
+            var popup_bb28b0ec6d2645faba507032a8b0df05 = L.popup({maxWidth: '300'});
+
+            
+                var html_efb924286a6943589804c86ffeddf26b = $('<div id="html_efb924286a6943589804c86ffeddf26b" style="width: 100.0%; height: 100.0%;">ID: 10492553 Beschreibung: von EG zu Brücke</div>')[0];
+                popup_bb28b0ec6d2645faba507032a8b0df05.setContent(html_efb924286a6943589804c86ffeddf26b);
+            
+
+            marker_3581f0df048547ccb577469bc08d5f92.bindPopup(popup_bb28b0ec6d2645faba507032a8b0df05);
+
+            
+        
+    
+
+            var marker_1d60f0a2e974480b82e3ac03dcb94cbd = L.marker(
+                [49.44849,8.58042],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_5efe3a7cf8ef4840b22b7e7913dbbf66 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_1d60f0a2e974480b82e3ac03dcb94cbd.setIcon(icon_5efe3a7cf8ef4840b22b7e7913dbbf66);
+            
+    
+            var popup_5e94d366034346609f3600ea1f0ea647 = L.popup({maxWidth: '300'});
+
+            
+                var html_f8d8d0471fb543129e65eedd9b7b088c = $('<div id="html_f8d8d0471fb543129e65eedd9b7b088c" style="width: 100.0%; height: 100.0%;">ID: 10501044 Beschreibung: zu Gleis 1</div>')[0];
+                popup_5e94d366034346609f3600ea1f0ea647.setContent(html_f8d8d0471fb543129e65eedd9b7b088c);
+            
+
+            marker_1d60f0a2e974480b82e3ac03dcb94cbd.bindPopup(popup_5e94d366034346609f3600ea1f0ea647);
+
+            
+        
+    
+
+            var marker_ca5a1c7b73a04ddab47f059199ef088a = L.marker(
+                [49.44855,8.58023],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_27e636f183754857bf19b1438b3d5de6 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ca5a1c7b73a04ddab47f059199ef088a.setIcon(icon_27e636f183754857bf19b1438b3d5de6);
+            
+    
+            var popup_5a0eceb206a04aa1a89c4a87d48369f8 = L.popup({maxWidth: '300'});
+
+            
+                var html_6291fdb4894b477986da540ba17bd0dc = $('<div id="html_6291fdb4894b477986da540ba17bd0dc" style="width: 100.0%; height: 100.0%;">ID: 10501045 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_5a0eceb206a04aa1a89c4a87d48369f8.setContent(html_6291fdb4894b477986da540ba17bd0dc);
+            
+
+            marker_ca5a1c7b73a04ddab47f059199ef088a.bindPopup(popup_5a0eceb206a04aa1a89c4a87d48369f8);
+
+            
+        
+    
+
+            var marker_d9b512ca41674043b7328c8c8264b80b = L.marker(
+                [51.3439939,12.4790524],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_fb4d694d67d24ad6b88321c9a35034f4 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_d9b512ca41674043b7328c8c8264b80b.setIcon(icon_fb4d694d67d24ad6b88321c9a35034f4);
+            
+    
+            var popup_ca94042ef5df4c519ab681265b7190e7 = L.popup({maxWidth: '300'});
+
+            
+                var html_b8fc37761a6744879c1336b5889ad6de = $('<div id="html_b8fc37761a6744879c1336b5889ad6de" style="width: 100.0%; height: 100.0%;">ID: 10122223 Beschreibung: zu Gleis 2</div>')[0];
+                popup_ca94042ef5df4c519ab681265b7190e7.setContent(html_b8fc37761a6744879c1336b5889ad6de);
+            
+
+            marker_d9b512ca41674043b7328c8c8264b80b.bindPopup(popup_ca94042ef5df4c519ab681265b7190e7);
+
+            
+        
+    
+
+            var marker_03195f718132415fb1fa355bbee12baf = L.marker(
+                [52.45875909,13.5797837],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_9030b02120a14df48909a6beb381932f = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_03195f718132415fb1fa355bbee12baf.setIcon(icon_9030b02120a14df48909a6beb381932f);
+            
+    
+            var popup_c992d6f45f124169b33b35fda4ada98a = L.popup({maxWidth: '300'});
+
+            
+                var html_798c5cfd87464d33ba857936aece411a = $('<div id="html_798c5cfd87464d33ba857936aece411a" style="width: 100.0%; height: 100.0%;">ID: 10310569 Beschreibung: zu Gleis 1/2 (S-Bahn)</div>')[0];
+                popup_c992d6f45f124169b33b35fda4ada98a.setContent(html_798c5cfd87464d33ba857936aece411a);
+            
+
+            marker_03195f718132415fb1fa355bbee12baf.bindPopup(popup_c992d6f45f124169b33b35fda4ada98a);
+
+            
+        
+    
+
+            var marker_a75ec07f819841ae85c54d3c87bbe07b = L.marker(
+                [48.9612927,10.9085975],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_aa2c0442fbba4190b1d6e8223b150abf = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a75ec07f819841ae85c54d3c87bbe07b.setIcon(icon_aa2c0442fbba4190b1d6e8223b150abf);
+            
+    
+            var popup_00021d1e5c064ca8b0737c51cc0dd671 = L.popup({maxWidth: '300'});
+
+            
+                var html_810c8b40d4ee4f6fbc0cfe56104fa0ff = $('<div id="html_810c8b40d4ee4f6fbc0cfe56104fa0ff" style="width: 100.0%; height: 100.0%;">ID: 10283327 Beschreibung: zu Gleis 1</div>')[0];
+                popup_00021d1e5c064ca8b0737c51cc0dd671.setContent(html_810c8b40d4ee4f6fbc0cfe56104fa0ff);
+            
+
+            marker_a75ec07f819841ae85c54d3c87bbe07b.bindPopup(popup_00021d1e5c064ca8b0737c51cc0dd671);
+
+            
+        
+    
+
+            var marker_9e1ff0e594dd40c1bb56ad67d358831a = L.marker(
+                [53.6043461,10.1536602],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_533f5e8ed8ac4c088e9dfc6eb4961534 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_9e1ff0e594dd40c1bb56ad67d358831a.setIcon(icon_533f5e8ed8ac4c088e9dfc6eb4961534);
+            
+    
+            var popup_fb8c2ac28fed49b4ac7067beb958548b = L.popup({maxWidth: '300'});
+
+            
+                var html_8e3bc6cb6fa447cda0eb86ad7ec640a7 = $('<div id="html_8e3bc6cb6fa447cda0eb86ad7ec640a7" style="width: 100.0%; height: 100.0%;">ID: 10283335 Beschreibung: zu Gleis 1/2</div>')[0];
+                popup_fb8c2ac28fed49b4ac7067beb958548b.setContent(html_8e3bc6cb6fa447cda0eb86ad7ec640a7);
+            
+
+            marker_9e1ff0e594dd40c1bb56ad67d358831a.bindPopup(popup_fb8c2ac28fed49b4ac7067beb958548b);
+
+            
+        
+    
+
+            var marker_b9a9194fc32741728d2bd65187f23434 = L.marker(
+                [50.055725,7.7698319],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_b2ae0a3e022a47149c1f22fec45070f9 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_b9a9194fc32741728d2bd65187f23434.setIcon(icon_b2ae0a3e022a47149c1f22fec45070f9);
+            
+    
+            var popup_2f897bbbd85a41549f25a6366d9ffcd8 = L.popup({maxWidth: '300'});
+
+            
+                var html_f2a9d6ba45754ea3990602ccd6901fb4 = $('<div id="html_f2a9d6ba45754ea3990602ccd6901fb4" style="width: 100.0%; height: 100.0%;">ID: 10501084 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_2f897bbbd85a41549f25a6366d9ffcd8.setContent(html_f2a9d6ba45754ea3990602ccd6901fb4);
+            
+
+            marker_b9a9194fc32741728d2bd65187f23434.bindPopup(popup_2f897bbbd85a41549f25a6366d9ffcd8);
+
+            
+        
+    
+
+            var marker_14ccc8b1c1c74e428fa1f46d26250ced = L.marker(
+                [51.2041587,6.6847199],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_96878a1f9a9e490ba4d6bd27c3a2cb39 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_14ccc8b1c1c74e428fa1f46d26250ced.setIcon(icon_96878a1f9a9e490ba4d6bd27c3a2cb39);
+            
+    
+            var popup_36582da5de2c49afb72538aa17834cf9 = L.popup({maxWidth: '300'});
+
+            
+                var html_0206cb7dfce44b60a4249b90ad761854 = $('<div id="html_0206cb7dfce44b60a4249b90ad761854" style="width: 100.0%; height: 100.0%;">ID: 10479536 Beschreibung: zu Gleis 3/4</div>')[0];
+                popup_36582da5de2c49afb72538aa17834cf9.setContent(html_0206cb7dfce44b60a4249b90ad761854);
+            
+
+            marker_14ccc8b1c1c74e428fa1f46d26250ced.bindPopup(popup_36582da5de2c49afb72538aa17834cf9);
+
+            
+        
+    
+
+            var marker_33aac79aaefb4a739c212f2736f303ed = L.marker(
+                [49.4100044,11.0479687],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_b88a823c96ea4e7c861ed0e292972fd4 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_33aac79aaefb4a739c212f2736f303ed.setIcon(icon_b88a823c96ea4e7c861ed0e292972fd4);
+            
+    
+            var popup_f1d0a205f09f40a5a10b56c32b1186b6 = L.popup({maxWidth: '300'});
+
+            
+                var html_5f90e323d1c444d59bb3f7a677a03e5b = $('<div id="html_5f90e323d1c444d59bb3f7a677a03e5b" style="width: 100.0%; height: 100.0%;">ID: 10086916 Beschreibung: zu Gleis 2/3 (S-Bahn)</div>')[0];
+                popup_f1d0a205f09f40a5a10b56c32b1186b6.setContent(html_5f90e323d1c444d59bb3f7a677a03e5b);
+            
+
+            marker_33aac79aaefb4a739c212f2736f303ed.bindPopup(popup_f1d0a205f09f40a5a10b56c32b1186b6);
+
+            
+        
+    
+
+            var marker_a6c4674f6eee4855903847292175e5cf = L.marker(
+                [51.6162371,7.2030893],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_7ac697bcc30e450eac789685acbc7233 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a6c4674f6eee4855903847292175e5cf.setIcon(icon_7ac697bcc30e450eac789685acbc7233);
+            
+    
+            var popup_a146b4ce96f4493fa3c1acdd053577e6 = L.popup({maxWidth: '300'});
+
+            
+                var html_9ba6e714711347e99d0b55f9f0617b88 = $('<div id="html_9ba6e714711347e99d0b55f9f0617b88" style="width: 100.0%; height: 100.0%;">ID: 10069596 Beschreibung: zu Gleis 1</div>')[0];
+                popup_a146b4ce96f4493fa3c1acdd053577e6.setContent(html_9ba6e714711347e99d0b55f9f0617b88);
+            
+
+            marker_a6c4674f6eee4855903847292175e5cf.bindPopup(popup_a146b4ce96f4493fa3c1acdd053577e6);
+
+            
+        
+    
+
+            var marker_3973f727a79b4900b676d47bce10a812 = L.marker(
+                [51.4928847,10.788718],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_530a75712e9547f598300ebf02d6cd44 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_3973f727a79b4900b676d47bce10a812.setIcon(icon_530a75712e9547f598300ebf02d6cd44);
+            
+    
+            var popup_f5c15f91583b41daba91dc9c9ef86973 = L.popup({maxWidth: '300'});
+
+            
+                var html_cdf78854b1704313b2c981baa52b28ef = $('<div id="html_cdf78854b1704313b2c981baa52b28ef" style="width: 100.0%; height: 100.0%;">ID: 10460930 Beschreibung: zu Gleis 2/2a/3</div>')[0];
+                popup_f5c15f91583b41daba91dc9c9ef86973.setContent(html_cdf78854b1704313b2c981baa52b28ef);
+            
+
+            marker_3973f727a79b4900b676d47bce10a812.bindPopup(popup_f5c15f91583b41daba91dc9c9ef86973);
+
+            
+        
+    
+
+            var marker_56021b6ae08445909683cf07b71ccdcc = L.marker(
+                [53.8675129,10.6699413],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_51b06765b63b4e16b7699bcb40f96036 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_56021b6ae08445909683cf07b71ccdcc.setIcon(icon_51b06765b63b4e16b7699bcb40f96036);
+            
+    
+            var popup_7a77dff57d794a659743f2a4b8cc9163 = L.popup({maxWidth: '300'});
+
+            
+                var html_c961857a616849638be490d68f0bd3e3 = $('<div id="html_c961857a616849638be490d68f0bd3e3" style="width: 100.0%; height: 100.0%;">ID: 10039761 Beschreibung: zu Gleis 4/5</div>')[0];
+                popup_7a77dff57d794a659743f2a4b8cc9163.setContent(html_c961857a616849638be490d68f0bd3e3);
+            
+
+            marker_56021b6ae08445909683cf07b71ccdcc.bindPopup(popup_7a77dff57d794a659743f2a4b8cc9163);
+
+            
+        
+    
+
+            var marker_dcf78be815444984add8e71708fcc7a1 = L.marker(
+                [49.4383263,8.5721101],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_2e5dfc08c3d94a8e9fb7081937a79992 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_dcf78be815444984add8e71708fcc7a1.setIcon(icon_2e5dfc08c3d94a8e9fb7081937a79992);
+            
+    
+            var popup_a7ab51c24a2541b1a6228b8d05ce2cbc = L.popup({maxWidth: '300'});
+
+            
+                var html_fedc52dff6d241979453dc7f1b1692c7 = $('<div id="html_fedc52dff6d241979453dc7f1b1692c7" style="width: 100.0%; height: 100.0%;">ID: 10259672 Beschreibung: zu Gleis 1</div>')[0];
+                popup_a7ab51c24a2541b1a6228b8d05ce2cbc.setContent(html_fedc52dff6d241979453dc7f1b1692c7);
+            
+
+            marker_dcf78be815444984add8e71708fcc7a1.bindPopup(popup_a7ab51c24a2541b1a6228b8d05ce2cbc);
+
+            
+        
+    
+
+            var marker_5982e2a21f1f4f3cb77a9c5f21900180 = L.marker(
+                [52.4436009,13.2943818],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_2c87ed0027984156bce1561d02f6690d = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5982e2a21f1f4f3cb77a9c5f21900180.setIcon(icon_2c87ed0027984156bce1561d02f6690d);
+            
+    
+            var popup_5a324a483ef347ceb9004796edc54169 = L.popup({maxWidth: '300'});
+
+            
+                var html_708a38fb527b4ece9cc2c78f4ad18ac2 = $('<div id="html_708a38fb527b4ece9cc2c78f4ad18ac2" style="width: 100.0%; height: 100.0%;">ID: 10432053 Beschreibung: zu Gleis 1/2 (S-Bahn)</div>')[0];
+                popup_5a324a483ef347ceb9004796edc54169.setContent(html_708a38fb527b4ece9cc2c78f4ad18ac2);
+            
+
+            marker_5982e2a21f1f4f3cb77a9c5f21900180.bindPopup(popup_5a324a483ef347ceb9004796edc54169);
+
+            
+        
+    
+
+            var marker_663b78c7b0934eb399cb3cb7c8f5a9a6 = L.marker(
+                [48.6832885,9.7604294],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_905ee08fc02b4fc09f27bc089b9200ff = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_663b78c7b0934eb399cb3cb7c8f5a9a6.setIcon(icon_905ee08fc02b4fc09f27bc089b9200ff);
+            
+    
+            var popup_468247c4474345928178276f4add5f6f = L.popup({maxWidth: '300'});
+
+            
+                var html_3da24e21d70a4920bba977af4a804625 = $('<div id="html_3da24e21d70a4920bba977af4a804625" style="width: 100.0%; height: 100.0%;">ID: 10457321 Beschreibung: zu Gleis 1</div>')[0];
+                popup_468247c4474345928178276f4add5f6f.setContent(html_3da24e21d70a4920bba977af4a804625);
+            
+
+            marker_663b78c7b0934eb399cb3cb7c8f5a9a6.bindPopup(popup_468247c4474345928178276f4add5f6f);
+
+            
+        
+    
+
+            var marker_7881662bbf8b4723943d0f889a78c45f = L.marker(
+                [48.6834261,9.7606522],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7b52c456e2cb4e3db7e8aef873f5b887);
+            
+    
+
+                var icon_b01d34bffea84876b4c9e31e44c37cee = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_7881662bbf8b4723943d0f889a78c45f.setIcon(icon_b01d34bffea84876b4c9e31e44c37cee);
+            
+    
+            var popup_c8a5fc615d3d4456b673e0ad0feba97a = L.popup({maxWidth: '300'});
+
+            
+                var html_e97667c5e2b14267bb8d0ba1b52e05cd = $('<div id="html_e97667c5e2b14267bb8d0ba1b52e05cd" style="width: 100.0%; height: 100.0%;">ID: 10457320 Beschreibung: zu Gleis 2/3</div>')[0];
+                popup_c8a5fc615d3d4456b673e0ad0feba97a.setContent(html_e97667c5e2b14267bb8d0ba1b52e05cd);
+            
+
+            marker_7881662bbf8b4723943d0f889a78c45f.bindPopup(popup_c8a5fc615d3d4456b673e0ad0feba97a);
+
+            
+        
+</script>
