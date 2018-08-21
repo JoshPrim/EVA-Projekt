@@ -27,6 +27,7 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+from dash.dependencies import Input, Output
 import flask
 import dash_auth
 
@@ -65,27 +66,35 @@ class Dashboard():
                         children='EVA Dashboard'),
             ]),
 
+
             # Beschreibung
             html.Div([
-                html.H2(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'center', 'width': '10em',
+                html.Hr(),
+
+                html.H1(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'center', 'width': '10em',
                                'color': '#000099'}, children='Der Aufzugwächter'),
+
+
                 dcc.Markdown('''
-                    Informationen rund um Aufzuege und Rolltreppen in Bahnhöfen der DB Station & Service AG
+                    **Informationen rund um Aufzüge und Rolltreppen in Bahnhöfen der DB Station & Service AG**
                     '''.replace('  ', ''), className='beschreibung',
                              containerProps={
                                  'style': {'maxWidth': '650px', 'color': '#000099', 'margin-left': 'auto',
                                            'margin-right': 'auto', 'text-align': 'center'}})
             ]),
 
+
+
             # Übersicht
             html.Div([
+
 
                 html.Div([ dcc.Graph(
                 id='diagramm_status',
                 figure={
                     'data': [
                         {'x': ['aktiv', 'inaktiv', 'keine Information'], 'y': [4, 1, 2], 'type': 'bar', 'name': 'Aufzüge',
-                         'marker': dict(color=['green', 'red', 'grey'])
+                         'marker': dict(color=['green', 'red', 'orange'])
                          },
                     ],
                     'layout': {
@@ -97,21 +106,66 @@ class Dashboard():
                 }
                 )], style={'width': '35%', 'text-align': 'left', 'display': 'inline-block', 'padding-top': 10, 'padding-left': 140, 'padding-bottom': 10 }),
 
-                html.Div([dcc.Graph(
+                html.Div([ dcc.Graph(
                 id='diagramm_inaktive',
                 figure={
                     'data': [
-                        {'x': ['aktiv', 'inaktiv', 'keine Information'], 'y': [2, 3, 5], 'type': 'bar',
-                         'name': 'Aufzüge'},
+                        {'values': ['20', '30', '50'], 'type': 'pie', 'name': 'GründeInaktivität',
+                         'marker': dict(colors=['#DCDCDC', '#778899', '#C0C0C0']), 'labels': ['Grund1', 'Grund2', 'Grund3']
+                         },
                     ],
                     'layout': {
                         'title': 'Gründe für Inaktivität',
+                        'width': '35%',
+                        'align': 'right'
 
                     }
                 }
-                )], style={'width': '40%', 'text-align': 'right', 'display': 'inline-block', 'padding-left': 10, 'padding-bottom': 10}),
+                )],
+                style={'width': '40%', 'text-align': 'right', 'display': 'inline-block', 'padding-left': 10, 'padding-bottom': 10}),
 
-            ], style = {'background-color': '#F0F8FF'}
+                html.Hr(),
+
+
+            html.Div([
+                html.H3(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'left',
+                                'color': '#000099'}, children='Wusstest du schon?'),
+
+                html.Div('Der älteste Aufzug steht in:[stadt] seit [Jahreszahl]'),
+                html.Br(),
+                html.Div('Der neuste Aufzug steht in:[stadt] seit [Jahreszahl]'),
+                html.Br(),
+                html.Div('Der Bahnhof mit den meisten Aufzügen steht in:[stadt]'),
+                html.Br(),
+                html.Div('Der Aufzug mit den meinste Ausfällen steht in:[stadt]'),
+
+            ], style={'display': 'inline-block', 'text-align': 'left', 'margin-left': 50}),
+
+            html.Hr(style={'width': 1, 'height': 200, 'display': 'inline-block', 'margin-left': 190}),
+
+
+            html.Div([
+                html.H3(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'left',
+                                   'color': '#000099'}, children='Aggregierte Werte'),
+
+                html.Div('Berechnung 1'),
+                html.Br(),
+                html.Div('Berechnung 2'),
+                html.Br(),
+                html.Div('Berechnung 3'),
+                html.Br(),
+                html.Div('Berechnung 4'),
+
+            ], style={'display': 'inline-block', 'text-align': 'left', 'margin-left': 100}),
+
+            html.Hr(),
+
+
+            html.H3(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'left',
+                               'color': '#000099'}, children='Karte'),
+
+
+            ], style = {'background-color': '#E6E6FA'}
             )
 
 
@@ -123,11 +177,13 @@ class Dashboard():
         ########################################################################## CALLBACKS #############################################################################################################################################
         ##########################################################################           #############################################################################################################################################
 
-        # @app.callback():
+        #@app.callback()
 
-        # app.css.append_css({'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'})
 
-        app.run_server(debug=False, host='0.0.0.0', port='37001')
+
+        #app.css.append_css({'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'})
+
+        app.run_server(debug=False, host='0.0.0.0', port='37002')
 
 
 if __name__ == '__main__':
