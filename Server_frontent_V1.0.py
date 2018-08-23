@@ -277,6 +277,7 @@ app.layout = html.Div(children=[
 
             #rechter Teil
             html.Div([
+                html.Br(), html.Br(),
                 html.Div(['Aufzug-ID:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
                 dcc.Input(value='', type='text',
                           style={'margin-left': '5', 'margin-right': 'auto', 'display': 'inline-block'}),
@@ -296,20 +297,25 @@ app.layout = html.Div(children=[
                 html.Br(), html.Br(),
                 html.Div(['Baujahr:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
                 html.Div(id='baujahr', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
-                html.Br(),
+                html.Br(), html.Br(),
 
                 # Tabelle
-                dt.DataTable(
-                    rows=['xyz'],
-                    columns=['123', '456'],
-                    editable=False,
-                    row_selectable=False,
-                    filterable=False,
-                    sortable=False,
-                    id='datatable-status'
-                )
+                html.Div([
+                    dt.DataTable(
+                        rows=['xyz'],
+                        columns=['123', '456'],
+                        editable=False,
+                        row_selectable=False,
+                        filterable=False,
+                        sortable=False,
+                        id='datatable-status',
+                        min_height=250
+                    ),
 
-            ], style={'width': '49%','display': 'inline-block'})
+                    html.Br(),
+                ])
+
+            ], style={'width': '49%','display': 'inline-block', 'vertical-align':'top'})
          ], style={'margin-left':'20'}),
 
         ], style = {'background-color': '#E6E6FA'}),
