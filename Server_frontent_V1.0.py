@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
  Autor: Joshua Prim, Philipp Krenitz, Bartos Mosch, Sophie Hagemann
  Version: 1.0
@@ -20,8 +21,6 @@
 ==============================================================================
 
 '''
-
-# -*- coding: utf-8 -*-
 
 
 import dash
