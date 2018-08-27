@@ -141,12 +141,12 @@ for i in uniqueList:
     if count != 0:
         dictStateExplanationReason[str(i)] = count
     
-tmp1 = []
-tmp2 = []
+key_array = []
+value_array = []
 
 for key, value in dictStateExplanationReason.items():
-    tmp1.append(key)
-    tmp2.append(value)
+    key_array.append(key)
+    value_array.append(value)
 
 
 
@@ -166,7 +166,7 @@ aufzüge['Equipment'] = aufzüge['Equipment'].astype(str).astype('int64')
 ######         Karte          ######
 ####################################
 
-tmp6 = facilities.aggregate([
+elevators = facilities.aggregate([
 
     {'$match': {'type': 'ELEVATOR'}},
     {'$group': {
@@ -179,10 +179,10 @@ tmp6 = facilities.aggregate([
     }}
 ])
 
-tmp6 = pd.DataFrame(list(tmp6))
-tmp6.columns = ['equipmentnumber', 'description', 'geocoordX', 'geocoordY', 'lastStateChangeDate', 'state']
+elevators = pd.DataFrame(list(elevators))
+elevators.columns = ['equipmentnumber', 'description', 'geocoordX', 'geocoordY', 'lastStateChangeDate', 'state']
 
-inactive = tmp6[tmp6['state'] == 'INACTIVE']
+inactive = elevators[elevators['state'] == 'INACTIVE']
 
 # Zoom am ausgewählten Ort
 geolocator = Nominatim(user_agent="Eva_Dashboard")
@@ -248,8 +248,8 @@ app.layout = html.Div(children=[
             id='diagramm_inaktive',
             figure={
                 'data': [
-                    {'values': tmp2, 'type': 'pie', 'name': 'GründeInaktivität',
-                     'marker': dict(colors=['#DCDCDC', '#778899', '#C0C0C0']), 'labels': tmp1
+                    {'values': value_array, 'type': 'pie', 'name': 'GründeInaktivität',
+                     'marker': dict(colors=['#DCDCDC', '#778899', '#C0C0C0']), 'labels': key_array
                      },
                 ],
                 'layout': {
@@ -264,27 +264,31 @@ app.layout = html.Div(children=[
 
             html.Hr(),
 
-        #mittleres Drittel, aggregierte Werte etc.
+        #mittleres Drittel: "Wusstest du schon?", aggregierte Werte etc.
         html.Div([]),
         html.Div([
-            html.H3(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'left',
+            html.H3(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'right',
                             'color': '#000099'}, children='Wusstest du schon?'),
 
-            html.Div('Der älteste Aufzug steht in:[stadt] seit [Jahreszahl]'),
+            html.Div('Der älteste Aufzug steht in: '),
+            html.Div(id='aeltester_aufzug', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
             html.Br(),
-            html.Div('Der neuste Aufzug steht in:[stadt] seit [Jahreszahl]'),
+            html.Div('Der neuste Aufzug steht in: '),
+            html.Div(id='neuster_aufzug', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
             html.Br(),
-            html.Div('Der Bahnhof mit den meisten Aufzügen steht in:[stadt]'),
+            html.Div('Die Station mit den meisten Aufzügen steht in: '),
+            html.Div(id='meisten_aufzüge', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
             html.Br(),
-            html.Div('Der Aufzug mit den meinste Ausfällen steht in:[stadt]'),
+            html.Div('Der Aufzug mit den meinste Ausfällen steht in: '),
+            html.Div(id='meiste_ausfälle', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
             html.Br(),
-        ], style={'display': 'inline-block', 'text-align': 'left', 'margin-left': 50}),
+        ], id='wusstest_du_schon', style={'display': 'inline-block', 'text-align': 'right', 'width': '45%', 'margin-right':20}),
 
-        html.Hr(style={'width': 1, 'height': 150, 'display': 'inline-block', 'margin-left': 190}),
+        html.Hr(style={'width': 1, 'height': 150, 'display': 'inline-block'}),
+
         html.Div([
             html.H3(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'left',
                                'color': '#000099'}, children='Aggregierte Werte'),
-
             html.Div('Berechnung 1'),
             html.Br(),
             html.Div('Berechnung 2'),
@@ -293,8 +297,7 @@ app.layout = html.Div(children=[
             html.Br(),
             html.Div('Berechnung 4'),
             html.Br(),
-
-        ], style={'display': 'inline-block', 'text-align': 'left', 'margin-left': 100}),
+        ], style={'display': 'inline-block', 'text-align': 'left', 'width': '50%', 'margin-left':20}),
 
         html.Hr(),
 
@@ -312,7 +315,15 @@ app.layout = html.Div(children=[
                 dcc.Input(id='stadt_input', value='Frankfurt', type='text', style={'margin-left': '5', 'margin-right': 'auto', 'display': 'inline-block'}),
                 html.Div(['Bundesland:  '], style={'margin-left': '15', 'margin-right': 'auto', 'display': 'inline-block'}),
                 dcc.Input(id='bundesland_input', value='Hessen', type='text', style={'margin-left': '5', 'margin-right': 'auto', 'display': 'inline-block'}),
-                html.Br(),
+                html.Br(), html.Br(),
+                dcc.RadioItems(
+                    options=[
+                        {'label': 'Aktive Aufzüge', 'value': 'aktiv'},
+                        {'label': 'Inaktive Aufzüge', 'value': 'inaktiv'},
+                        {'label': ' Alle Aufzüge', 'value': 'beide'}
+                    ],
+                    value='inaktiv', style={'margin-left':10}
+                ),
                 html.Iframe(id='karte', srcDoc=open('map_inactive_elivators.html', 'r').read(),
                             style={'width': '90%', 'height': '30em'})
             ], style={'width': '49%', 'display': 'inline-block'}),
@@ -325,21 +336,30 @@ app.layout = html.Div(children=[
                           style={'margin-left': '5', 'margin-right': 'auto', 'display': 'inline-block'}),
                 html.Br(),
                 html.Hr(),
-                html.Div(['Stationsname:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
-                html.Div(id='stationsname', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
-                html.Br(), html.Br(),
-                html.Div(['Beschreibung:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
-                html.Div(id='beschreibung', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
-                html.Br(), html.Br(),
-                html.Div(['Hersteller:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
-                html.Div(id='hersteller', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
-                html.Br(), html.Br(),
-                html.Div(['Antriebsart:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
-                html.Div(id='antrieb', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
-                html.Br(), html.Br(),
-                html.Div(['Baujahr:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
-                html.Div(id='baujahr', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
-                html.Br(), html.Br(),
+                    html.Div([
+                        html.Div(['Stationsname:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                        html.Br(), html.Br(),
+                        html.Div(['Beschreibung:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                        html.Br(), html.Br(),
+                        html.Div(['Hersteller:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                        html.Br(), html.Br(),
+                        html.Div(['Antriebsart:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                        html.Br(), html.Br(),
+                        html.Div(['Baujahr:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                        html.Br(), html.Br(),
+                    ], style={'width': '20%', 'display': 'inline-block'}),
+                    html.Div([
+                        html.Div(id='stationsname', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                        html.Br(), html.Br(),
+                        html.Div(id='beschreibung', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                        html.Br(), html.Br(),
+                        html.Div(id='hersteller',style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                        html.Br(), html.Br(),
+                        html.Div(id='antrieb', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                        html.Br(), html.Br(),
+                        html.Div(id='baujahr', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                        html.Br(), html.Br(),
+                    ], style={'width': '80%', 'display': 'inline-block'}),
 
                 # Tabelle
                 html.Div([
@@ -399,8 +419,8 @@ app.layout = html.Div(children=[
 )
 def karte_aktualisieren(input_stadt, input_bland):
     try: 
-        tmp8 = str(input_stadt + ', ' + input_bland + ', Deutschland')
-        location = geolocator.geocode(tmp8)
+        input_user = str(input_stadt + ', ' + input_bland + ', Deutschland')
+        location = geolocator.geocode(input_user)
 
         m = folium.Map(location=[location.latitude,location.longitude], zoom_start=10)
 
@@ -422,43 +442,43 @@ def karte_aktualisieren(input_stadt, input_bland):
 # Callback Stationsname aktualisieren
 @app.callback(
     Output(component_id='stationsname', component_property='children'),
-    [Input(component_id='aufzug_id_input', component_property='value'),]
+    [Input(component_id='aufzug_id_input', component_property='value')]
 )
-def aufzug_ID(input_value):
+def stationsname_aktualisieren(input_value):
     try:
-        tmp3 = aufzüge[aufzüge['Equipment'] == int(input_value)]
-        tmp4 = tmp3['Ort'].values
-        return tmp4[0]
+        aufzug = aufzüge[aufzüge['Equipment'] == int(input_value)]
+        attribute = aufzug['Ort'].values
+        return attribute[0]
 
     except:
         return str('Aufzug existiert nicht!')
 
 
-# Callback Beschreibung aktualisieren
+# Callback Hersteller aktualisieren
 @app.callback(
     Output(component_id='hersteller', component_property='children'),
-    [Input(component_id='aufzug_id_input', component_property='value'),]
+    [Input(component_id='aufzug_id_input', component_property='value')]
 )
-def aufzug_ID(input_value):
+def hersteller_aktualisieren(input_value):
     try:
-        tmp3 = aufzüge[aufzüge['Equipment'] == int(input_value)]
-        tmp4 = tmp3['Standort Equipment'].values
-        return tmp4[0]
+        aufzug = aufzüge[aufzüge['Equipment'] == int(input_value)]
+        attribute = aufzug['Standort Equipment'].values
+        return attribute[0]
 
     except:
         return ''
 
 
-# Callback Hersteller aktualisieren
+# Callback Beschreibung aktualisieren
 @app.callback(
     Output(component_id='beschreibung', component_property='children'),
-    [Input(component_id='aufzug_id_input', component_property='value'),]
+    [Input(component_id='aufzug_id_input', component_property='value')]
 )
-def aufzug_ID(input_value):
+def beschreibung_aktualisieren(input_value):
     try:
         tmp3 = aufzüge[aufzüge['Equipment'] == int(input_value)]
-        tmp4 = tmp3['Hersteller'].values
-        return tmp4[0]
+        attribute = tmp3['Hersteller'].values
+        return attribute[0]
 
     except:
         return ''
@@ -467,13 +487,13 @@ def aufzug_ID(input_value):
 # Callback Antriebsart aktualisieren
 @app.callback(
     Output(component_id='antrieb', component_property='children'),
-    [Input(component_id='aufzug_id_input', component_property='value'),]
+    [Input(component_id='aufzug_id_input', component_property='value')]
 )
-def aufzug_ID(input_value):
+def anstriebsart_aktualisieren(input_value):
     try:
-        tmp3 = aufzüge[aufzüge['Equipment'] == int(input_value)]
-        tmp4 = tmp3['ANTRIEBSART'].values
-        return tmp4[0]
+        aufzug = aufzüge[aufzüge['Equipment'] == int(input_value)]
+        attribute = aufzug['ANTRIEBSART'].values
+        return attribute[0]
 
     except:
         return ''
@@ -482,13 +502,13 @@ def aufzug_ID(input_value):
 # Callback Baujahr aktualisieren
 @app.callback(
     Output(component_id='baujahr', component_property='children'),
-    [Input(component_id='aufzug_id_input', component_property='value'),]
+    [Input(component_id='aufzug_id_input', component_property='value')]
 )
-def aufzug_ID(input_value):
+def baujahr_aktualisieren(input_value):
     try:
-        tmp3 = aufzüge[aufzüge['Equipment'] == int(input_value)]
-        tmp4 = tmp3['Baujahr'].values
-        return tmp4[0]
+        aufzug = aufzüge[aufzüge['Equipment'] == int(input_value)]
+        attribute = aufzug['Baujahr'].values
+        return attribute[0]
 
     except:
         return ''
@@ -497,21 +517,53 @@ def aufzug_ID(input_value):
 # Callback Tabelle aktualisieren
 @app.callback(
     Output(component_id='datatable-status', component_property='rows'),
-    [Input(component_id='aufzug_id_input', component_property='value'),]
+    [Input(component_id='aufzug_id_input', component_property='value')]
 )
-def aufzug_ID(input_value):
+def tabelle_aktualisieren(input_value):
     try:
-        tmp13 = facilities.find({"type": "ELEVATOR", "equipmentnumber": int(input_value)})
-        tmp13 = pd.DataFrame(list(tmp13))
-        tmp13 = tmp13[['datetime', 'state', 'stateExplanation']]
-        tmp14 = tmp13[::-1]
-        tmp14.columns = ['Datum', 'Status' , 'Erklärung des Status']
+        tabellen_input = facilities.find({"type": "ELEVATOR", "equipmentnumber": int(input_value)})
+        tabellen_input = pd.DataFrame(list(tabellen_input))
+        tabellen_input = tabellen_input[['datetime', 'state', 'stateExplanation']]
+        status_tabelle = tabellen_input[::-1]
+        status_tabelle.columns = ['Datum', 'Status' , 'Erklärung des Status']
 
-        return tmp14.to_dict('records')
+        return status_tabelle.to_dict('records')
 
     except:
-        return [{}]   
+        return [{}]
 
+'''
+#Callback "Wusstest du schon?" aktualisieren
+@appcallback(
+    Output(component_id='aeltester_aufzug', component_property='children'),
+    [Input(component_id='', component_property='' )]
+)
+def aeltester_aufzug_berechnen
+    value = '[stadt] seit [Jahreszahl]'
+
+@appcallback(
+    Output(component_id='neuster_aufzug', component_property='children'),
+    [Input(component_id='', component_property='')]
+)
+def aneuster_aufzug_berechnen
+    value = '[stadt] seit [Jahreszahl]'
+
+
+@appcallback(
+    Output(component_id='meisten_aufzüge', component_property='children'),
+    [Input(component_id='', component_property='')]
+)
+def meisten_aufzüge_berechnen
+    value = '[stadt] [Anzahl]'
+
+@appcallback(
+    Output(component_id='meiste_ausfälle', component_property='children'),
+    [Input(component_id='', component_property='')]
+)
+def meiste_ausfälle_berechnen
+    value = '[stadt]'
+
+'''
 
 
 app.run_server(debug=False, host='0.0.0.0', port='37002')
