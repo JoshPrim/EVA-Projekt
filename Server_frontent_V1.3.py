@@ -209,13 +209,63 @@ auth = dash_auth.BasicAuth(
      app,
      VALID_USERNAME_PASSWORD_PAIRS
 )
-app.layout = html.Div(children=[
+
+# Erklärung:
+# Since we're adding callbacks to elements that don't exist in the app.layout, Dash will raise an exception to warn us
+# that we might be doing something wrong. In this case, we're adding the elements through a callback, so we can ignore the exception.
+app.config.suppress_callback_exceptions = True
+
+#######################################
+#######################################
+#######################################
+#######################################
+#######################################
+#######################################
+#######################################
+#######################################
+app.layout = html.Div([
+    dcc.Location(id='url', refresh=False),
+    html.Div(id='page-content')
+])
+
+#######################################
+#######################################
+#######################################
+#######################################
+#######################################
+#######################################
+#######################################
+#######################################
+
+
+page_rolltreppen = html.Div([
+    html.H1('Page Rolltreppen'),
+
+    dcc.Link('Go to Page Aufzüge', href='/page-aufzuege'),
+])
+
+
+
+#######################################
+#######################################
+#######################################
+#######################################
+#######################################
+#######################################
+#######################################
+#######################################
+
+page_aufzuege = html.Div(children=[
 
     # Überschrift
     html.Div([
         html.H1(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'center', 'width': '15em'},
             children='EVA Dashboard'),
             ]),
+
+    html.Div([
+        dcc.Link('Go to Page Rolltreppen', href='/page-rolltreppen')
+    ], style={'text-align':'right'}),
 
         # Unterüberschrift
         html.Div([
@@ -230,6 +280,7 @@ app.layout = html.Div(children=[
                              'style': {'maxWidth': '650px', 'color': '#000099', 'margin-left': 'auto',
                                        'margin-right': 'auto', 'text-align': 'center'}})
         ]),
+
 
         # Hauptteil
         html.Div([
@@ -275,35 +326,44 @@ app.layout = html.Div(children=[
         html.Div([
             html.H3(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'right',
                             'color': '#000099'}, children='Wusstest du schon?'),
-
+            html.Br(),
             html.Div('Der älteste Aufzug ist aus dem Jahr {} steht in: {}'.format(aeltesteAufzug_jahr, aeltesteAufzug_ort)),
             html.Div(id='aeltester_aufzug', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
             html.Br(),
-            html.Div('Der neuste Aufzug steht in: '),
-            html.Div(id='neuster_aufzug', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
-            html.Br(),
             html.Div('Die Station mit den meisten Aufzügen steht in: '),
+            #count wie oft eine 'stationnumber' vorkommt, kann dann die mit den meisten dann einer Stadt zugeordnet werden?
             html.Div(id='meisten_aufzüge', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
             html.Br(),
             html.Div('Der Aufzug mit den meinste Ausfällen steht in: '),
+            #count wie oft 'inactive' im Status vorkommt
             html.Div(id='meiste_ausfälle', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
             html.Br(),
-        ], id='wusstest_du_schon', style={'display': 'inline-block', 'text-align': 'right', 'width': '45%', 'margin-right':20}),
+        ], style={'display': 'inline-block', 'text-align': 'right', 'width': '45%', 'margin-right':20, 'vertical-align':'top'}),
 
-        html.Hr(style={'width': 1, 'height': 150, 'display': 'inline-block'}),
+        html.Hr(style={'width': 1, 'height': 200, 'display': 'inline-block'}),
 
         html.Div([
             html.H3(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'left',
                                'color': '#000099'}, children='Aggregierte Werte'),
-            html.Div('Berechnung 1'),
-            html.Br(),
-            html.Div('Berechnung 2'),
-            html.Br(),
-            html.Div('Berechnung 3'),
-            html.Br(),
-            html.Div('Berechnung 4'),
-            html.Br(),
-        ], style={'display': 'inline-block', 'text-align': 'left', 'width': '50%', 'margin-left':20}),
+            html.Div([
+                html.Div('Antriebsart:'),
+                html.Br(), html.Br(), html.Br(), html.Br(),
+                html.Div('Hersteller:'),
+                html.Br(),
+            ], style={'display':'inline-block', 'width': '20%' }),
+            html.Div([
+                html.Div('HYDRAULISCH: [Zahl] Aufzüge'),
+                html.Div('SEIL: [Zahl] Aufzüge'),
+                html.Br(), html.Br(), html.Br(),
+                html.Div('Unternehmen 1: [Zahl] Aufzüge'),
+                html.Div('Unternehmen 2: [Zahl] Aufzüge'),
+                html.Div('Unternehmen 3: [Zahl] Aufzüge')
+
+
+            ], style={'display':'inline-block', 'width': '80%', 'vertical-align':'top'})
+
+
+        ], style={'display': 'inline-block', 'text-align': 'left', 'width': '50%', 'margin-left':20, 'vertical-align':'top'}),
 
         html.Hr(),
 
@@ -314,7 +374,7 @@ app.layout = html.Div(children=[
                 html.H3(style={'margin-right': 'auto', 'text-align': 'left',
                            'color': '#000099'}, children='Funktionieren die Aufzüge an deiner Haltestelle? - Finde es heraus!'),
             ]),
-            html.Div([]),
+
             #linker Teil
             html.Div([
                 html.Div(['Stadt:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
@@ -367,12 +427,12 @@ app.layout = html.Div(children=[
                         html.Div(id='baujahr', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
                         html.Br(), html.Br(),
                     ], style={'width': '80%', 'display': 'inline-block'}),
-
+'''
                 # Tabelle
                 html.Div([
                     dt.DataTable(
                         rows=[{}],
-                        columns=['Datum', 'Status' , 'Erklärung des Status'],
+                        columns=['Datum_Uhrzeit', 'Status' , 'Erklärung des Status'],
                         editable=False,
                         row_selectable=False,
                         filterable=False,
@@ -384,6 +444,7 @@ app.layout = html.Div(children=[
 
                     html.Br(),
                 ])
+'''
 
             ], style={'width': '49%','display': 'inline-block', 'vertical-align':'top'})
          ], style={'margin-left':'20'}),
@@ -414,9 +475,11 @@ app.layout = html.Div(children=[
 
 ], style={'marginTop': '2%', 'marginLeft': '5%', 'marginRight': '5%'})
 
+
 ##########################################################################           #############################################################################################################################################
 ########################################################################## CALLBACKS #############################################################################################################################################
 ##########################################################################           #############################################################################################################################################
+
 
 # Callback Karte aktualisieren
 @app.callback(
@@ -589,45 +652,24 @@ def tabelle_aktualisieren(input_value):
         tabellen_input = pd.DataFrame(list(tabellen_input))
         tabellen_input = tabellen_input[['datetime', 'state', 'stateExplanation']]
         status_tabelle = tabellen_input[::-1]
-        status_tabelle.columns = ['Datum', 'Status' , 'Erklärung des Status']
+        status_tabelle.columns = ['Datum_Uhrzeit', 'Status', 'Erklärung des Status']
 
         return status_tabelle.to_dict('records')
 
     except:
         return [{}]
 
-'''
-#Callback "Wusstest du schon?" aktualisieren
-@app.callback(
-    Output(component_id='aeltester_aufzug', component_property='children'),
-    [Input(component_id='', component_property='' )]
-)
-def aeltester_aufzug_berechnen
-    value = '[stadt] seit [Jahreszahl]'
 
-@app.callback(
-    Output(component_id='neuster_aufzug', component_property='children'),
-    [Input(component_id='', component_property='')]
-)
-def aneuster_aufzug_berechnen
-    value = '[stadt] seit [Jahreszahl]'
-
-
-@app.callback(
-    Output(component_id='meisten_aufzüge', component_property='children'),
-    [Input(component_id='', component_property='')]
-)
-def meisten_aufzüge_berechnen
-    value = '[stadt] [Anzahl]'
-
-@app.callback(
-    Output(component_id='meiste_ausfälle', component_property='children'),
-    [Input(component_id='', component_property='')]
-)
-def meiste_ausfälle_berechnen
-    value = '[stadt]'
-
-'''
+#Seite updaten für den Wechsel zwischen Aufzügen und Rolltreppen
+@app.callback(dash.dependencies.Output('page-content', 'children'),
+              [dash.dependencies.Input('url', 'pathname')])
+def display_page(pathname):
+    if pathname == '/page-aufzuege':
+        return page_aufzuege
+    elif pathname == '/page-rolltreppen':
+        return page_rolltreppen
+    else:
+        return page_aufzuege
 
 
 app.run_server(debug=False, host='0.0.0.0', port='37002')
