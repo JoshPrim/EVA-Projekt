@@ -1,5 +1,6 @@
 .DS_Store
-.idea
+/.idea
 /venv
 /static
 /__pycache__
+/.ipynb_checkpoints
