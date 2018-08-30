@@ -1,0 +1,16 @@
+# base image
+FROM python:3.6
+
+# set working directory
+WORKDIR /usr/src/app
+
+# copy Project to container
+COPY . /usr/src/app
+
+# add and install requirements
+RUN pip install -r requirements.txt
+
+RUN chmod +x entrypoint.sh
+
+
+CMD ["entrypoint.sh"]

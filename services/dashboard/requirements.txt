@@ -1,0 +1,2 @@
+FLASK-SQLAlchemy==2.3.2
+psycopg2==2.7.4

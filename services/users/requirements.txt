@@ -1,0 +1,5 @@
+flask
+pymongo
+FLASK-SQLAlchemy==2.3.2
+psycopg2==2.7.4
+Flask-Testing==0.6.2

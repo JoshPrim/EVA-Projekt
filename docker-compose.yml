@@ -1,0 +1,123 @@
+version: '3.6'
+
+services:
+
+  #elevator-client:
+  #  build:
+  #   context: ./services/fasta-client
+  #   dockerfile: Dockerfile-dev
+  #  volumes:
+  #   - '/home/parot/parot-dev/sandbox/shared/Logs/FaSta/ELEVATOR:/usr/src/app/Logs/FaSta/ELEVATOR/'
+  #   - '/home/parot/development/EvaFlaskMongoDocker/:/usr/src/app/EvaFlaskMongoDocker'
+  #  environment:
+  #   - CLIENT_APP=project/manage.py
+  #   - CLIENT_ENV=development
+  #   - APP_SETTINGS=project.config.DevelopmentConfig
+  #   - MONGO_URL='mongodb://bar#t:downy37)tory@localhost:27018/eva'
+  #   - MONGO_TEST_URL='mongodb://bart:downy37)tory@l#ocalhost:27018/eva-test'
+  #   - FASTA_URL='https://api.deutschebahn.com/fasta/v2/facilities?type=ELEVATOR'
+  #   - LOG_DIR='./Logs/FaSta'
+  #  depends_on:
+  #   - mongo-db
+  #  deploy:
+  #    restart_policy:
+  #      condition: always
+
+  #escalator-client:
+  #  build:
+  #   context: ./services/fasta-client
+  #   dockerfile: Dockerfile-dev
+  #  volumes:
+  #   - '/home/parot/parot-dev/sandbox/shared/Logs/FaSta/ESCALATOR:/usr/src/app/Logs/FaSta/ESCALATOR/'
+  #   - '/home/parot/parot-dev/sandbox/shared/escelator/EVA-Projekt:/usr/src/app/EVA-Projekt'
+  #  environment:
+  #   - API_TYPE=escalator
+  #   - APP_SETTINGS=project.config.DevelopmentConfig
+  #   - MONGO_URL='mongodb://bart:downy37)tory@localhost:27018/eva'
+  #   - FaSta_URL='https://api.deutschebahn.com/fasta/v2/facilities?type=ESCALATOR'
+  #  depends_on:
+  #   - mongo-db
+
+  dashboard:
+    build:
+      context: ./services/dashboard
+      dockerfile: Dockerfile-dev
+      #command: python -u app.py
+    volumes:
+      - './services/dashboard:/usr/src/app'
+    #  - './mnt/db-station.csv:/usr/src/app/:ro'
+    #  - '/etc/group:/etc/group:ro'
+    #  - '/etc/passwd:/etc/passwd:ro'
+    ports:
+      - "5001:5000"
+    environment:
+     - FLASK_APP=project/__init__.py
+     - FLASK_ENV=development
+     - APP_SETTINGS=project.config.DevelopmentConfig
+     - DATABASE_URL=postgres://postgres:postgres@station-db:5432/station_dev
+     - MASTER_DATA=./project/db/db-stations.csv
+    depends_on:
+      - station-db
+
+
+# Databases
+
+  station-db:
+    build:
+      context: ./services/dashboard/project/db
+      dockerfile: Dockerfile
+    ports:
+      - "5435:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  #mongo-db:
+  #  image: 'mongo:latest'
+  #  command: mongod --port 27018
+  #  ports:
+  #    - "27018:27018"
+  #  environment:
+  #    - MONGO_USER=bart
+  #    - MONGO_PASSWORD=downy37)tory
+  #  volumes:
+  #    - '/eva-dev/mnt/mongo/data/configdb:/data/configdb'
+  #    - '/eva-dev/mnt/mongo/data:/data/db'
+  #    - '/etc/group:/etc/group:ro'
+  #    - '/etc/passwd:/etc/passwd:ro'
+  #  network_mode: 'host'
+  #  deploy:
+  #    restart_policy:
+  #      condition: unless-stopped
+
+# Analytical Pipeline
+
+# Testdrive.io Tutorial
+
+ #user:
+ #   build:
+ #     context: ./services/users-tutorial
+ #     dockerfile: Dockerfile-dev
+ #     command: python -u app.py
+ #   volumes:
+ #     - './services/users:/users/src/app'
+ #   ports:
+ #     - "5000:5000"#
+ #   environment:
+ #    - FLASK_APP=project/__init__.py
+ #    - FLASK_ENV=development
+ #    - APP_SETTINGS=project.config.DevelopmentConfig
+ #    - DATABASE_URL=postgres://postgres:postgres@users-db:5432/users_dev
+ #    - DATABASE_TEST_URL=postgres://postgres:postgres@users-db:5432/users_test
+ #   depends_on:
+ #     - users-db
+#
+ # users-db:
+ #   build:
+ #     context: ./services/users-tutorial/project/db
+ #     dockerfile: Dockerfile
+ #   ports:
+ #     - "5435:5432"
+ #   environment:
+ #     - POSTGRES_USER=postgres
+ #     - POSTGRES_PASSWORD=postgres
