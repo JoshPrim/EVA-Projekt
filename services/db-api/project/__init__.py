@@ -32,28 +32,43 @@ class Station(db.Model):
     bundesland = db.Column(db.String(128), nullable=False)
     rb = db.Column(db.String(128), nullable=False)
     bm = db.Column(db.String(128), nullable=False)
-    bfNr = db.Column(db.Integer)
+    bfnr = db.Column(db.Integer, nullable=False)
     station = db.Column(db.String(128), nullable=False)
-    bfDs100Abk = db.Column(db.String(10), nullable=False)
-    katVst = db.Column(db.Integer, nullable=False)
-    strasse = db.Column(db.String(128), nullable=False)
-    plz = db.Column(db.Integer, nullable=False)
-    ort  = db.Column(db.String(128), nullable=False)
-    aufgabenvergeber = db.Column(db.String(128), nullable=False)
+    bfdsabk = db.Column(db.String(10), nullable=False)
+    katvst = db.Column(db.Integer, nullable=False)
+    strasse = db.Column(db.String(128), nullable=True)
+    plz = db.Column(db.Integer, nullable=True)
+    ort  = db.Column(db.String(128), nullable=True)
+    aufgabenvergeber = db.Column(db.String(128), nullable=True)
 
 
-    def __init__(self, bundesland, rb, bm , bfNr, station, bfDs100Abk, katVst, strasse, plz, ort, aufgabenvergeber):
+    def __init__(self, bundesland, rb, bm , bfnr, station, bfdsabk, katvst, strasse, plz, ort, aufgabenvergeber):
         self.bundesland = bundesland
         self.rb = rb
         self.bm = bm
-        self.bfNr =  bfNr
+        self.bfnr =  bfnr
         self.station = station
-        self.bfDs100Abk = bfDs100Abk
-        self.katVst =  katVst
+        self.bfdsabk = bfdsabk
+        self.katvst =  katvst
         self.strasse = strasse
         self.plz = plz
         self.ort = ort
         self.aufgabenvergeber = aufgabenvergeber
+
+    def to_json(self):
+        return {
+          'bundesland':self.bundesland,
+          'rb':self.rb,
+          'bm':self.bm,
+          'bfnr':self.bfnr,
+          'station':self.station,
+          'bfdsabk':self.bfdsabk,
+          'katvst':self.katvst,
+          'strasse':self.strasse,
+          'plz':self.plz,
+          'ort':self.ort,
+          'aufgabenvergeber':self.aufgabenvergeber
+        }
 
 
 # routes
@@ -63,3 +78,14 @@ def ping_pong():
         'status': 'success',
         'message': 'pong!'
     })
+
+# routes
+@app.route('/station', methods=['GET'])
+def get_all_stations():
+    response_object = {
+        'status': 'success',
+        'data': {
+            'station': [station.to_json() for station in Station.query.all()]
+        }
+    }
+    return jsonify(response_object), 200

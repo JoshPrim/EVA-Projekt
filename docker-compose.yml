@@ -40,11 +40,11 @@ services:
 
   dashboard:
     build:
-      context: ./services/dashboard
+      context: ./services/db-api
       dockerfile: Dockerfile-dev
       #command: python -u app.py
     volumes:
-      - './services/dashboard:/usr/src/app'
+      - './services/db-api:/usr/src/app'
     #  - './mnt/db-station.csv:/usr/src/app/:ro'
     #  - '/etc/group:/etc/group:ro'
     #  - '/etc/passwd:/etc/passwd:ro'
@@ -64,7 +64,7 @@ services:
 
   station-db:
     build:
-      context: ./services/dashboard/project/db
+      context: ./services/db-api/project/db
       dockerfile: Dockerfile
     ports:
       - "5435:5432"
