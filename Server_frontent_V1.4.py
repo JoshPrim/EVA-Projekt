@@ -160,12 +160,25 @@ aufzüge = aufzüge.drop(0)
 aufzüge['Equipment'] = aufzüge['Equipment'].astype(str).astype('int64')
 
 
+####################################
+######   Wusstest du schon?   ######
+####################################
 
+# Ältester Aufzug
 aeltesteAufzug_datensatz = aufzüge[aufzüge['Baujahr'] == int(aufzüge['Baujahr'].min())]
 
 aeltesteAufzug_ort = aeltesteAufzug_datensatz['Ort'].values[0]
 aeltesteAufzug_jahr = int(aeltesteAufzug_datensatz['Baujahr'].values[0])
 
+# Station mit den meisten Aufzügen
+uniquelist_orte = aufzüge['Ort'].unique()
+
+df_anzahlProStation = pd.DataFrame(columns=['Ort', 'Anzahl_Aufzüge'])
+
+for i in uniquelist_orte:
+    tmp = len(aufzüge[aufzüge['Ort'] == i])
+    df_anzahlProStation.loc[i] = i,tmp
+df_anzahlProStation = df_anzahlProStation.sort_values(by=['Anzahl_Aufzüge'], ascending=False)
 
 ####################################
 ######         Karte          ######
@@ -197,8 +210,19 @@ geolocator = Nominatim(user_agent="Eva_Dashboard")
 ######   Aggregierte Werte    ######
 ####################################
 
+# Anzahl Antriebsart
 anzahl_seilAufzüge = len(aufzüge[aufzüge['ANTRIEBSART'] == 'SEIL'])
 anzahl_hydraulischAufzüge = len(aufzüge[aufzüge['ANTRIEBSART'] == 'HYDRAULISCH'])
+
+# Top Hersteller
+uniquelist_hersteller = aufzüge['Hersteller'].unique()
+
+df_anzahlAufzüge = pd.DataFrame(columns=['Hersteller', 'Anzahl_Aufzüge'])
+
+for i in uniquelist_hersteller:
+    tmp = len(aufzüge[aufzüge['Hersteller'] == i])
+    df_anzahlAufzüge.loc[i] = i,tmp
+df_anzahlAufzüge = df_anzahlAufzüge.sort_values(by=['Anzahl_Aufzüge'], ascending=False)
 
 
 ####################################
@@ -329,7 +353,7 @@ page_aufzuege = html.Div(children=[
             html.Div('Der älteste Aufzug ist aus dem Jahr {} steht in: {}'.format(aeltesteAufzug_jahr, aeltesteAufzug_ort)),
             html.Div(id='aeltester_aufzug', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
             html.Br(),
-            html.Div('Die Station mit den meisten Aufzügen steht in: '),
+            html.Div('Die Station mit den meisten Aufzügen ist: {} mit {} Aufzügen'.format(df_anzahlProStation['Ort'].iloc[0], df_anzahlProStation['Anzahl_Aufzüge'].iloc[0])),
             #count wie oft eine 'stationnumber' vorkommt, kann dann die mit den meisten dann einer Stadt zugeordnet werden?
             html.Div(id='meisten_aufzüge', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
             html.Br(),
@@ -347,16 +371,16 @@ page_aufzuege = html.Div(children=[
             html.Div([
                 html.Div('Antriebsart:'),
                 html.Br(), html.Br(), html.Br(), html.Br(),
-                html.Div('Hersteller:'),
+                html.Div('Top Hersteller:'),
                 html.Br(),
             ], style={'display':'inline-block', 'width': '20%' }),
             html.Div([
-                html.Div('HYDRAULISCH: [Zahl] Aufzüge'),
-                html.Div('SEIL: [Zahl] Aufzüge'),
+                html.Div('HYDRAULISCH: {} Aufzüge'.format(anzahl_hydraulischAufzüge)),
+                html.Div('SEIL: {} Aufzüge'.format(anzahl_seilAufzüge)),
                 html.Br(), html.Br(), html.Br(),
-                html.Div('Unternehmen 1: [Zahl] Aufzüge'),
-                html.Div('Unternehmen 2: [Zahl] Aufzüge'),
-                html.Div('Unternehmen 3: [Zahl] Aufzüge')
+                html.Div('{}: {} Aufzüge'.format(df_anzahlAufzüge['Hersteller'].iloc[0], df_anzahlAufzüge['Anzahl_Aufzüge'].iloc[0])),
+                html.Div('{}: {} Aufzüge'.format(df_anzahlAufzüge['Hersteller'].iloc[1], df_anzahlAufzüge['Anzahl_Aufzüge'].iloc[1])),
+                html.Div('{}: {} Aufzüge'.format(df_anzahlAufzüge['Hersteller'].iloc[2], df_anzahlAufzüge['Anzahl_Aufzüge'].iloc[2]))
 
 
             ], style={'display':'inline-block', 'width': '80%', 'vertical-align':'top'})
@@ -671,6 +695,8 @@ def display_page(pathname):
     else:
         return page_aufzuege
 
+if sys.version_info < (3, 0):
+    sys.exit("Dieses Programm erfordert Python 3.0 und höher")
 
 app.run_server(debug=False, host='0.0.0.0', port='37002')
 
