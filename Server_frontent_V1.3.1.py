@@ -194,6 +194,14 @@ active = elevators[elevators['state'] == 'ACTIVE']
 geolocator = Nominatim(user_agent="Eva_Dashboard")
 
 ####################################
+######   Aggregierte Werte    ######
+####################################
+
+anzahl_seilAufzüge = len(aufzüge[aufzüge['ANTRIEBSART'] == 'SEIL'])
+anzahl_hydraulischAufzüge = len(aufzüge[aufzüge['ANTRIEBSART'] == 'HYDRAULISCH'])
+
+
+####################################
 ######        APP             ######
 ####################################
 
