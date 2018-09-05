@@ -215,29 +215,19 @@ auth = dash_auth.BasicAuth(
 # that we might be doing something wrong. In this case, we're adding the elements through a callback, so we can ignore the exception.
 app.config.suppress_callback_exceptions = True
 
-#######################################
-#######################################
-#######################################
-#######################################
-#######################################
-#######################################
-#######################################
-#######################################
+###########################################################################################################
+###########################################################################################################
+#######################################                             #######################################
+####################################### 2. Seite für Rolltreppen    #######################################
+#######################################                             #######################################
+###########################################################################################################
+###########################################################################################################
+
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div(id='page-content'),
     html.Div(dt.DataTable(rows=[{}]), style={'display': 'none'})
 ])
-
-#######################################
-#######################################
-#######################################
-#######################################
-#######################################
-#######################################
-#######################################
-#######################################
-
 
 page_rolltreppen = html.Div([
     html.H1('Page Rolltreppen'),
@@ -246,16 +236,14 @@ page_rolltreppen = html.Div([
 
 ])
 
-
-
-#######################################
-#######################################
-#######################################
-#######################################
-#######################################
-#######################################
-#######################################
-#######################################
+#####################################################################################################################
+#####################################################################################################################
+#####################################################################################################################
+#####################################################################################################################
+#####################################################################################################################
+#####################################################################################################################
+#####################################################################################################################
+#####################################################################################################################
 
 page_aufzuege = html.Div(children=[
 
@@ -264,10 +252,6 @@ page_aufzuege = html.Div(children=[
         html.H1(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'center', 'width': '15em'},
             children='EVA Dashboard'),
             ]),
-
-    html.Div([
-        dcc.Link('Go to Page Rolltreppen', href='/page-rolltreppen')
-    ], style={'text-align':'right'}),
 
         # Unterüberschrift
         html.Div([
@@ -283,44 +267,49 @@ page_aufzuege = html.Div(children=[
                                        'margin-right': 'auto', 'text-align': 'center'}})
         ]),
 
+        html.Div([
+                dcc.Link('Go to Page Rolltreppen', href='/page-rolltreppen')
+        ], style={'text-align':'right'}),
 
         # Hauptteil
         html.Div([
+
             #Diagramme
-            html.Div([ dcc.Graph(
-            id='diagramm_status',
-            figure={
-                'data': [
-                    {'x': ['aktiv', 'inaktiv', 'keine Information'], 'y': [stateCountACTIVE, stateCountINACTIVE, stateCountUNKNOWN], 'type': 'bar', 'name': 'Aufzüge',
-                     'marker': dict(color=['green', 'red', 'orange'])
-                     },
-                ],
-                'layout': {
-                    'title': 'Die Aufzüge im Überblick',
-                    'width': '35%',
-                    'align': 'left'
+            html.Div([], style={'width':'10%', 'display': 'inline-block', 'vertical-align':'top'}),
+            html.Div([
+                html.Div([ dcc.Graph(
+                id='diagramm_status',
+                figure={
+                    'data': [
+                        {'x': ['aktiv', 'inaktiv', 'keine Information'], 'y': [stateCountACTIVE, stateCountINACTIVE, stateCountUNKNOWN], 'type': 'bar', 'name': 'Aufzüge',
+                         'marker': dict(color=['green', 'red', 'orange'])
+                         },
+                    ],
+                    'layout': {
+                        'title': 'Die Aufzüge im Überblick',
+                        'width': '35%',
+                        'align': 'left'
+                    }
                 }
-            }
-            )], style={'width': '35%', 'text-align': 'left', 'display': 'inline-block', 'padding-top': 10, 'padding-left': 140, 'padding-bottom': 10 }),
+                )], style={'width': '40%', 'display': 'inline-block', 'padding-top': 10, 'padding-bottom': 10}),
 
-            html.Div([ dcc.Graph(
-            id='diagramm_inaktive',
-            figure={
-                'data': [
-                    {'values': value_array, 'type': 'pie', 'name': 'GründeInaktivität',
-                     'marker': dict(colors=['#DCDCDC', '#778899', '#C0C0C0']), 'labels': key_array
-                     },
-                ],
-                'layout': {
-                    'title': 'Gründe für Inaktivität',
-                    'width': '35%',
-                    'align': 'right'
-
+                html.Div([ dcc.Graph(
+                id='diagramm_inaktive',
+                figure={
+                    'data': [
+                        {'values': value_array, 'type': 'pie', 'name': 'GründeInaktivität',
+                         'marker': dict(colors=['#DCDCDC', '#778899', '#C0C0C0']), 'labels': key_array
+                         },
+                    ],
+                    'layout': {
+                        'title': 'Gründe für Inaktivität',
+                        'width': '35%',
+                        'align': 'right'
+                    }
                 }
-            }
-            )],
-            style={'width': '40%', 'text-align': 'right', 'display': 'inline-block', 'padding-left': 10, 'padding-bottom': 10}),
-
+                )],
+                style={'width': '40%', 'display': 'inline-block', 'padding-left': 10, 'padding-bottom': 10}),
+            ], style={'width':'90%', 'margin':'auto', 'display': 'inline-block', 'vertical-align':'top'}),
             html.Hr(),
 
         #mittleres Drittel: "Wusstest du schon?", aggregierte Werte etc.

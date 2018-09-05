@@ -26,6 +26,7 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_table_experiments as dt
 from dash.dependencies import Input, Output
 import flask
 import dash_auth
@@ -53,7 +54,7 @@ import pgdb
 
 print('Fasta Server initialisiert!')
 
-def getDesiredState(listWithStates: list, state: str):
+def getDesiredState(listWithStates, state):
     stateCounter = 0
 
     for i in listWithStates:
@@ -64,7 +65,7 @@ def getDesiredState(listWithStates: list, state: str):
     return stateCounter
 
 
-def getDesiredStateExplanation(listWithStates: list, state: str, stateExplanation: str):
+def getDesiredStateExplanation(listWithStates, state, stateExplanation):
     stateExpressionCounter = 0
 
     for i in listWithStates:
@@ -143,7 +144,6 @@ tmp2 = []
 for key, value in dictStateExplanationReason.items():
     tmp1.append(key)
     tmp2.append(value)
-    
 
 ####################################
 ######        APP             ######
@@ -154,7 +154,6 @@ VALID_USERNAME_PASSWORD_PAIRS = [
     ['Josh', '1234'],
     ['Sophie', '1234']
 ]
-
 server = flask.Flask('EVA Dashboard')
 app = dash.Dash('EVA Dashboard', server=server)
 app.title = 'EVA Dashboard'
@@ -162,7 +161,6 @@ auth = dash_auth.BasicAuth(
      app,
      VALID_USERNAME_PASSWORD_PAIRS
 )
-
 app.layout = html.Div(children=[
 
     # Überschrift
@@ -171,15 +169,12 @@ app.layout = html.Div(children=[
             children='EVA Dashboard'),
             ]),
 
-
-        # Beschreibung
+        # Unterüberschrift
         html.Div([
             html.Hr(),
 
             html.H1(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'center', 'width': '10em',
                            'color': '#000099'}, children='Der Aufzugwächter'),
-
-
             dcc.Markdown('''
                 **Informationen rund um Aufzüge und Rolltreppen in Bahnhöfen der DB Station & Service AG**
                 '''.replace('  ', ''), className='beschreibung',
@@ -188,12 +183,9 @@ app.layout = html.Div(children=[
                                        'margin-right': 'auto', 'text-align': 'center'}})
         ]),
 
-
-
-        # Übersicht
+        # Hauptteil
         html.Div([
-
-
+            #Diagramme
             html.Div([ dcc.Graph(
             id='diagramm_status',
             figure={
@@ -206,7 +198,6 @@ app.layout = html.Div(children=[
                     'title': 'Die Aufzüge im Überblick',
                     'width': '35%',
                     'align': 'left'
-
                 }
             }
             )], style={'width': '35%', 'text-align': 'left', 'display': 'inline-block', 'padding-top': 10, 'padding-left': 140, 'padding-bottom': 10 }),
@@ -231,7 +222,8 @@ app.layout = html.Div(children=[
 
             html.Hr(),
 
-
+        #mittleres Drittel, aggregierte Werte etc.
+        html.Div([]),
         html.Div([
             html.H3(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'left',
                             'color': '#000099'}, children='Wusstest du schon?'),
@@ -243,12 +235,10 @@ app.layout = html.Div(children=[
             html.Div('Der Bahnhof mit den meisten Aufzügen steht in:[stadt]'),
             html.Br(),
             html.Div('Der Aufzug mit den meinste Ausfällen steht in:[stadt]'),
-
+            html.Br(),
         ], style={'display': 'inline-block', 'text-align': 'left', 'margin-left': 50}),
 
-        html.Hr(style={'width': 1, 'height': 200, 'display': 'inline-block', 'margin-left': 190}),
-
-
+        html.Hr(style={'width': 1, 'height': 150, 'display': 'inline-block', 'margin-left': 190}),
         html.Div([
             html.H3(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'left',
                                'color': '#000099'}, children='Aggregierte Werte'),
@@ -260,32 +250,99 @@ app.layout = html.Div(children=[
             html.Div('Berechnung 3'),
             html.Br(),
             html.Div('Berechnung 4'),
+            html.Br(),
 
         ], style={'display': 'inline-block', 'text-align': 'left', 'margin-left': 100}),
 
         html.Hr(),
 
-
-        html.H3(style={'margin-left': 'auto', 'margin-right': 'auto', 'text-align': 'left',
-                           'color': '#000099'}, children='Karte'),
-            
+        #unteres Drittel
         html.Div([
-            html.Div('Stadt eingeben:  '),
-            dcc.Input(id='karte_input', value='1', type='text'),
-            html.Br()
-        ]),
-               
-        html.Iframe(id='karte', srcDoc = open('map_inactive_elivators.html', 'r').read(), style={'width':'100%', 'height':'50em'}),
-        
+            #Titel
+            html.Div([
+                html.H3(style={'margin-right': 'auto', 'text-align': 'left',
+                           'color': '#000099'}, children='Funktionieren die Aufzüge an deiner Haltestelle? - Finde es heraus!'),
+            ]),
+            html.Div([]),
+            #linker Teil
+            html.Div([
+                html.Div(['Stadt:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                dcc.Input(id='karte_input', value='', type='text', style={'margin-left': '5', 'margin-right': 'auto', 'display': 'inline-block'}),
+                html.Div(['Bundesland:  '], style={'margin-left': '15', 'margin-right': 'auto', 'display': 'inline-block'}),
+                dcc.Input(value='Hessen', type='text', style={'margin-left': '5', 'margin-right': 'auto', 'display': 'inline-block'}),
+                html.Br(),
+                html.Iframe(id='karte', srcDoc=open('map_inactive_elivators.html', 'r').read(),
+                            style={'width': '90%', 'height': '30em'})
+            ], style={'width': '49%', 'display': 'inline-block'}),
+
+            #rechter Teil
+            html.Div([
+                html.Br(), html.Br(),
+                html.Div(['Aufzug-ID:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                dcc.Input(value='', type='text',
+                          style={'margin-left': '5', 'margin-right': 'auto', 'display': 'inline-block'}),
+                html.Br(),
+                html.Hr(),
+                html.Div(['Stationsnummer:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                html.Div(id='stationsnummer', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                html.Br(), html.Br(),
+                html.Div(['Ort:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                html.Div(id='ort', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                html.Br(), html.Br(),
+                html.Div(['Beschreibung:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                html.Div(id='beschreibung', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                html.Br(), html.Br(),
+                html.Div(['Hersteller:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                html.Div(id='hersteller', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                html.Br(), html.Br(),
+                html.Div(['Baujahr:  '], style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                html.Div(id='baujahr', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
+                html.Br(), html.Br(),
+
+                # Tabelle
+                html.Div([
+                    dt.DataTable(
+                        rows=['xyz'],
+                        columns=['123', '456'],
+                        editable=False,
+                        row_selectable=False,
+                        filterable=False,
+                        sortable=False,
+                        id='datatable-status',
+                        min_height=250
+                    ),
+
+                    html.Br(),
+                ])
+
+            ], style={'width': '49%','display': 'inline-block', 'vertical-align':'top'})
+         ], style={'margin-left':'20'}),
+
+        ], style = {'background-color': '#E6E6FA'}),
 
 
-        ], style = {'background-color': '#E6E6FA'}
-        )
+    #Fußzeile
+    html.Div([ ], style={'height':70}),
+    html.Hr(),
+    html.Div([
 
+        dcc.Markdown(''' 
+                **THM Friedberg**
+                '''.replace('  ', ''), className='beschreibung',
+                     containerProps={
+                         'style': {'maxWidth': '650px', 'color': '#000000', 'margin-left': 'auto',
+                                   'margin-right': 'auto', 'text-align': 'center'}}),
+
+        dcc.Markdown(''' 
+                **Sophie Hagemann, Philipp Krenitz, Bartos Mosch, Joshua Prim**
+                '''.replace('  ', ''), className='beschreibung',
+                         containerProps={
+                             'style':{'maxWidth': '650px', 'color': '#000000', 'margin-left': 'auto',
+                                       'margin-right': 'auto', 'text-align': 'center'}})
+    ], style={'height':70}),
 
 
 ], style={'marginTop': '2%', 'marginLeft': '5%', 'marginRight': '5%'})
-
 
 ##########################################################################           #############################################################################################################################################
 ########################################################################## CALLBACKS #############################################################################################################################################
@@ -300,8 +357,6 @@ def karte_aktualisieren(input_value):
         return open('map_inactive_elivators_FFM.html', 'r').read()
     else:
         return open('map_inactive_elivators.html', 'r').read()
-
-
 
 
 app.run_server(debug=False, host='0.0.0.0', port='37002')
