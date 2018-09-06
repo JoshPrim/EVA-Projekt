@@ -1,13 +1,13 @@
 # base image
-FROM python:3.6.5
+FROM python:latest
 
 # install dependencies
-#RUN apk update && \
-#    apk add --virtual build-deps gcc python-dev musl-dev && \
-#RUN  apt-get install netcat-openbsd
+RUN apt-get update && \
+    apt-get install netcat-openbsd
 
 # set working directory
 WORKDIR /usr/src/app
+
 
 # copy Project to container
 COPY . /usr/src/app

@@ -6,16 +6,17 @@ import pymongo
 import os
 from project.api.FaSta_Client import FaSta_Request
 
-
 def startRequests():
     while True:
+        mongo_uri = os.getenv('MONGO_URL')
+        print(mongo_uri)
+        client = pymongo.MongoClient(os.getenv(mongo_uri))
 
-        client = pymongo.MongoClient(os.getenv('MONGO_URL'))
         dbeva = client.eva
         facilities = dbeva.facilities
 
         # print("hello world")
-        request =   FaSta_Request('d16d67e35458c895f557696799eb4e8f').request()
+        request =   FaSta_Request('d16d67e35458c895f557696799eb4e8f').getFacilites()
 
         for api_item in range(len(request)):
 

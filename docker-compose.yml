@@ -2,39 +2,35 @@ version: '3.6'
 
 services:
 
-  #elevator-client:
-  #  build:
-  #   context: ./services/fasta-client
-  #   dockerfile: Dockerfile-dev
-  #  volumes:
-  #   - '/home/parot/parot-dev/sandbox/shared/Logs/FaSta/ELEVATOR:/usr/src/app/Logs/FaSta/ELEVATOR/'
-  #   - '/home/parot/development/EvaFlaskMongoDocker/:/usr/src/app/EvaFlaskMongoDocker'
-  #  environment:
-  #   - CLIENT_APP=project/manage.py
-  #   - CLIENT_ENV=development
-  #   - APP_SETTINGS=project.config.DevelopmentConfig
-  #   - MONGO_URL='mongodb://bar#t:downy37)tory@localhost:27018/eva'
-  #   - MONGO_TEST_URL='mongodb://bart:downy37)tory@l#ocalhost:27018/eva-test'
-  #   - FASTA_URL='https://api.deutschebahn.com/fasta/v2/facilities?type=ELEVATOR'
-  #   - LOG_DIR='./Logs/FaSta'
-  #  depends_on:
-  #   - mongo-db
-  #  deploy:
-  #    restart_policy:
-  #      condition: always
+  elevator-client:
+    build:
+     context: ./services/fasta-client
+     dockerfile: Dockerfile-dev
+    volumes:
+     - '/home/parot/eva-dev/mnt/logs/elevator:/usr/src/app/logs/elevator/'
+    # - './services/fasta-client:/usr/src/app'
+    environment:
+     - API_TYPE=elevator
+     - APP_SETTINGS=project.config.DevelopmentConfig
+     - MONGO_URL=mongodb://bart:downy37)tory@localhost:27018/local
+     - FASTA_URL=https://api.deutschebahn.com/fasta/v2/facilities?type=ELEVATOR
+     - LOG_DIR=./logs/elevator/
+    depends_on:
+     - mongo-db
 
   escalator-client:
     build:
      context: ./services/fasta-client
      dockerfile: Dockerfile-dev
     volumes:
-     - '/home/parot/eva-dev/mnt/Logs/escalator:/usr/src/app/Logs/FaSta/escalator/'
+     - '/home/parot/eva-dev/mnt/logs/escalator:/usr/src/app/logs/escalator/'
     # - './services/fasta-client:/usr/src/app'
     environment:
      - API_TYPE=escalator
      - APP_SETTINGS=project.config.DevelopmentConfig
-     - MONGO_URL='mongodb://bart:downy37)tory@localhost:27018/admin'
-     - FaSta_URL='https://api.deutschebahn.com/fasta/v2/facilities?type=ESCALATOR'
+     - MONGO_URL=mongodb://bart:downy37)tory@localhost:27018/local
+     - FASTA_URL=https://api.deutschebahn.com/fasta/v2/facilities?type=ESCALATOR
+     - LOG_DIR=./logs/escalator/
     depends_on:
      - mongo-db
 
@@ -97,7 +93,7 @@ services:
  #     dockerfile: Dockerfile-dev
  #     command: python -u app.py
  #   volumes:
- #     - './services/users:/users/src/app'
+ #     - './services/users:/users/project/app'
  #   ports:
  #     - "5000:5000"#
  #   environment:

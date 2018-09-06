@@ -14,8 +14,8 @@ class FaSta_Request():
 
     def create_log_directories(self):
         #  date_n_time = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d_%H-%M-%S')
-        if not os.path.exists(os.path.abspath('./Logs')):
-            os.mkdir(os.path.abspath('./Logs'))
+        if not os.path.exists(os.path.abspath(self.LOG_DIR)):
+            os.mkdir(os.path.abspath(self.LOG_DIR))
 
         if not os.path.exists(os.path.abspath(self.LOG_DIR)):
             os.makedirs(os.path.abspath(self.LOG_DIR))
@@ -30,6 +30,7 @@ class FaSta_Request():
         # Request an die FaSta API
         try:
             url = self.FASTA_URL
+            print(url)
             headers = {'Accept': 'application/json', 'Authorization': self.api_key}
 
             response = requests.get(url, headers=headers)
