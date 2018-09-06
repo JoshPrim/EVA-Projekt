@@ -23,29 +23,29 @@ services:
   #    restart_policy:
   #      condition: always
 
-  #escalator-client:
-  #  build:
-  #   context: ./services/fasta-client
-  #   dockerfile: Dockerfile-dev
-  #  volumes:
-  #   - '/home/parot/parot-dev/sandbox/shared/Logs/FaSta/ESCALATOR:/usr/src/app/Logs/FaSta/ESCALATOR/'
-  #   - '/home/parot/parot-dev/sandbox/shared/escelator/EVA-Projekt:/usr/src/app/EVA-Projekt'
-  #  environment:
-  #   - API_TYPE=escalator
-  #   - APP_SETTINGS=project.config.DevelopmentConfig
-  #   - MONGO_URL='mongodb://bart:downy37)tory@localhost:27018/eva'
-  #   - FaSta_URL='https://api.deutschebahn.com/fasta/v2/facilities?type=ESCALATOR'
-  #  depends_on:
-  #   - mongo-db
+  escalator-client:
+    build:
+     context: ./services/fasta-client
+     dockerfile: Dockerfile-dev
+    volumes:
+     - '/home/parot/eva-dev/mnt/Logs/escalator:/usr/src/app/Logs/FaSta/escalator/'
+    # - './services/fasta-client:/usr/src/app'
+    environment:
+     - API_TYPE=escalator
+     - APP_SETTINGS=project.config.DevelopmentConfig
+     - MONGO_URL='mongodb://bart:downy37)tory@localhost:27018/admin'
+     - FaSta_URL='https://api.deutschebahn.com/fasta/v2/facilities?type=ESCALATOR'
+    depends_on:
+     - mongo-db
 
   dashboard:
     build:
       context: ./services/db-api
       dockerfile: Dockerfile-dev
       #command: python -u app.py
+    restart: always
     volumes:
       - './services/db-api:/usr/src/app'
-    #  - './mnt/db-station.csv:/usr/src/app/:ro'
     #  - '/etc/group:/etc/group:ro'
     #  - '/etc/passwd:/etc/passwd:ro'
     ports:
@@ -59,7 +59,6 @@ services:
     depends_on:
       - station-db
 
-
 # Databases
 
   station-db:
@@ -72,23 +71,21 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
 
-  #mongo-db:
-  #  image: 'mongo:latest'
-  #  command: mongod --port 27018
-  #  ports:
-  #    - "27018:27018"
-  #  environment:
-  #    - MONGO_USER=bart
-  #    - MONGO_PASSWORD=downy37)tory
-  #  volumes:
-  #    - '/eva-dev/mnt/mongo/data/configdb:/data/configdb'
-  #    - '/eva-dev/mnt/mongo/data:/data/db'
-  #    - '/etc/group:/etc/group:ro'
-  #    - '/etc/passwd:/etc/passwd:ro'
-  #  network_mode: 'host'
-  #  deploy:
-  #    restart_policy:
-  #      condition: unless-stopped
+  mongo-db:
+    image: 'mongo:latest'
+    command: mongod --port 27017
+    restart: unless-stopped
+    ports:
+      - "27027:27017"
+      - "28028:28018"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=bart
+      - MONGO_INITDB_ROOT_PASSWORD=downy37)tory
+    volumes:
+      - '/eva-dev/mnt/mongo/data/configdb:/data/configdb'
+      - '/eva-dev/mnt/mongo/data:/data/db'
+      #- '/etc/group:/etc/group:ro'
+      #- '/etc/passwd:/etc/passwd:ro'
 
 # Analytical Pipeline
 

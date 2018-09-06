@@ -1,5 +1,5 @@
 import os
-
+from project import app, db
 
 class BaseConfig:
     """Base configuration"""
@@ -11,6 +11,7 @@ class DevelopmentConfig(BaseConfig):
     """Development configuration"""
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     MASTER_DATA = os.environ.get('MASTER_DATA')
+
 
 class TestingConfig(BaseConfig):
     """Testing configuration"""
