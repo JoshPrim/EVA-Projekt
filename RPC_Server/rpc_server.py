@@ -89,6 +89,6 @@ if __name__ == "__main__":
     t.start()
     print('Datenaufbereitungsthread erfolgreich gestartet')
 
-    print('Start des RPC Servers')
+    print('Start des RPC Servers: localhost:37005')
     server = ThreadedServer(MyService, port = 37005)
     server.start()

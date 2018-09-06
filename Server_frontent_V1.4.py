@@ -421,7 +421,7 @@ page_aufzuege = html.Div(children=[
                     ],
                     value='inaktiv', style={'margin-left':10}
                 ),
-                html.Iframe(id='karte', srcDoc=open('map_inactive_elivators.html', 'r').read(),
+                html.Iframe(id='karte', srcDoc=open('./Maps/map_inactive_elivators.html', 'r').read(),
                             style={'width': '90%', 'height': '30em'})
             ], style={'width': '49%', 'display': 'inline-block'}),
 
@@ -537,11 +537,11 @@ def karte_aktualisieren(input_stadt, input_bland, radio_button):
                                   popup = tmp,
                                  icon=folium.Icon(color='green', icon='info-sign')).add_to(m)
 
-            m.save('map_active_elivators.html')
-            return open('map_active_elivators.html', 'r').read()
+            m.save('./Maps/map_active_elivators.html')
+            return open('./Maps/map_active_elivators.html', 'r').read()
         
         except:    
-            return open('map_active_elivators_FFM.html', 'r').read()
+            return open('./Maps/map_active_elivators_FFM.html', 'r').read()
 
     elif radio_button == 'inaktiv':
         try: 
@@ -559,11 +559,11 @@ def karte_aktualisieren(input_stadt, input_bland, radio_button):
                                   popup = tmp,
                                  icon=folium.Icon(color='red', icon='info-sign')).add_to(m)
 
-            m.save('map_inactive_elivators.html')
-            return open('map_inactive_elivators.html', 'r').read()
+            m.save('./Maps/map_inactive_elivators.html')
+            return open('./Maps/map_inactive_elivators.html', 'r').read()
         
         except:    
-            return open('map_inactive_elivators_FFM.html', 'r').read()
+            return open('./Maps/map_inactive_elivators_FFM.html', 'r').read()
 
     else:
         try: 
@@ -590,11 +590,11 @@ def karte_aktualisieren(input_stadt, input_bland, radio_button):
                                   popup = tmp,
                                  icon=folium.Icon(color='red', icon='info-sign')).add_to(m)
 
-            m.save('map_both_elivators.html')
-            return open('map_both_elivators.html', 'r').read()
+            m.save('./Maps/map_both_elivators.html')
+            return open('./Maps/map_both_elivators.html', 'r').read()
         
         except:    
-            return open('map_inactive_elivators_FFM.html', 'r').read()
+            return open('./Maps/map_inactive_elivators_FFM.html', 'r').read()
 
 
 # Callback Stationsname aktualisieren
