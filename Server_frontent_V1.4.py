@@ -40,6 +40,7 @@ from types import *
 import pandas as pd
 import numpy as np
 from pandas import DataFrame
+import rpyc
 
 import sys
 sys.path.append('./Clients')
@@ -225,6 +226,12 @@ for i in uniquelist_hersteller:
 df_anzahlAufzüge = df_anzahlAufzüge.sort_values(by=['Anzahl_Aufzüge'], ascending=False)
 
 
+# Aufälle gesamt
+proxy = rpyc.connect('localhost', 37005, config={'allow_public_attrs': True})
+
+aufzug_aggregiert, anzahl_aggregiert = proxy.root.anzahlAusfälle()
+
+
 ####################################
 ######        APP             ######
 ####################################
@@ -357,7 +364,7 @@ page_aufzuege = html.Div(children=[
             #count wie oft eine 'stationnumber' vorkommt, kann dann die mit den meisten dann einer Stadt zugeordnet werden?
             html.Div(id='meisten_aufzüge', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
             html.Br(),
-            html.Div('Der Aufzug mit den meinste Ausfällen steht in: '),
+            html.Div('Der Aufzug mit den meinste Ausfällen ist {} mit {} Ausfällen'.format(aufzug_aggregiert, anzahl_aggregiert)),
             #count wie oft 'inactive' im Status vorkommt
             html.Div(id='meiste_ausfälle', style={'margin-left': 'auto', 'margin-right': 'auto', 'display': 'inline-block'}),
             html.Br(),
