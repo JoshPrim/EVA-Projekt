@@ -882,11 +882,11 @@ def karte_aktualisieren(input_stadt, input_bland, radio_button):
                                   popup=tmp,
                                   icon=folium.Icon(color='green', icon='info-sign')).add_to(m)
 
-            m.save('map_active_escalators.html')
-            return open('map_active_escalators.html', 'r').read()
+            m.save('./Maps/map_active_escalators.html')
+            return open('./Maps/map_active_escalators.html', 'r').read()
 
         except:
-            return open('map_active_escalators_FFM.html', 'r').read()
+            return open('./Maps/map_active_escalators_FFM.html', 'r').read()
 
     elif radio_button == 'inaktiv':
         try:
@@ -904,11 +904,11 @@ def karte_aktualisieren(input_stadt, input_bland, radio_button):
                                   popup=tmp,
                                   icon=folium.Icon(color='red', icon='info-sign')).add_to(m)
 
-            m.save('map_inactive_escalators.html')
-            return open('map_inactive_escalators.html', 'r').read()
+            m.save('./Maps/map_inactive_escalators.html')
+            return open('./Maps/map_inactive_escalators.html', 'r').read()
 
         except:
-            return open('map_inactive_escalators_FFM.html', 'r').read()
+            return open('./Maps/map_inactive_escalators_FFM.html', 'r').read()
 
     else:
         try:
@@ -935,11 +935,11 @@ def karte_aktualisieren(input_stadt, input_bland, radio_button):
                                   popup=tmp,
                                   icon=folium.Icon(color='red', icon='info-sign')).add_to(m)
 
-            m.save('map_both_escalators.html')
-            return open('map_both_escalators.html', 'r').read()
+            m.save('./Maps/map_both_escalators.html')
+            return open('./Maps/map_both_escalators.html', 'r').read()
 
         except:
-            return open('map_inactive_escalators_FFM.html', 'r').read()
+            return open('./Maps/map_inactive_escalators_FFM.html', 'r').read()
 ######################################################################################################
 
 # Callback Stationsname aktualisieren
@@ -965,7 +965,7 @@ def stationsname_aktualisieren(input_value):
 def hersteller_aktualisieren(input_value):
     try:
         aufzug = aufzüge[aufzüge['Equipment'] == int(input_value)]
-        attribute = aufzug['Standort Equipment'].values
+        attribute = aufzug['Hersteller'].values
         return attribute[0]
 
     except:
@@ -980,7 +980,7 @@ def hersteller_aktualisieren(input_value):
 def beschreibung_aktualisieren(input_value):
     try:
         tmp3 = aufzüge[aufzüge['Equipment'] == int(input_value)]
-        attribute = tmp3['Hersteller'].values
+        attribute = tmp3['Standort Equipment'].values
         return attribute[0]
 
     except:
