@@ -54,7 +54,7 @@ class FaSta_Request():
             for i in range(len(json_response)):
                 json_response[i]["datetime"] = date_n_time
 
-            print(json_response)
+            #print(json_response)
 
             return json_response
 

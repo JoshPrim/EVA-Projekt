@@ -28,6 +28,8 @@ def init_db():
         cursor.copy_expert(cmd, f)
         conn.commit()
 
+
+
 if __name__ == '__main__':
     db.create_all()
     init_db()

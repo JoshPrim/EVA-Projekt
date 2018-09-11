@@ -16,7 +16,7 @@
 #    _items = db.tododb.find()
 #    items = [item for item in _items]
 #
-#    return render_template('todo.html', items=items)
+#    return render_template('index.html', items=items)
 #
 #
 #@app.route('/new', methods=['POST'])

@@ -9,9 +9,12 @@ class BaseConfig:
 
 class DevelopmentConfig(BaseConfig):
     """Development configuration"""
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('POSTGRES_URL')
     MASTER_DATA = os.environ.get('MASTER_DATA')
 
+    MONGO_URI = os.environ.get('MONGO_URI')
+    print(MONGO_URI)
+    MONGO_DBNAME = 'eva_dev'
 
 class TestingConfig(BaseConfig):
     """Testing configuration"""

@@ -11,11 +11,13 @@ class DevelopmentConfig(BaseConfig):
     """Development configuration"""
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
-    MONGO_URL = os.environ.get('MONGO_URL')
+    MONGO_URI = os.environ.get('MONGO_URI')
     MONGO_TEST_URL = os.environ.get('MONGO_TEST_URL')
+    MONGO_DB = 'eva_dev'
 
     FASTA_URL= os.environ.get('FaSta_URL')
     FASTA_TOKEN = 'd16d67e35458c895f557696799eb4e8f'
+
 
     @staticmethod
     def config(name):

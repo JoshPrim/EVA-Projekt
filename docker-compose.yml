@@ -12,7 +12,7 @@ services:
     environment:
      - API_TYPE=elevator
      - APP_SETTINGS=project.config.DevelopmentConfig
-     - MONGO_URL=mongodb://bart:downy37)tory@localhost:27018/local
+     - MONGO_URI=mongodb://bart:downy37)tory@mongo-db:27017/eva_dev
      - FASTA_URL=https://api.deutschebahn.com/fasta/v2/facilities?type=ELEVATOR
      - LOG_DIR=./logs/elevator/
     depends_on:
@@ -28,13 +28,13 @@ services:
     environment:
      - API_TYPE=escalator
      - APP_SETTINGS=project.config.DevelopmentConfig
-     - MONGO_URL=mongodb://bart:downy37)tory@localhost:27018/local
+     - MONGO_URI=mongodb://bart:downy37)tory@mongo-db:27017/eva_dev
      - FASTA_URL=https://api.deutschebahn.com/fasta/v2/facilities?type=ESCALATOR
      - LOG_DIR=./logs/escalator/
     depends_on:
      - mongo-db
 
-  dashboard:
+  db-api:
     build:
       context: ./services/db-api
       dockerfile: Dockerfile-dev
@@ -50,8 +50,9 @@ services:
      - FLASK_APP=project/__init__.py
      - FLASK_ENV=development
      - APP_SETTINGS=project.config.DevelopmentConfig
-     - DATABASE_URL=postgres://postgres:postgres@station-db:5432/station_dev
+     - POSTGRES_URL=postgres://postgres:postgres@station-db:5432/station_dev
      - MASTER_DATA=./project/db/db-stations.csv
+     - MONGO_URI=mongodb://bart:downy37)tory@mongo-db:27017/eva_dev
     depends_on:
       - station-db
 

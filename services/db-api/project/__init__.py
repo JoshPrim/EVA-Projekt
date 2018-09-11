@@ -1,10 +1,11 @@
 import os
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
-
+from flask_pymongo import PyMongo
+from flask import render_template
 
 # instantiate the app
-app = Flask(__name__)
+app = Flask(__name__, template_folder='./templates')
 
 # set config
 app_settings = os.getenv('APP_SETTINGS')
@@ -12,6 +13,7 @@ app.config.from_object(app_settings)
 
 # instantiate the db
 db = SQLAlchemy(app)
+mongo = PyMongo(app)
 
 # model
 class Station(db.Model):
@@ -71,7 +73,7 @@ class Station(db.Model):
         }
 
 
-# routes
+# routes postgres
 @app.route('/station/ping', methods=['GET'])
 def ping_pong():
     return jsonify({
@@ -85,7 +87,87 @@ def get_all_stations():
     response_object = {
         'status': 'success',
         'data': {
-            'station': [station.to_json() for station in Station.query.all()]
+            'station': [station.to_json() for station in Station.qery.all()]
         }
     }
     return jsonify(response_object), 200
+
+## classes & routes mongo ## NUR MIT mongoengine Implementierung
+#class Facility(mongo.db.Document):
+#    equipmentnumber = mongo.db.StringField(required=False)
+#    type = mongo.db.StringField(required=False)
+#    description = mongo.db.StringField(required=False)
+#    geocoordX = mongo.db.StringField(required=False)
+#    geocoordY = mongo.db.StringField(required=False)
+#    state = mongo.db.StringField(required=False)
+#    stateExplanation = mongo.db.StringField(required=False)
+#    stationnumber = mongo.db.StringField(required=False)
+#
+#    def __init__(self,equipmentnumber,type,description,geocoordX,geocoordY,state,stateExplanation,stationnumber):
+#       self.equipmentnumber = equipmentnumber
+#       self.type = type
+#       self.description  = description
+#       self.geocoordX  = geocoordX
+#       self.geocoordY  = geocoordY
+#       self.state  = state
+#       self.stateExplanation = stateExplanation
+#       self.stationnumber = stationnumber
+#
+#    def to_json(self):
+#        return {
+#          'equipmentnumber': self.equipmentnumber,
+#          'type': self.type,
+#          'description': self.description ,
+#          'geocoordX': self.geocoordX ,
+#          'geocoordY': self.geocoordY ,
+#          'state': self.state ,
+#          'stateExplanation': self.stateExplanation,
+#          'stationnumber': self.stationnumber
+#        }
+
+@app.route('/mongo/get_all', methods=['GET'])
+def get_all_fac():
+    fac = mongo.db.facilities
+    f = fac.find()
+    output = []
+    for f in f:
+        output.append({
+            'datetime': f['datetime'],
+            'equipmentnumber' : f['equipmentnumber'],
+            'type' : f['type'],
+            'description' : f['description'],
+            'geocoordX' : f['geocoordX'],
+            'geocoordY' : f['geocoordY'],
+            'state' : f['state'],
+            'stateExplanation' : f['stateExplanation'],
+            'stationnumber' : f['stationnumber']
+        })
+
+    response_object = {
+        'status': 'success',
+        'data': {
+            'facility': output
+        }
+    }
+    return jsonify((response_object), 200)
+
+
+@app.route('/mongo/single', methods=['GET'])
+def get_one_fac():
+    fac = mongo.db.facilities
+    f = fac.find_one({'equipmentnumber': 10499641})
+    output = []
+    output.append({'equipmentnumber': f['equipmentnumber']})
+    response_object = {
+        'status': 'success',
+        'data': {
+            'facility': output
+        }
+    }
+    return jsonify((response_object))
+
+@app.route('/mongo/count' )
+def get_one_faci():
+    count = mongo.db.facilities.count()
+    return render_template('index.html',
+    count=count)
