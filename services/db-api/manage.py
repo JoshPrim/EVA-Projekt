@@ -2,8 +2,8 @@
 
 
 from flask.cli import FlaskGroup
-from project import app, db
-import unittest
+from project import app, db, mongo
+from project.api_models.station import Station
 import os
 
 cli = FlaskGroup(app)
@@ -28,7 +28,10 @@ def init_db():
         cursor.copy_expert(cmd, f)
         conn.commit()
 
-
+#mongo cli commands
+@cli.command()
+def mongo_init():
+   print('success')
 
 if __name__ == '__main__':
     db.create_all()
