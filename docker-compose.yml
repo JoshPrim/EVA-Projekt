@@ -79,8 +79,8 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=bart
       - MONGO_INITDB_ROOT_PASSWORD=downy37)tory
     volumes:
-      - '/eva-dev/mnt/mongo/data/configdb:/data/configdb'
-      - '/eva-dev/mnt/mongo/data:/data/db'
+      - '/home/parot/eva-dev/mnt/mongo/data/configdb:/data/configdb'
+      - '/home/parot/eva-dev/mnt/mongo/data:/data/db'
       #- '/etc/group:/etc/group:ro'
       #- '/etc/passwd:/etc/passwd:ro'
 

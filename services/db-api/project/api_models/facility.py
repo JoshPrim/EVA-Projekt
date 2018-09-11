@@ -1,6 +1,7 @@
 from flask import jsonify, render_template
 from project import app, mongo
 
+
 # mongo  routes
 @app.route('/mongo/get_all', methods=['GET'])
 def get_all_fac():
@@ -50,9 +51,37 @@ def get_one_faci():
     count=count)
 
 # routes
+@app.route('/mongo/agg', methods=['GET'])
+def aggFac():
+    f = mongo.db.facilities.aggregate( [
+    { '$match': { 'state': 'INACTIVE' } },
+    {
+        '$group': {
+            '_id': "$equipmentnumber",
+            'count': { '$sum': 1 }
+        }
+    }
+    ])
+    output = []
+    for f in f:
+        output.append({
+            '_id': f['_id'],
+            'count' : f['count']
+        })
+
+    response_object = {
+        'status': 'success',
+        'data': {
+            'facility': output
+        }
+    }
+    return jsonify((response_object), 200)
+
+# routes
 @app.route('/mongo/ping', methods=['GET'])
 def mongo_pong():
     return jsonify({
         'status': 'success',
         'message': 'pong!'
     })
+

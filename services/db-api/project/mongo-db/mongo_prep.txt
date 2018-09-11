@@ -1,0 +1,28 @@
+
+# mongo export 
+
+docker-compose exec mongo-db mongodump  -u bart -p 'downy37)tory' -h mongo-db --port 27017 -d eva_dev -o ./data/db/dump
+
+docker-compose exec mongo-db mongo admin -u bart -p 'downy37)tory'
+
+docker exec eva-mongodb mongodump  -u bart -p 'downy37)tory' -h localhost --port 27017 -d eva -o p./data/db/dump
+ 
+# mongo restore 
+ 
+docker-compose exec mongo-db mongorestore -u bart -p 'downy37)tory' -h mongo-db --port 27017 -d eva_dev  ./data/db/dump/eva
+
+# login to mongo
+
+docker-compose exec mongo-db mongo admin  -u bart -p 'downy37)tory'
+
+# mongo init setup
+
+use eva_dev
+
+db.createUser({ user: "bart", pwd: "downy37)tory", roles: [{ role: "dbOwner", db: "eva_dev" }] })
+
+db.auth("bart","downy37)tory")
+
+db.createCollection("facilities")
+
+db.facilities.find({"equipmentnumber":10253036})

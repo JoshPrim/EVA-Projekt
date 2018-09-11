@@ -31,7 +31,8 @@ def init_db():
 #mongo cli commands
 @cli.command()
 def mongo_init():
-   print('success')
+   mongo.cx.admin.command('ismaster')
+
 
 if __name__ == '__main__':
     db.create_all()

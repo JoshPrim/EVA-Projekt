@@ -1,4 +1,4 @@
-from project import db, mongo
+from project import db
 
 # postgres models
 class Station(db.Model):
