@@ -1,0 +1,21 @@
+# base image
+FROM python:latest
+
+# install dependencies
+RUN apt-get update && \
+    apt-get install netcat-openbsd
+
+# set working directory
+WORKDIR /usr/src/app
+
+
+# copy Project to container
+COPY . /usr/src/app
+
+# add and install requirements
+RUN pip install -r requirements.txt
+
+COPY ./entrypoint.sh /usr/src/app/entrypoint.sh
+RUN chmod +x /usr/src/app/entrypoint.sh
+
+CMD ["./entrypoint.sh"]
