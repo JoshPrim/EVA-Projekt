@@ -8,4 +8,4 @@ done
 
 echo "PostgreSQL & Mongo startet!"
 
-python ./dashboard_server.py
+python ./projekt/dashboard_server.py

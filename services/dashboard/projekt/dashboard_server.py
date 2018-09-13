@@ -21,30 +21,21 @@
 ==============================================================================
 
 '''
-
+import sys
 import dash
+import dash_auth
+import dash_core_components
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_table_experiments as dt
-from dash.dependencies import Input, Output
 import flask
-import dash_auth
-import json
+import pandas as pd
 import plotly.graph_objs as go
 import pymongo
-import collections
-from pprint import pprint
-from bson.son import SON  # for aggregate function
-from pymongo.command_cursor import CommandCursor
-from types import *
-import pandas as pd
-import numpy as np
-from pandas import DataFrame
+from dash.dependencies import Input, Output
+import os
 
-import sys
 sys.path.append('./Clients')
-import psycopg2
-import pgdb
 import folium
 from geopy.geocoders import Nominatim
 
@@ -192,14 +183,14 @@ def createReasonsForInactivity(givenType: str):
 def createInitialData():
 
     client = pymongo.MongoClient(MONGO_URL, maxPoolSize=50)
-    dbeva = client.eva
+    dbeva = client.eva_dev
     facilities = dbeva['facilities']
 
     #################################
     #### TODO: Posgress Zugriff #####
     #################################
 
-    aufzüge = pd.read_csv('Stammdaten_Aufzüge.csv', sep=';', engine='python')
+    aufzüge = pd.read_csv('./projekt/Stammdaten_Aufzüge.csv', sep=';', engine='python')
 
     columns = ['Standort Equipment', 'TechnPlatzBezeichng', 'Equipment', 'Equipmentname', 'Ort', 'Wirtschaftseinheit',
                'Hersteller',
@@ -369,7 +360,7 @@ VALID_USERNAME_PASSWORD_PAIRS = [
     ['Bart', '1234']
 ]
 server = flask.Flask('EVA Dashboard')
-app = dash.Dash('EVA Dashboard', server=server)
+app =  dash.Dash('EVA Dashboard', server=server)
 app.title = 'EVA Dashboard'
 auth = dash_auth.BasicAuth(
      app,
@@ -524,7 +515,7 @@ page_rolltreppen = html.Div(children=[
                     ],
                     value='inaktiv', style={'margin-left': 10}
                 ),
-                html.Iframe(id='escalator_karte', srcDoc=open('./Maps/map_inactive_elivators.html', 'r').read(),
+                html.Iframe(id='escalator_karte', srcDoc=open('./projekt/Maps/map_inactive_elivators.html', 'r').read(),
                             style={'width': '90%', 'height': '30em'})
             ], style={'width': '49%', 'display': 'inline-block'}),
 
@@ -741,7 +732,7 @@ page_aufzuege = html.Div(children=[
                     ],
                     value='inaktiv', style={'margin-left':10}
                 ),
-                html.Iframe(id='karte', srcDoc=open('./Maps/map_inactive_elivators.html', 'r').read(),
+                html.Iframe(id='karte', srcDoc=open('./projekt/Maps/map_inactive_elivators.html', 'r').read(),
                             style={'width': '90%', 'height': '30em'})
             ], style={'width': '49%', 'display': 'inline-block'}),
 
@@ -857,11 +848,11 @@ def karte_aktualisieren(input_stadt, input_bland, radio_button):
                                   popup = tmp,
                                  icon=folium.Icon(color='green', icon='info-sign')).add_to(m)
 
-            m.save('./Maps/map_active_elivators.html')
-            return open('./Maps/map_active_elivators.html', 'r').read()
+            m.save('./projekt/Maps/map_active_elivators.html')
+            return open('./projekt/Maps/map_active_elivators.html', 'r').read()
         
         except:    
-            return open('./Maps/map_active_elivators_FFM.html', 'r').read()
+            return open('./projekt/Maps/map_active_elivators_FFM.html', 'r').read()
 
     elif radio_button == 'inaktiv':
         try: 
@@ -879,11 +870,11 @@ def karte_aktualisieren(input_stadt, input_bland, radio_button):
                                   popup = tmp,
                                  icon=folium.Icon(color='red', icon='info-sign')).add_to(m)
 
-            m.save('./Maps/map_inactive_elivators.html')
-            return open('./Maps/map_inactive_elivators.html', 'r').read()
+            m.save('./projekt/Maps/map_inactive_elivators.html')
+            return open('./projekt/Maps/map_inactive_elivators.html', 'r').read()
         
         except:    
-            return open('./Maps/map_inactive_elivators_FFM.html', 'r').read()
+            return open('./projekt/Maps/map_inactive_elivators_FFM.html', 'r').read()
 
     else:
         try: 
@@ -910,11 +901,11 @@ def karte_aktualisieren(input_stadt, input_bland, radio_button):
                                   popup = tmp,
                                  icon=folium.Icon(color='red', icon='info-sign')).add_to(m)
 
-            m.save('./Maps/map_both_elivators.html')
-            return open('./Maps/map_both_elivators.html', 'r').read()
+            m.save('./projekt/Maps/map_both_elivators.html')
+            return open('./projekt/Maps/map_both_elivators.html', 'r').read()
         
         except:    
-            return open('./Maps/map_inactive_elivators_FFM.html', 'r').read()
+            return open('./projekt/Maps/map_inactive_elivators_FFM.html', 'r').read()
 
 
 ######################################################################################################
@@ -942,11 +933,11 @@ def karte_aktualisieren(input_stadt, input_bland, radio_button):
                                   popup=tmp,
                                   icon=folium.Icon(color='green', icon='info-sign')).add_to(m)
 
-            m.save('./Maps/map_active_escalators.html')
-            return open('./Maps/map_active_escalators.html', 'r').read()
+            m.save('./projekt/Maps/map_active_escalators.html')
+            return open('./projekt/Maps/map_active_escalators.html', 'r').read()
 
         except:
-            return open('./Maps/map_active_escalators_FFM.html', 'r').read()
+            return open('./projekt/Maps/map_active_escalators_FFM.html', 'r').read()
 
     elif radio_button == 'inaktiv':
         try:
@@ -964,11 +955,11 @@ def karte_aktualisieren(input_stadt, input_bland, radio_button):
                                   popup=tmp,
                                   icon=folium.Icon(color='red', icon='info-sign')).add_to(m)
 
-            m.save('./Maps/map_inactive_escalators.html')
-            return open('./Maps/map_inactive_escalators.html', 'r').read()
+            m.save('./projekt/Maps/map_inactive_escalators.html')
+            return open('./projekt/Maps/map_inactive_escalators.html', 'r').read()
 
         except:
-            return open('./Maps/map_inactive_escalators_FFM.html', 'r').read()
+            return open('./projekt/Maps/map_inactive_escalators_FFM.html', 'r').read()
 
     else:
         try:
@@ -995,11 +986,11 @@ def karte_aktualisieren(input_stadt, input_bland, radio_button):
                                   popup=tmp,
                                   icon=folium.Icon(color='red', icon='info-sign')).add_to(m)
 
-            m.save('./Maps/map_both_escalators.html')
-            return open('./Maps/map_both_escalators.html', 'r').read()
+            m.save('./projekt/Maps/map_both_escalators.html')
+            return open('./projekt/Maps/map_both_escalators.html', 'r').read()
 
         except:
-            return open('./Maps/map_inactive_escalators_FFM.html', 'r').read()
+            return open('./projekt/Maps/map_inactive_escalators_FFM.html', 'r').read()
 ######################################################################################################
 
 # Callback Stationsname aktualisieren

@@ -85,17 +85,18 @@ services:
       #- '/etc/passwd:/etc/passwd:ro'
 
   # Dashboard
-   dashboard_server:
+  dashboard-server:
     build:
       context: ./services/dashboard
       dockerfile: Dockerfile-dev
+      #command: python -u app.py
     restart: always
     volumes:
-      - './services/db-api:/usr/src/app'
-    #  - '/etc/group:/etc/group:ro'
+      - './services/dashboard:/usr/src/app'
+    #  - '/etc/group:/etc/group:ro'#
     #  - '/etc/passwd:/etc/passwd:ro'
     ports:
-      - "37002:37002"
+     - "37002:37002"
     environment:
      - APP_SETTINGS=project.config.DevelopmentConfig
      - POSTGRES_URL=postgres://postgres:postgres@station-db:5432/station_dev
@@ -104,34 +105,3 @@ services:
       - station-db
       - mongo-db
 
-# Analytical Pipeline
-
-# Testdrive.io Tutorial
-
- #user:
- #   build:
- #     context: ./services/users-tutorial
- #     dockerfile: Dockerfile-dev
- #     command: python -u app.py
- #   volumes:
- #     - './services/users:/users/project/app'
- #   ports:
- #     - "5000:5000"#
- #   environment:
- #    - FLASK_APP=project/__init__.py
- #    - FLASK_ENV=development
- #    - APP_SETTINGS=project.config.DevelopmentConfig
- #    - DATABASE_URL=postgres://postgres:postgres@users-db:5432/users_dev
- #    - DATABASE_TEST_URL=postgres://postgres:postgres@users-db:5432/users_test
- #   depends_on:
- #     - users-db
-#
- # users-db:
- #   build:
- #     context: ./services/users-tutorial/project/db
- #     dockerfile: Dockerfile
- #   ports:
- #     - "5435:5432"
- #   environment:
- #     - POSTGRES_USER=postgres
- #     - POSTGRES_PASSWORD=postgres

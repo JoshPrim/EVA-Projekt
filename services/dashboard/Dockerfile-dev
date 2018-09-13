@@ -1,5 +1,5 @@
 # base image
-FROM python:latest
+FROM python:3.6.5
 
 # install dependencies
 RUN apt-get update && \
@@ -8,14 +8,14 @@ RUN apt-get update && \
 # set working directory
 WORKDIR /usr/src/app
 
-
-# copy Project to container
-COPY . /usr/src/app
-
 # add and install requirements
+COPY ./requirements.txt /usr/src/app/requirements.txt
 RUN pip install -r requirements.txt
 
 COPY ./entrypoint.sh /usr/src/app/entrypoint.sh
 RUN chmod +x /usr/src/app/entrypoint.sh
+
+# copy Project to container
+COPY . /usr/src/app
 
 CMD ["./entrypoint.sh"]
