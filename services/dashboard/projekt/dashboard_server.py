@@ -32,8 +32,18 @@ import flask
 import pandas as pd
 import plotly.graph_objs as go
 import pymongo
+<<<<<<< Updated upstream
 from dash.dependencies import Input, Output
 import os
+=======
+import collections
+from pprint import pprint
+from pymongo.command_cursor import CommandCursor
+from types import *
+import pandas as pd
+import numpy as np
+from pandas import DataFrame
+>>>>>>> Stashed changes
 
 sys.path.append('./Clients')
 import folium
