@@ -6,6 +6,7 @@ services:
     build:
      context: ./services/fasta-client
      dockerfile: Dockerfile-dev
+    restart: always
     volumes:
      - '/home/parot/eva-dev/mnt/logs/elevator:/usr/src/app/logs/elevator/'
     # - './services/fasta-client:/usr/src/app'
@@ -22,6 +23,7 @@ services:
     build:
      context: ./services/fasta-client
      dockerfile: Dockerfile-dev
+    restart: always
     volumes:
      - '/home/parot/eva-dev/mnt/logs/escalator:/usr/src/app/logs/escalator/'
     # - './services/fasta-client:/usr/src/app'
@@ -62,6 +64,7 @@ services:
     build:
       context: ./services/db-api/project/db
       dockerfile: Dockerfile
+    restart: unless-stopped
     ports:
       - "5435:5432"
     environment:
