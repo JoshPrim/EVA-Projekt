@@ -11,3 +11,5 @@ dash-core-components==0.27.1
 dash-auth==1.0.0
 Flask
 dash-table-experiments==0.6.0 
+apscheduler
+threaded==2.0.2

@@ -32,7 +32,6 @@ import flask
 import pandas as pd
 import plotly.graph_objs as go
 import pymongo
-import threading
 <<<<<<< Updated upstream
 from dash.dependencies import Input, Output
 import os
@@ -40,8 +39,6 @@ import os
 import collections
 from pprint import pprint
 from pymongo.command_cursor import CommandCursor
-from datetime import datetime
-from apscheduler.schedulers.blocking import BlockingScheduler
 from types import *
 import pandas as pd
 import numpy as np
@@ -281,36 +278,6 @@ elevator_key_array, elevator_value_array = createReasonsForInactivity('ELEVATOR'
 
 escalator_key_array, escalator_value_array = createReasonsForInactivity('ESCALATOR')
 
-
-####################################################
-######   Routine zum Aktualisieren der Daten  ######
-####################################################
-
-def updateValues():
-    global facilities, aufzüge, elevatorStateCountACTIVE, elevatorStateCountINACTIVE, elevatorStateCountUNKNOWN
-    global escalatorStateCountACTIVE, escalatorStateCountINACTIVE, escalatorStateCountUNKNOWN
-    global elevator_key_array, elevator_value_array
-    global escalator_key_array, escalator_value_array
-
-    facilities, aufzüge = createInitialData()
-    elevatorStateCountACTIVE, elevatorStateCountINACTIVE, elevatorStateCountUNKNOWN = createOverview('ELEVATOR')
-    escalatorStateCountACTIVE, escalatorStateCountINACTIVE, escalatorStateCountUNKNOWN = createOverview('ESCALATOR')
-    elevator_key_array, elevator_value_array = createReasonsForInactivity('ELEVATOR')
-    escalator_key_array, escalator_value_array = createReasonsForInactivity('ESCALATOR')
-
-# Daten werden jede Stunde aktualisiert
-scheduler = BlockingScheduler()
-scheduler.add_job(updateValues, 'interval', hours=1)
-
-class UpdateValue(threading.Thread):
-    def __init__(self):
-            threading.Thread.__init__(self)
-    def run(self):
-        scheduler.start()
-        print('Thread zum Updaten der Werte gestartet!')
-
-tread = UpdateValue()
-tread.start()
 
 ####################################
 ######   Wusstest du schon?   ######
