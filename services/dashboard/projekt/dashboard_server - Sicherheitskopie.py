@@ -200,7 +200,7 @@ def createInitialData():
     #### TODO: Postgress Zugriff #####
     #################################
 
-    aufzüge = pd.read_csv('./projekt/Stammdaten_Aufzüge.csv', sep=';', engine='python')
+    aufzüge = pd.read_csv('./projekt/db-elevator.csv', sep=';', engine='python')
 
     columns = ['Standort Equipment', 'TechnPlatzBezeichng', 'Equipment', 'Equipmentname', 'Ort', 'Wirtschaftseinheit',
                'Hersteller',

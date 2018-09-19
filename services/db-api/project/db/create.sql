@@ -1,3 +1,3 @@
-CREATE DATABASE station_prod;
-CREATE DATABASE station_dev;
-CREATE DATABASE station_test;
+CREATE DATABASE eva_prod;
+CREATE DATABASE eva_dev;
+CREATE DATABASE eva_test;

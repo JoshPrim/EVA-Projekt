@@ -10,7 +10,9 @@ class BaseConfig:
 class DevelopmentConfig(BaseConfig):
     """Development configuration"""
     SQLALCHEMY_DATABASE_URI = os.environ.get('POSTGRES_URL')
-    MASTER_DATA = os.environ.get('MASTER_DATA')
+    MASTER_STATION = os.environ.get('MASTER_STATION')
+    MASTER_ELEVATOR = os.environ.get('MASTER_ELEVATOR')
+
 
     MONGO_URI = os.environ.get('MONGO_URI')
     print(MONGO_URI)

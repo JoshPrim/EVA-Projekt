@@ -57,36 +57,116 @@ class Station(db.Model):
           'aufgabenvergeber':self.aufgabenvergeber
         }
 
-# classes & routes mongo ## NUR MIT mongoengine Implementierung
-#class Facility(mongo.db.Document):
-#    equipmentnumber = mongo.db.StringField(required=False)
-#    type = mongo.db.StringField(required=False)
-#    description = mongo.db.StringField(required=False)
-#    geocoordX = mongo.db.StringField(required=False)
-#    geocoordY = mongo.db.StringField(required=False)
-#    state = mongo.db.StringField(required=False)
-#    stateExplanation = mongo.db.StringField(required=False)
-#    stationnumber = mongo.db.StringField(required=False)
-#
-#    def __init__(self,equipmentnumber,type,description,geocoordX,geocoordY,state,stateExplanation,stationnumber):
-#       self.equipmentnumber = equipmentnumber
-#       self.type = type
-#       self.description  = description
-#       self.geocoordX  = geocoordX
-#       self.geocoordY  = geocoordY
-#       self.state  = state
-#       self.stateExplanation = stateExplanation
-#       self.stationnumber = stationnumber
-#
-#    def to_json(self):
-#        return {
-#          'equipmentnumber': self.equipmentnumber,
-#          'type': self.type,
-#          'description': self.description ,
-#          'geocoordX': self.geocoordX ,
-#          'geocoordY': self.geocoordY ,
-#          'state': self.state ,
-#          'stateExplanation': self.stateExplanation,
-#          'stationnumber': self.stationnumber
-#        }
+class Elevator(db.Model):
+    __tablename__ = 'elevator'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    standort_equipment = db.Column(db.String(128), nullable= True)
+    technplatzbezeichng = db.Column(db.String(128), nullable= True)
+    equipment = db.Column(db.Integer, nullable= True)
+    equipmentname = db.Column(db.String(256), nullable= True)
+    ort = db.Column(db.String(128), nullable= True)
+    wirtschaftseinheit = db.Column(db.String(128), nullable= True)
+    hersteller = db.Column(db.String(128), nullable= True)
+    baujahr = db.Column(db.String(128), nullable= True)
+    antriebsart = db.Column(db.String(128), nullable= True)
+    anzahl_haltestellen = db.Column(db.String(128), nullable= True)
+    anzahl_tueren_kabine = db.Column(db.String(128), nullable= True)
+    anzahl_tueren_schacht = db.Column(db.String(128), nullable= True)
+    foerdergeschwindigkeit = db.Column(db.String(128), nullable= True)
+    foerderhoehe = db.Column(db.String(128), nullable= True)
+    lage = db.Column(db.String(128), nullable= True)
+    tragkraft = db.Column(db.String(128), nullable= True)
+    erweiterte_ortsangabe = db.Column(db.String(128), nullable= True)
+    min_tuerbreite = db.Column(db.String(128), nullable= True)
+    kabinentiefe = db.Column(db.String(128), nullable= True)
+    kabinenbreite = db.Column(db.String(128), nullable= True)
+    kabinenhoehe = db.Column(db.String(128), nullable= True)
+    tuerhohe = db.Column(db.String(128), nullable= True)
+    fabriknummer = db.Column(db.String(128), nullable= True)
+    tuerart = db.Column(db.String(128), nullable= True)
+    geokoordinaterechtswert = db.Column(db.String(128), nullable = True)
+    geokoordinatehochwert = db.Column(db.String(128), nullable = True)
+    ausftextlichebeschreibung = db.Column(db.String(1280), nullable = True)
+
+    def __init__(self,standort_equipment,technplatzbezeichng,equipment,equipmentname,ort,wirtschaftseinheit,hersteller,baujahr,antriebsart,anzahl_haltestellen,anzahl_tueren_kabine,anzahl_tueren_schacht,foerdergeschwindigkeit,foerderhoehe,lage,tragkraft,erweiterte_ortsangabe,min_tuerbreite,kabinentiefe,kabinenbreite,kabinenhoehe,tuerhohe,fabriknummer,tuerart,geokoordinaterechtswert, geokoordinatehochwert, ausftextlichebeschreibung ):
+       self.standort_equipment = standort_equipment
+       self.technplatzbezeichng = technplatzbezeichng
+       self.equipment = equipment
+       self.equipmentname = equipmentname
+       self.ort = ort
+       self.wirtschaftseinheit = wirtschaftseinheit
+       self.hersteller = hersteller
+       self.baujahr = baujahr
+       self.antriebsart = antriebsart
+       self.anzahl_haltestellen = anzahl_haltestellen
+       self.anzahl_tueren_kabine = anzahl_tueren_kabine
+       self.anzahl_tueren_schacht = anzahl_tueren_schacht
+       self.foerdergeschwindigkeit = foerdergeschwindigkeit
+       self.foerderhoehe = foerderhoehe
+       self.lage = lage
+       self.tragkraft = tragkraft
+       self.erweiterte_ortsangabe = erweiterte_ortsangabe
+       self.min_tuerbreite = min_tuerbreite
+       self.kabinentiefe = kabinentiefe
+       self.kabinenbreite = kabinenbreite
+       self.kabinenhoehe = kabinenhoehe
+       self.tuerhohe = tuerhohe
+       self.fabriknummer = fabriknummer
+       self.tuerart = tuerart
+       self.geokoordinaterechtswert = geokoordinaterechtswert
+       self.geokoordinatehochwert = geokoordinatehochwert
+       self.ausftextlichebeschreibung = ausftextlichebeschreibung
+
+    def to_json(self):
+        return{
+            'standort_equipment' :self.standort_equipment,
+            'technplatzbezeichng' :self.technplatzbezeichng,
+            'equipment' :self.equipment,
+            'equipmentname' :self.equipmentname,
+            'ort' :self.ort,
+            'wirtschaftseinheit':self.wirtschaftseinheit,
+            'hersteller':self.hersteller,
+            'baujahr' :self.baujahr,
+            'antriebsart' :self.antriebsart,
+            'anzahl_haltestellen' :self.anzahl_haltestellen,
+            'anzahl_tueren_kabine' :self.anzahl_tueren_kabine,
+            'anzahl_tueren_schacht':self.anzahl_tueren_schacht,
+            'foerdergeschwindigkeit':self.foerdergeschwindigkeit,
+            'foerderhoehe' :self.foerderhoehe,
+            'lage' :self.lage,
+            'tragkraft' :self.tragkraft,
+            'erweiterte_ortsangabe' :self.erweiterte_ortsangabe,
+            'min_tuerbreite' :self.min_tuerbreite,
+            'kabinentiefe':self.kabinentiefe,
+            'kabinenbreite':self.kabinenbreite,
+            'kabinenhoehe' :self.kabinenhoehe,
+            'tuerhohe' :self.tuerhohe,
+            'fabriknummer' :self.fabriknummer,
+            'tuerart' :self.tuerart,
+            'geokoordinaterechtswert':self.geokoordinaterechtswert,
+            'geokoordinatehochwert' :self.geokoordinatehochwert,
+            'ausftextlichebeschreibung':self.ausftextlichebeschreibung
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

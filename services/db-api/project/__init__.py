@@ -16,6 +16,7 @@ mongo = PyMongo(app)
 
 #importing routes from facility
 from project.api_models import facility
+from project.api_models import elevator
 
 # routes
 @app.route('/ping', methods=['GET'])
