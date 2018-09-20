@@ -103,7 +103,7 @@ services:
      - "37002:37002"
     environment:
      - APP_SETTINGS=project.config.DevelopmentConfig
-     - POSTGRES_URL=postgres://postgres:postgres@station-db:5432/station_dev
+     - POSTGRES_URL=postgresql://postgres:postgres@station-db:5432/eva_dev
      - MONGO_URI=mongodb://bart:downy37)tory@mongo-db:27017/eva_dev
     depends_on:
       - station-db

@@ -48,6 +48,7 @@ from pandas import DataFrame
 sys.path.append('./Clients')
 import folium
 from geopy.geocoders import Nominatim
+#from sqlalchemy import create_engine
 
 
 ##########################################################################                 #############################################################################################################################################
@@ -201,39 +202,38 @@ def createInitialData():
     #################################
 
     # Aufzüge reinladen
-    try:
-        engine = create_engine(POSTGRESS_URL)
-        aufzüge = pd.read_sql_query('select * from "elevator"',con=engine)
+    '''
+    print('Vor engine')
+    engine = create_engine(POSTGRESS_URL)
+    print('After engine')
+    aufzüge = pd.read_sql_query('select * from "elevator"',con=engine)
+    print('Aufzüge da')
+    columns = ['ID','Standort Equipment', 'TechnPlatzBezeichng', 'Equipment', 'Equipmentname', 'Ort', 'Wirtschaftseinheit',
+                'Hersteller',
+                'Baujahr', 'ANTRIEBSART', 'ANZAHL_HALTESTELLEN', 'ANZAHL_TUEREN_KABINE', 'ANZAHL_TUEREN_SCHACHT',
+                'FOERDERGESCHWINDIGKEIT',
+                'FOERDERHOEHE', 'LAGE', 'TRAGKRAFT', 'ERWEITERTE_ORTSANGABE', 'MIN_TUERBREITE', 'KABINENTIEFE',
+                'KABINENBREITE',
+                'KABINENHOEHE', 'TUERHOHE', 'FABRIKNUMMER', 'TUERART', 'GEOKOORDINATERECHTSWERT',
+                'GEOKOORDINATEHOCHWERT', 'AUSFTEXTLICHEBESCHREIBUNG']
+    aufzüge.columns = columns
+    aufzüge = aufzüge.drop(0)
+    aufzüge['Equipment'] = aufzüge['Equipment'].astype(str).astype('int64')
+    '''
 
-        columns = ['Standort Equipment', 'TechnPlatzBezeichng', 'Equipment', 'Equipmentname', 'Ort', 'Wirtschaftseinheit',
-                   'Hersteller',
-                   'Baujahr', 'ANTRIEBSART', 'ANZAHL_HALTESTELLEN', 'ANZAHL_TUEREN_KABINE', 'ANZAHL_TUEREN_SCHACHT',
-                   'FOERDERGESCHWINDIGKEIT',
-                   'FOERDERHOEHE', 'LAGE', 'TRAGKRAFT', 'ERWEITERTE_ORTSANGABE', 'MIN_TUERBREITE', 'KABINENTIEFE',
-                   'KABINENBREITE',
-                   'KABINENHOEHE', 'TUERHOHE', 'FABRIKNUMMER', 'TUERART', 'GEOKOORDINATERECHTSWERT',
-                   'GEOKOORDINATEHOCHWERT', 'AUSFTEXTLICHEBESCHREIBUNG']
-        aufzüge.columns = columns
-        aufzüge = aufzüge.drop(0)
-        aufzüge['Equipment'] = aufzüge['Equipment'].astype(str).astype('int64')
+    aufzüge = pd.read_csv('./projekt/db-elevator.csv', sep=';', engine='python')
 
-        print('Aufzüge via PostgreSQL geladen!')
-    except:
-        aufzüge = pd.read_csv('./projekt/db-elevator.csv', sep=';', engine='python')
-
-        columns = ['Standort Equipment', 'TechnPlatzBezeichng', 'Equipment', 'Equipmentname', 'Ort', 'Wirtschaftseinheit',
-                   'Hersteller',
-                   'Baujahr', 'ANTRIEBSART', 'ANZAHL_HALTESTELLEN', 'ANZAHL_TUEREN_KABINE', 'ANZAHL_TUEREN_SCHACHT',
-                   'FOERDERGESCHWINDIGKEIT',
-                   'FOERDERHOEHE', 'LAGE', 'TRAGKRAFT', 'ERWEITERTE_ORTSANGABE', 'MIN_TUERBREITE', 'KABINENTIEFE',
-                   'KABINENBREITE',
-                   'KABINENHOEHE', 'TUERHOHE', 'FABRIKNUMMER', 'TUERART', 'GEOKOORDINATERECHTSWERT',
-                   'GEOKOORDINATEHOCHWERT', 'AUSFTEXTLICHEBESCHREIBUNG']
-        aufzüge.columns = columns
-        aufzüge = aufzüge.drop(0)
-        aufzüge['Equipment'] = aufzüge['Equipment'].astype(str).astype('int64')
-
-        print('Aufzüge via CSV geladen!')
+    columns = ['Standort Equipment', 'TechnPlatzBezeichng', 'Equipment', 'Equipmentname', 'Ort', 'Wirtschaftseinheit',
+               'Hersteller',
+               'Baujahr', 'ANTRIEBSART', 'ANZAHL_HALTESTELLEN', 'ANZAHL_TUEREN_KABINE', 'ANZAHL_TUEREN_SCHACHT',
+               'FOERDERGESCHWINDIGKEIT',
+               'FOERDERHOEHE', 'LAGE', 'TRAGKRAFT', 'ERWEITERTE_ORTSANGABE', 'MIN_TUERBREITE', 'KABINENTIEFE',
+               'KABINENBREITE',
+               'KABINENHOEHE', 'TUERHOHE', 'FABRIKNUMMER', 'TUERART', 'GEOKOORDINATERECHTSWERT',
+               'GEOKOORDINATEHOCHWERT', 'AUSFTEXTLICHEBESCHREIBUNG']
+    aufzüge.columns = columns
+    aufzüge = aufzüge.drop(0)
+    aufzüge['Equipment'] = aufzüge['Equipment'].astype(str).astype('int64')
 
     return facilities, aufzüge
 
