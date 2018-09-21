@@ -49,7 +49,7 @@ sys.path.append('./Clients')
 import folium
 from geopy.geocoders import Nominatim
 #from sqlalchemy import create_engine
-
+import psycopg2
 
 ##########################################################################                 #############################################################################################################################################
 ########################################################################## Web Application #############################################################################################################################################
@@ -197,33 +197,18 @@ def createInitialData():
     dbeva = client.eva_dev
     facilities = dbeva['facilities']
 
-    #################################
-    #### TODO: Postgress Zugriff #####
-    #################################
-
     # Aufzüge reinladen
-    '''
-    print('Vor engine')
-    engine = create_engine(POSTGRESS_URL)
-    print('After engine')
-    aufzüge = pd.read_sql_query('select * from "elevator"',con=engine)
-    print('Aufzüge da')
+    conn = psycopg2.connect(host='station-db', user='postgres', password='postgres', dbname='eva_dev', port=5432)
+    cur = conn.cursor()
+
+    querry = 'select * from "elevator"'
+    cur.execute( querry )
+
+    stammdaten_liste = cur.fetchall()
+
+    aufzüge = pd.DataFrame(stammdaten_liste)
+
     columns = ['ID','Standort Equipment', 'TechnPlatzBezeichng', 'Equipment', 'Equipmentname', 'Ort', 'Wirtschaftseinheit',
-                'Hersteller',
-                'Baujahr', 'ANTRIEBSART', 'ANZAHL_HALTESTELLEN', 'ANZAHL_TUEREN_KABINE', 'ANZAHL_TUEREN_SCHACHT',
-                'FOERDERGESCHWINDIGKEIT',
-                'FOERDERHOEHE', 'LAGE', 'TRAGKRAFT', 'ERWEITERTE_ORTSANGABE', 'MIN_TUERBREITE', 'KABINENTIEFE',
-                'KABINENBREITE',
-                'KABINENHOEHE', 'TUERHOHE', 'FABRIKNUMMER', 'TUERART', 'GEOKOORDINATERECHTSWERT',
-                'GEOKOORDINATEHOCHWERT', 'AUSFTEXTLICHEBESCHREIBUNG']
-    aufzüge.columns = columns
-    aufzüge = aufzüge.drop(0)
-    aufzüge['Equipment'] = aufzüge['Equipment'].astype(str).astype('int64')
-    '''
-
-    aufzüge = pd.read_csv('./projekt/db-elevator.csv', sep=';', engine='python')
-
-    columns = ['Standort Equipment', 'TechnPlatzBezeichng', 'Equipment', 'Equipmentname', 'Ort', 'Wirtschaftseinheit',
                'Hersteller',
                'Baujahr', 'ANTRIEBSART', 'ANZAHL_HALTESTELLEN', 'ANZAHL_TUEREN_KABINE', 'ANZAHL_TUEREN_SCHACHT',
                'FOERDERGESCHWINDIGKEIT',
@@ -234,6 +219,12 @@ def createInitialData():
     aufzüge.columns = columns
     aufzüge = aufzüge.drop(0)
     aufzüge['Equipment'] = aufzüge['Equipment'].astype(str).astype('int64')
+    aufzüge = aufzüge.drop_duplicates(['Equipment'])
+    aufzüge = aufzüge.drop(columns=['ID'])
+    aufzüge = aufzüge.fillna(value=np.nan)
+    aufzüge['Baujahr'] = pd.to_numeric(aufzüge['Baujahr'], errors='coerce')
+
+    print('Anzahl Aufzüge: ', len(aufzüge))
 
     return facilities, aufzüge
 

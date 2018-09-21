@@ -13,4 +13,4 @@ Flask
 dash-table-experiments==0.6.0 
 apscheduler
 threaded==2.0.2
-
+psycopg2==2.7.5
