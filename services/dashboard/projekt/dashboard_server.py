@@ -900,7 +900,7 @@ def karte_aktualisieren(input_stadt, input_bland, radio_button):
                                   popup = tmp,
                                  icon=folium.Icon(color='green', icon='info-sign')).add_to(m)
 
-            m.save('./projekt/Maps/map_active_es.html')
+            m.save('./projekt/Maps/map_active_elevators.html')
             return open('./projekt/Maps/map_active_elevators.html', 'r').read()
         
         except:    
@@ -922,7 +922,7 @@ def karte_aktualisieren(input_stadt, input_bland, radio_button):
                                   popup = tmp,
                                  icon=folium.Icon(color='red', icon='info-sign')).add_to(m)
 
-            m.save('./projekt/Maps/map_inactive_es.html')
+            m.save('./projekt/Maps/map_inactive_elevators.html')
             return open('./projekt/Maps/map_inactive_elevators.html', 'r').read()
         
         except:    
