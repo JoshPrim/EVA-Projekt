@@ -309,7 +309,7 @@ def updateValues():
 
 # Daten werden jede Stunde aktualisiert
 scheduler = BlockingScheduler()
-scheduler.add_job(updateValues, 'interval', hours=1)
+scheduler.add_job(updateValues, 'interval', minutes=5)
 
 class UpdateValue(threading.Thread):
     def __init__(self):
