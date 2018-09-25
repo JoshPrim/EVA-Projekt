@@ -2,37 +2,39 @@ version: '3.6'
 
 services:
 
-  elevator-client:
-    build:
-     context: ./services/fasta-client
-     dockerfile: Dockerfile-dev
-    volumes:
-     - '/home/parot/eva-dev/mnt/logs/elevator:/usr/src/app/logs/elevator/'
-    # - './services/fasta-client:/usr/src/app'
-    environment:
-     - API_TYPE=elevator
-     - APP_SETTINGS=project.config.DevelopmentConfig
-     - MONGO_URI=mongodb://bart:downy37)tory@mongo-db:27017/eva_dev
-     - FASTA_URL=https://api.deutschebahn.com/fasta/v2/facilities?type=ELEVATOR
-     - LOG_DIR=./logs/elevator/
-    depends_on:
-     - mongo-db
+  #elevator-client:
+  #  build:
+  #   context: ./services/fasta-client
+  #   dockerfile: Dockerfile-dev
+  #  restart: always
+  #  volumes:
+  #   - '/home/parot/eva-dev/mnt/logs/elevator:/usr/src/app/logs/elevator/'
+  #  # - './services/fasta-client:/usr/src/app'
+  #  environment:
+  #   - API_TYPE=elevator
+  #   - APP_SETTINGS=project.config.DevelopmentConfig
+  #   - MONGO_URI=mongodb://bart:downy37)tory@mongo-db:27017/eva_dev
+  #   - FASTA_URL=https://api.deutschebahn.com/fasta/v2/facilities?type=ELEVATOR
+  #   - LOG_DIR=./logs/elevator/
+  #  depends_on:
+  #   - mongo-db
 
-  escalator-client:
-    build:
-     context: ./services/fasta-client
-     dockerfile: Dockerfile-dev
-    volumes:
-     - '/home/parot/eva-dev/mnt/logs/escalator:/usr/src/app/logs/escalator/'
-    # - './services/fasta-client:/usr/src/app'
-    environment:
-     - API_TYPE=escalator
-     - APP_SETTINGS=project.config.DevelopmentConfig
-     - MONGO_URI=mongodb://bart:downy37)tory@mongo-db:27017/eva_dev
-     - FASTA_URL=https://api.deutschebahn.com/fasta/v2/facilities?type=ESCALATOR
-     - LOG_DIR=./logs/escalator/
-    depends_on:
-     - mongo-db
+  #escalator-client:
+  #  build:
+  #   context: ./services/fasta-client
+  #   dockerfile: Dockerfile-dev
+  #  restart: always
+  #  volumes:
+  #   - '/home/parot/eva-dev/mnt/logs/escalator:/usr/src/app/logs/escalator/'
+  #  # - './services/fasta-client:/usr/src/app'
+  #  environment:
+  #   - API_TYPE=escalator
+  #   - APP_SETTINGS=project.config.DevelopmentConfig
+  #   - MONGO_URI=mongodb://bart:downy37)tory@mongo-db:27017/eva_dev
+  #   - FASTA_URL=https://api.deutschebahn.com/fasta/v2/facilities?type=ESCALATOR
+  #   - LOG_DIR=./logs/escalator/
+  #  depends_on:
+  #   - mongo-db
 
   db-api:
     build:
@@ -45,13 +47,14 @@ services:
     #  - '/etc/group:/etc/group:ro'
     #  - '/etc/passwd:/etc/passwd:ro'
     ports:
-      - "5001:5000"
+      - "5002:5000"
     environment:
      - FLASK_APP=project/__init__.py
      - FLASK_ENV=development
      - APP_SETTINGS=project.config.DevelopmentConfig
-     - POSTGRES_URL=postgres://postgres:postgres@station-db:5432/station_dev
-     - MASTER_DATA=./project/db/db-stations.csv
+     - POSTGRES_URL=postgres://postgres:postgres@station-db:5432/eva_dev
+     - MASTER_STATION=./project/db/db-stations.csv
+     - MASTER_ELEVATOR=./project/db/db-elevator.csv
      - MONGO_URI=mongodb://bart:downy37)tory@mongo-db:27017/eva_dev
     depends_on:
       - station-db
@@ -62,8 +65,9 @@ services:
     build:
       context: ./services/db-api/project/db
       dockerfile: Dockerfile
+    restart: unless-stopped
     ports:
-      - "5435:5432"
+      - "5436:5432"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
@@ -73,8 +77,8 @@ services:
     command: mongod --port 27017
     restart: unless-stopped
     ports:
-      - "27027:27017"
-      - "28028:28018"
+      - "27029:27017"
+      - "28030:28018"
     environment:
       - MONGO_INITDB_ROOT_USERNAME=bart
       - MONGO_INITDB_ROOT_PASSWORD=downy37)tory
@@ -83,3 +87,25 @@ services:
       - '/home/parot/eva-dev/mnt/mongo/data:/data/db'
       #- '/etc/group:/etc/group:ro'
       #- '/etc/passwd:/etc/passwd:ro'
+
+  # Dashboard
+  dashboard-server:
+    build:
+      context: ./services/dashboard
+      dockerfile: Dockerfile-dev
+      #command: python -u app.py
+    restart: always
+    volumes:
+      - './services/dashboard:/usr/src/app'
+    #  - '/etc/group:/etc/group:ro'#
+    #  - '/etc/passwd:/etc/passwd:ro'
+    ports:
+     - "37003:37003"
+    environment:
+     - APP_SETTINGS=project.config.DevelopmentConfig
+     - POSTGRES_URL=postgresql://postgres:postgres@station-db:5432/eva_dev
+     - MONGO_URI=mongodb://bart:downy37)tory@mongo-db:27017/eva_dev
+    depends_on:
+      - station-db
+      - mongo-db
+

@@ -6,6 +6,7 @@ class BaseConfig:
     TESTING = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+    print('Running through config')
 
 class DevelopmentConfig(BaseConfig):
     """Development configuration"""
@@ -15,7 +16,6 @@ class DevelopmentConfig(BaseConfig):
 
 
     MONGO_URI = os.environ.get('MONGO_URI')
-    print(MONGO_URI)
     MONGO_DBNAME = 'eva_dev'
 
 class TestingConfig(BaseConfig):
