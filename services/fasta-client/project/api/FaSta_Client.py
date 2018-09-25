@@ -25,7 +25,7 @@ class FaSta_Request():
     def getFacilites(self):
         print('Zugriff wird ausgeführt!')
 
-        self.logdir = self.create_log_directories()
+        #self.logdir = self.create_log_directories()
 
         # Request an die FaSta API
         try:
@@ -39,8 +39,8 @@ class FaSta_Request():
             date_n_time = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d_%H-%M-%S')
 
             # Json als .json abspeichern
-            with open(self.logdir + '{}.json'.format(date_n_time), 'w') as outfile:
-                json.dump(response.json(), outfile)
+            #with open(self.logdir + '{}.json'.format(date_n_time), 'w') as outfile:
+            #    json.dump(response.json(), outfile)
 
             # Json als .txt abspeichern
             # with open(self.logdir + '{}.txt'.format(date_n_time), 'w') as outfile:

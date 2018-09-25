@@ -48,7 +48,8 @@ from pandas import DataFrame
 sys.path.append('./Clients')
 import folium
 from geopy.geocoders import Nominatim
-
+#from sqlalchemy import create_engine
+import psycopg2
 
 ##########################################################################                 #############################################################################################################################################
 ########################################################################## Web Application #############################################################################################################################################
@@ -196,13 +197,18 @@ def createInitialData():
     dbeva = client.eva_dev
     facilities = dbeva['facilities']
 
-    #################################
-    #### TODO: Postgress Zugriff #####
-    #################################
+    # Aufzüge reinladen
+    conn = psycopg2.connect(host='station-db', user='postgres', password='postgres', dbname='eva_dev', port=5432)
+    cur = conn.cursor()
 
-    aufzüge = pd.read_csv('./projekt/db-elevator.csv', sep=';', engine='python')
+    querry = 'select * from "elevator"'
+    cur.execute( querry )
 
-    columns = ['Standort Equipment', 'TechnPlatzBezeichng', 'Equipment', 'Equipmentname', 'Ort', 'Wirtschaftseinheit',
+    stammdaten_liste = cur.fetchall()
+
+    aufzüge = pd.DataFrame(stammdaten_liste)
+
+    columns = ['ID','Standort Equipment', 'TechnPlatzBezeichng', 'Equipment', 'Equipmentname', 'Ort', 'Wirtschaftseinheit',
                'Hersteller',
                'Baujahr', 'ANTRIEBSART', 'ANZAHL_HALTESTELLEN', 'ANZAHL_TUEREN_KABINE', 'ANZAHL_TUEREN_SCHACHT',
                'FOERDERGESCHWINDIGKEIT',
@@ -213,6 +219,12 @@ def createInitialData():
     aufzüge.columns = columns
     aufzüge = aufzüge.drop(0)
     aufzüge['Equipment'] = aufzüge['Equipment'].astype(str).astype('int64')
+    aufzüge = aufzüge.drop_duplicates(['Equipment'])
+    aufzüge = aufzüge.drop(columns=['ID'])
+    aufzüge = aufzüge.fillna(value=np.nan)
+    aufzüge['Baujahr'] = pd.to_numeric(aufzüge['Baujahr'], errors='coerce')
+
+    print('Anzahl Aufzüge: ', len(aufzüge))
 
     return facilities, aufzüge
 
@@ -297,7 +309,7 @@ def updateValues():
 
 # Daten werden jede Stunde aktualisiert
 scheduler = BlockingScheduler()
-scheduler.add_job(updateValues, 'interval', hours=1)
+scheduler.add_job(updateValues, 'interval', minutes=5)
 
 class UpdateValue(threading.Thread):
     def __init__(self):
@@ -888,7 +900,7 @@ def karte_aktualisieren(input_stadt, input_bland, radio_button):
                                   popup = tmp,
                                  icon=folium.Icon(color='green', icon='info-sign')).add_to(m)
 
-            m.save('./projekt/Maps/map_active_es.html')
+            m.save('./projekt/Maps/map_active_elevators.html')
             return open('./projekt/Maps/map_active_elevators.html', 'r').read()
         
         except:    
@@ -910,7 +922,7 @@ def karte_aktualisieren(input_stadt, input_bland, radio_button):
                                   popup = tmp,
                                  icon=folium.Icon(color='red', icon='info-sign')).add_to(m)
 
-            m.save('./projekt/Maps/map_inactive_es.html')
+            m.save('./projekt/Maps/map_inactive_elevators.html')
             return open('./projekt/Maps/map_inactive_elevators.html', 'r').read()
         
         except:    
