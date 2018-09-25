@@ -7,18 +7,16 @@ import os
 from project.api.FaSta_Client import FaSta_Request
 
 def startRequests():
-    while True:
-        mongo_uri = os.getenv('MONGO_URI')
-        print(mongo_uri)
-       # client = pymongo.MongoClient(os.getenv(mongo_uri))
-        client = pymongo.MongoClient('mongodb://bart:downy37)tory@mongo-db:27017/eva_dev')
-        eva = 'eva_dev'
 
-        db = client.eva_dev     #get_database('eva')
+    mongo_uri = os.getenv('MONGO_URI')
+    API_KEY = 'd16d67e35458c895f557696799eb4e8f'
+
+    while True:
+        client = pymongo.MongoClient(mongo_uri)
+        db = client.eva_dev
         facilities = db.facilities
 
-        # print("hello world")
-        request =   FaSta_Request('d16d67e35458c895f557696799eb4e8f').getFacilites()
+        request = FaSta_Request(API_KEY).getFacilites()
 
         for api_item in range(len(request)):
 
@@ -37,17 +35,10 @@ def startRequests():
                     print("facility found")
                     for mongo_item in search_result:
                         if (mongo_item["state"] != request[api_item]["state"]):
-                            print("")
-                            print("mongo_item:")
-                            print(mongo_item)
-                            print("")
-                            print("mongo_item state:")
-                            print(mongo_item["state"])
+                            print("mongo_item: ", mongo_item)
+                            print("mongo_item state: ", mongo_item["state"])
+                            print("api_item: ", request[api_item])
 
-                            print("")
-                            print("api_item")
-                            print(request[api_item])
-                            print("")
                             print("api_item state:")
                             print(request[api_item]["state"])
                             print(request[api_item])
@@ -57,22 +48,13 @@ def startRequests():
                             print(request[api_item])
                             facilities.insert_one(request[api_item])
                         break
-
                 else:
                     print("facility not found -> initial inserting")
                     facilities.insert_one(request[api_item])
-                    print(" ")
 
             except Exception as e:
                 print(e)
                 print('Fehler beim Mongo Request!')
-
-        # for item in request:‚
-        #    facilities.insert(item)
-
-        # pprint(request)
-        # result = json.loads(request)
-        # print(json.dumps(result, indent=4))
 
         time.sleep(60)
 
