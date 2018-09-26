@@ -9,7 +9,6 @@ import os
 cli = FlaskGroup(app)
 
 @cli.command()
-@with_appcontext
 def recreate_db():
     print('Running cli_recreate_db')
     db.drop_all()
@@ -17,7 +16,6 @@ def recreate_db():
     db.session.commit()
 
 @cli.command()
-@with_appcontext
 def init_tables():
     print('Running through cli_init_tables')
     """ Load station master data from csv"""
@@ -37,7 +35,6 @@ def init_tables():
 
 #mongo cli commands
 @cli.command()
-@with_appcontext
 def mongo_init():
    print('run trough docker with: docker-compose exec mongo-db mongorestore -u bart -p "downy37)tory" -h mongo-db --port 27017 -d eva_dev  ./data/db/dump/eva')
    #mongo.cx.admin.command('ismaster')
