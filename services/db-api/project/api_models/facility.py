@@ -1,6 +1,6 @@
 from flask import jsonify, render_template
 from project import app, mongo
-
+import socket
 
 # mongo  routes
 @app.route('/mongo/get_all', methods=['GET'])
@@ -48,7 +48,7 @@ def get_one_fac():
 def get_one_faci():
     count = mongo.db.facilities.count()
     return render_template('index.html',
-    count=count)
+    count=count, hostname=socket.gethostname())
 
 # routes
 @app.route('/mongo/agg', methods=['GET'])
