@@ -41,7 +41,7 @@ services:
       context: ./services/db-api
       dockerfile: Dockerfile-dev
       #command: python -u app.py
-    restart: always
+    restart: unless-stopped
     volumes:
       - './services/db-api:/usr/src/app'
     #  - '/etc/group:/etc/group:ro'
