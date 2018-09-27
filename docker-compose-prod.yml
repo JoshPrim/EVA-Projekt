@@ -7,8 +7,7 @@ services:
     build:
      context: ./services/fasta-client
      dockerfile: Dockerfile-dev
-    restart: on-failure
-
+    restart: on-failuredopc
     volumes:
      - '/home/parot/eva-dev/mnt/logs/elevator:/usr/src/app/logs/elevator/'
     # - './services/fasta-client:/usr/src/app'
@@ -22,7 +21,7 @@ services:
      - mongo-db
 
   escalator-client:
-    image: escalator:latest
+    image: escalator-client:latest
     build:
      context: ./services/fasta-client
      dockerfile: Dockerfile-dev

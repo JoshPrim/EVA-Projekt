@@ -3,10 +3,11 @@ version: '3.6'
 services:
 
   elevator-client:
+    image: elevator-client:latest
     build:
      context: ./services/fasta-client
      dockerfile: Dockerfile-dev
-    restart: always
+    restart: on-failuredopc
     volumes:
      - '/home/parot/eva-dev/mnt/logs/elevator:/usr/src/app/logs/elevator/'
     # - './services/fasta-client:/usr/src/app'
@@ -20,10 +21,11 @@ services:
      - mongo-db
 
   escalator-client:
+    image: escalator-client:latest
     build:
      context: ./services/fasta-client
      dockerfile: Dockerfile-dev
-    restart: always
+    restart: on-failure
     volumes:
      - '/home/parot/eva-dev/mnt/logs/escalator:/usr/src/app/logs/escalator/'
     # - './services/fasta-client:/usr/src/app'
@@ -37,11 +39,12 @@ services:
      - mongo-db
 
   db-api:
+    image: db-api:latest
     build:
       context: ./services/db-api
       dockerfile: Dockerfile-dev
       #command: python -u app.py
-    restart: unless-stopped
+    restart: on-failure
     volumes:
       - './services/db-api:/usr/src/app'
     #  - '/etc/group:/etc/group:ro'
@@ -58,10 +61,19 @@ services:
      - MONGO_URI=mongodb://bart:downy37)tory@mongo-db:27017/eva_dev
     depends_on:
       - station-db
+    deploy:
+      replicas: 3
+     # resources:
+     #   limits:
+     #     cpus: "0.1"#
+     #     memory: 50M
+      restart_policy:
+        condition: on-failure
 
 # Databases
 
   station-db:
+    image: station-db:latest
     build:
       context: ./services/db-api/project/db
       dockerfile: Dockerfile
@@ -90,11 +102,12 @@ services:
 
   # Dashboard
   dashboard-server:
+    image: dashboard:latest
     build:
       context: ./services/dashboard
       dockerfile: Dockerfile-dev
       #command: python -u app.py
-    restart: always
+    restart: on-failure
     volumes:
       - './services/dashboard:/usr/src/app'
     #  - '/etc/group:/etc/group:ro'#
