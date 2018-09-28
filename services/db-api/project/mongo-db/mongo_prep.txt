@@ -7,7 +7,7 @@ docker-compose exec mongo-db mongo admin -u bart -p 'downy37)tory'
 
 docker exec eva-mongodb mongodump  -u bart -p 'downy37)tory' -h localhost --port 27017 -d eva -o p./data/db/dump/180919
 
-docker-compose exec mongo-db  mongodump  -u bart -p 'downy37)tory' -h localhost --port 27017 -d eva_dev --authenticationDatabase eva_dev  -o ./data/db/dump/180919
+docker-compose exec mongo-db  mongodump  -u bart -p 'downy37)tory' -h localhost --port 27017 -d eva_dev --authenticationDatabase eva_dev  -o ./data/db/dump/180927
 
 # mongo restore 
  

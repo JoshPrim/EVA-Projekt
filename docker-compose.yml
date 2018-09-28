@@ -2,12 +2,24 @@ version: '3.6'
 
 services:
 
+  #services:
+  #  portainer:
+  #    image: portainer/portainer
+  #    ports:
+  #    - "9000:9000"
+  #    command: -H unix:///var/run/docker.sock
+  #    volumes:
+  #    - /var/run/docker.sock:/var/run/docker.sock
+  #    - portainer_data:/data
+  #volumes:
+  #  portainer_data:
+
   elevator-client:
     image: elevator-client:latest
     build:
      context: ./services/fasta-client
      dockerfile: Dockerfile-dev
-    restart: on-failuredopc
+    restart: on-failure
     volumes:
      - '/home/parot/eva-dev/mnt/logs/elevator:/usr/src/app/logs/elevator/'
     # - './services/fasta-client:/usr/src/app'

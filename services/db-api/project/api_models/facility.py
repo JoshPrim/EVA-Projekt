@@ -3,7 +3,7 @@ from project import app, mongo
 import socket
 
 # mongo  routes
-@app.route('/mongo/get_all', methods=['GET'])
+@app.route('/facility/all', methods=['GET'])
 def get_all_fac():
     fac = mongo.db.facilities
     f = fac.find()
@@ -30,7 +30,7 @@ def get_all_fac():
     return jsonify((response_object), 200)
 
 
-@app.route('/mongo/single', methods=['GET'])
+@app.route('/facility/single', methods=['GET'])
 def get_one_fac():
     fac = mongo.db.facilities
     f = fac.find_one({'equipmentnumber': 10499641})
@@ -44,14 +44,14 @@ def get_one_fac():
     }
     return jsonify((response_object))
 
-@app.route('/mongo/count' )
+@app.route('/facility/count' )
 def get_one_faci():
     count = mongo.db.facilities.count()
     return render_template('index.html',
     count=count, hostname=socket.gethostname())
 
 # routes
-@app.route('/mongo/agg', methods=['GET'])
+@app.route('/facility/count_inactive', methods=['GET'])
 def aggFac():
     f = mongo.db.facilities.aggregate( [
     { '$match': { 'state': 'INACTIVE' } },
@@ -77,11 +77,4 @@ def aggFac():
     }
     return jsonify((response_object), 200)
 
-# routes
-@app.route('/mongo/ping', methods=['GET'])
-def mongo_pong():
-    return jsonify({
-        'status': 'success',
-        'message': 'pong!'
-    })
 

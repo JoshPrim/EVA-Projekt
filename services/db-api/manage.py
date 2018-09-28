@@ -1,4 +1,4 @@
-# services/users/app.py
+# services/db-api/project/manage.py
 
 
 from flask.cli import FlaskGroup, with_appcontext
