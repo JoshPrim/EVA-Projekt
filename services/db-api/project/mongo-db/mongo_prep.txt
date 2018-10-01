@@ -5,8 +5,10 @@ docker-compose exec mongo-db mongodump  -u bart -p 'downy37)tory' -h mongo-db --
 
 docker-compose exec mongo-db mongo admin -u bart -p 'downy37)tory'
 
-docker exec eva-mongodb mongodump  -u bart -p 'downy37)tory' -h localhost --port 27017 -d eva -o p./data/db/dump
- 
+docker exec eva-mongodb mongodump  -u bart -p 'downy37)tory' -h localhost --port 27017 -d eva -o p./data/db/dump/180919
+
+docker-compose exec mongo-db  mongodump  -u bart -p 'downy37)tory' -h localhost --port 27017 -d eva_dev --authenticationDatabase eva_dev  -o ./data/db/dump/180927
+
 # mongo restore 
  
 docker-compose exec mongo-db mongorestore -u bart -p 'downy37)tory' -h mongo-db --port 27017 -d eva_dev  ./data/db/dump/eva
@@ -14,6 +16,7 @@ docker-compose exec mongo-db mongorestore -u bart -p 'downy37)tory' -h mongo-db 
 # login to mongo
 
 docker-compose exec mongo-db mongo admin  -u bart -p 'downy37)tory'
+
 
 # mongo init setup
 
@@ -26,3 +29,8 @@ db.auth("bart","downy37)tory")
 db.createCollection("facilities")
 
 db.facilities.find({"equipmentnumber":10253036})
+
+
+
+bausteine:
+eva_dev.facilities.deleteMany( { date time: { $gt: "2018-10-01_14-44-00" } } )

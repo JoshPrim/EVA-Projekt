@@ -1,7 +1,11 @@
+# services/db-api/project/__init__.py
+
 import os
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_pymongo import PyMongo
+
+print('Running through init')
 
 app = Flask(__name__, template_folder='./templates')
 
@@ -25,4 +29,3 @@ def ping_pong():
         'status': 'success',
         'message': 'pong!'
     })
-

@@ -3,7 +3,7 @@ from project.api_models.models import Station
 from project import app
 
 # routes
-@app.route('/stations', methods=['GET'])
+@app.route('/station/all', methods=['GET'])
 def get_all_stations():
     response_object = {
         'status': 'success',
@@ -12,11 +12,3 @@ def get_all_stations():
         }
     }
     return jsonify(response_object), 200
-
-# routes
-@app.route('/postgres/ping', methods=['GET'])
-def postgres_pong():
-    return jsonify({
-        'status': 'success',
-        'message': 'pong!'
-    })
