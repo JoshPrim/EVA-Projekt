@@ -2,12 +2,24 @@ version: '3.6'
 
 services:
 
+  #services:
+  #  portainer:
+  #    image: portainer/portainer
+  #    ports:
+  #    - "9000:9000"
+  #    command: -H unix:///var/run/docker.sock
+  #    volumes:
+  #    - /var/run/docker.sock:/var/run/docker.sock
+  #    - portainer_data:/data
+  #volumes:
+  #  portainer_data:
+
   elevator-client:
     image: elevator-client:latest
     build:
      context: ./services/fasta-client
      dockerfile: Dockerfile-dev
-    restart: on-failuredopc
+    restart: on-failure
     volumes:
      - '/home/parot/eva-dev/mnt/logs/elevator:/usr/src/app/logs/elevator/'
     # - './services/fasta-client:/usr/src/app'
@@ -63,10 +75,10 @@ services:
       - station-db
     deploy:
       replicas: 3
-      resources:
-        limits:
-          cpus: "0.1"#
-          memory: 50M
+     # resources:
+     #   limits:
+     #     cpus: "0.1"#
+     #     memory: 50M
       restart_policy:
         condition: on-failure
 
@@ -85,8 +97,11 @@ services:
       - POSTGRES_PASSWORD=postgres
 
   mongo-db:
-    image: 'mongo:latest'
-    command: mongod --port 27017
+    image: mongo-db:latest
+    #build:
+    #  context: ./services/db-api/project/mongo-db
+      dockerfile: Dockerfile
+    #command: mongod --port 27017
     restart: unless-stopped
     ports:
       - "27027:27017"
@@ -99,6 +114,14 @@ services:
       - '/home/parot/eva-dev/mnt/mongo/data:/data/db'
       #- '/etc/group:/etc/group:ro'
       #- '/etc/passwd:/etc/passwd:ro'
+    deploy:
+      replicas: 1
+      # resources:
+      #   limits:
+      #     cpus: "0.1"#
+      #     memory: 50M
+      restart_policy:
+        condition: on-failure
 
   # Dashboard
   dashboard-server:

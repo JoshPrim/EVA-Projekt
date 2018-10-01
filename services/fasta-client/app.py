@@ -29,7 +29,7 @@ def startRequests():
                        [("datetime", pymongo.DESCENDING)]).limit(1)
 
                    print("mongo db count")
-                   print(search_result.count())
+                   #print(search_result.count())
 
                    if (search_result.count() > 0):
 

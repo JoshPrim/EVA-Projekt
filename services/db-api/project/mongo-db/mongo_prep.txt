@@ -17,6 +17,7 @@ docker-compose exec mongo-db mongorestore -u bart -p 'downy37)tory' -h mongo-db 
 
 docker-compose exec mongo-db mongo admin  -u bart -p 'downy37)tory'
 
+
 # mongo init setup
 
 use eva_dev
@@ -28,3 +29,8 @@ db.auth("bart","downy37)tory")
 db.createCollection("facilities")
 
 db.facilities.find({"equipmentnumber":10253036})
+
+
+
+bausteine:
+eva_dev.facilities.deleteMany( { date time: { $gt: "2018-10-01_14-44-00" } } )

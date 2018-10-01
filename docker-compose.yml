@@ -74,7 +74,7 @@ services:
     depends_on:
       - station-db
     deploy:
-      replicas: 3
+      replicas: 1
      # resources:
      #   limits:
      #     cpus: "0.1"#
@@ -97,7 +97,7 @@ services:
       - POSTGRES_PASSWORD=postgres
 
   mongo-db:
-    image: 'mongo:latest'
+    image: mongo:latest
     command: mongod --port 27017
     restart: unless-stopped
     ports:
@@ -111,6 +111,14 @@ services:
       - '/home/parot/eva-dev/mnt/mongo/data:/data/db'
       #- '/etc/group:/etc/group:ro'
       #- '/etc/passwd:/etc/passwd:ro'
+    deploy:
+      replicas: 1
+      # resources:
+      #   limits:
+      #     cpus: "0.1"#
+      #     memory: 50M
+      restart_policy:
+        condition: on-failure
 
   # Dashboard
   dashboard-server:
