@@ -782,9 +782,9 @@ page_aufzuege = html.Div(children=[
                         {'label': 'Inaktive Aufzüge', 'value': 'inaktiv'},
                         {'label': ' Alle Aufzüge', 'value': 'beide'}
                     ],
-                    value='inaktiv', style={'margin-left':10}
+                    value='aktiv', style={'margin-left':10}
                 ),
-                html.Iframe(id='karte', srcDoc=open('./projekt/Maps/map_inactive_elevators.html', 'r').read(),
+                html.Iframe(id='karte', srcDoc=open('./projekt/Maps/map_active_elevators_FFM.html', 'r').read(),
                             style={'width': '90%', 'height': '30em'})
             ], style={'width': '49%', 'display': 'inline-block'}),
 
