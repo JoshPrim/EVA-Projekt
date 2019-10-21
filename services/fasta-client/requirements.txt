@@ -9,6 +9,6 @@ pytz
 requests==2.19.1
 setuptools==40.0.0
 six
-urllib3==1.23
+urllib3==1.24.2
 
 
