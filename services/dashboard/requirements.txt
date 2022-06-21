@@ -1,6 +1,6 @@
 folium==0.5.0
 geopy==1.16.0
-numpy==1.15.0
+numpy==1.22.0
 pandas==0.23.4
 pymongo==3.7.1
 plotly==2.7.0
