@@ -1,7 +1,7 @@
 pandas
 numpy
 ObjDict
-certifi==2018.4.16
+certifi==2022.12.7
 idna==2.7
 pymongo==3.7.1
 python-dateutil
