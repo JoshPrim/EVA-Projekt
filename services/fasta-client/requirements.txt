@@ -7,7 +7,7 @@ pymongo==3.7.1
 python-dateutil
 pytz
 requests==2.19.1
-setuptools==40.0.0
+setuptools==65.5.1
 six
 urllib3==1.23
 
